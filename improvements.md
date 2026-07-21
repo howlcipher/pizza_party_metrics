@@ -33,7 +33,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 12 | [Agent Suggestion] Data Pipeline: Real GitHub Collaboration Data Integration | Done (2026-07-21) | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.6-flash | 8 (Mandate for real data) * 1.0 (new capability) / 5 = 1.60 |
 | 8 | [Agent Suggestion] Data Transparency: Analytics Methodology Page | Done (2026-07-21) | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Addresses data trust) * 0.5 (decay) / 3 = 1.33 |
 | 14 | Live Data Ingestion API / Backend | Done (2026-07-21) | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core requirement) * 1.0 (new capability) / 6 = 1.33 |
-| 16 | [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Security) * 0.5 (decay) / 4 = 1.00 |
+| 16 | [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates | Done (2026-07-21) | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Security) * 0.5 (decay) / 4 = 1.00 |
 | 22 | [Agent Suggestion] Predictive Burnout Modeling | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
 | 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 0.5 (decay) / 4 = 0.88 |
 | 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.5 (decay) / 4 = 0.88 |
@@ -127,6 +127,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 16. [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates
 **Description:** Split the monolithic `build-and-deploy` job in `deploy.yml` into `validate`, `build`, and `deploy` jobs with security scanning (Trivy/npm audit).
 **Context:** Aligns with `devops` constraints ensuring security and logical environment isolation.
+**Done note (2026-07-21):** Refactored `.github/workflows/deploy.yml` into `validate`, `build`, and `deploy` jobs. Added `npm audit` and `aquasecurity/trivy-action` scanning to the validation phase.
 
 ### 17. Theme Options: Light, Dark, and Color-blind Modes
 **Description:** Add a theme switcher that allows users to toggle between Light Mode, Dark Mode (currently default), and a Color-blind friendly mode.
