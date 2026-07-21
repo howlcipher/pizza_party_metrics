@@ -52,8 +52,11 @@ const Dashboard = () => {
         )}
       </main>
       
-      <footer className="text-center py-6 text-amber-700 text-sm font-semibold mt-auto">
+      <footer className="text-center py-6 text-amber-700 text-sm font-semibold mt-auto space-y-2">
         <p>Telemetry generated with 🧀 & 🍅</p>
+        <p className="text-xs font-normal">
+          <strong>Live Data Sources:</strong> <a href="https://wfhresearch.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">WFH Research (SWAA)</a> &amp; <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">GitHub REST API</a>
+        </p>
       </footer>
     </div>
   );
