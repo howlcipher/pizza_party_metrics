@@ -23,6 +23,9 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 
 | # | Improvement | Status | Score (V×D÷E) | Claude model | Gemini model | ROI rationale |
 | --- | --- | --- | --- | --- | --- | --- |
+| 46 | Direct User Feedback: Update Async Collab Labels | Open | 6.00 | - | gemini-3.1-pro-high | 6 (User req) * 1.0 / 1 = 6.00 |
+| 48 | Direct User Feedback: Disable Tooltips on Mobile | Open | 6.00 | - | gemini-3.1-pro-high | 6 (User req) * 1.0 / 1 = 6.00 |
+| 47 | Direct User Feedback: Improve Top Bar Mobile UI | Open | 3.50 | - | gemini-3.1-pro-high | 7 (User req) * 1.0 / 2 = 3.50 |
 | 35 | [Agent Suggestion] UI/UX: Fix Export Race Condition & Accessibility Contrast | Open | 1.75 | - | gemini-3.1-pro-high | 7 (Compliance/Bugs) * 0.5 (decay) / 2 = 1.75 |
 | 44 | [Agent Suggestion] Frontend: Move Aggregations to ETL | Open | 1.16 | - | gemini-3.1-pro-high | 7 (Performance) * 0.5 (decay) / 3 = 1.16 |
 | 33 | [Agent Suggestion] DevOps: Enforce QA Guardrails & Trivy Security Checks | Open | 1.00 | - | gemini-3.1-pro-high | 8 (High risk) * 0.25 (decay) / 2 = 1.00 |
@@ -68,7 +71,6 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 27 | UI/UX: Mobile Responsiveness | ⚠️ below floor | 0.06 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Usability) * 0.03125 (decay) / 4 = 0.06 |
 | 17 | Theme Options: Light, Dark, and Color-blind Modes | ⚠️ below floor | 0.05 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (high UX value) * 0.03125 (decay) / 4 = 0.05 |
 | 21 | Stereotype Pizza Parlor Aesthetic Overhaul | Done (2026-07-21) | 0.04 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Fun branding) * 0.03125 (decay) / 5 = 0.04 |
-
 ## Details
 
 ### 1. [Agent Suggestion] Frontend: Rendering Efficiency (useMemo)
@@ -309,4 +311,19 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 45. [Agent Suggestion] Data Pipeline: Sync Local JSON Data
 **Description:** Re-run the local `etl.py` script to update `pizza_metrics.json` so that the local data matches the new mathematical formulas (specifically fixing the mathematically impossible Pizza Party Index scores in the local environment).
 **Context:** Resolves a discrepancy where the local JSON has outdated metrics causing the gauge charts to invert.
+**Status:** Open
+
+### 46. UI/UX: Update Async Collaboration Velocity Chart Labels
+**Description:** Change "Online Collaboration Score" to "Collaboration Score" in the Async Collaboration Velocity chart. Update subtitle "Online collaboration efficiency vs. time blocked waiting." to remove the word "Online".
+**Context:** User requested change to reflect that collaboration can be online or in person.
+**Status:** Open
+
+### 47. UI/UX: Improve Mobile Responsiveness of Top Bar
+**Description:** Fix the top bar which currently gets "wonky" on mobile devices.
+**Context:** User requested improvement for mobile responsiveness.
+**Status:** Open
+
+### 48. UI/UX: Disable Pizza Party Index Tooltips on Mobile
+**Description:** Disable tooltips on mobile for the Pizza Party index chart, as they currently appear behind the score and are unnecessary on mobile. Keep them on desktop.
+**Context:** User requested UI fix for mobile view.
 **Status:** Open
