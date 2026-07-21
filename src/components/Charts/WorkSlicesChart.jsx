@@ -1,19 +1,20 @@
 import React from 'react';
 import { 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine 
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
 
 const WorkSlicesChart = ({ data }) => {
   // Aggregate data by work_setup to compare
   const aggregatedData = data.reduce((acc, curr) => {
-    const existing = acc.find(item => item.work_setup === curr.work_setup);
+    // using work_setup_category now instead of work_setup object
+    const existing = acc.find(item => item.work_setup === curr.work_setup_category);
     if (existing) {
       existing.focus_hours += curr.focus_hours;
       existing.meeting_overhead += curr.meeting_overhead;
       existing.count += 1;
     } else {
       acc.push({
-        work_setup: curr.work_setup,
+        work_setup: curr.work_setup_category,
         focus_hours: curr.focus_hours,
         meeting_overhead: curr.meeting_overhead,
         count: 1
@@ -29,11 +30,11 @@ const WorkSlicesChart = ({ data }) => {
   }));
 
   return (
-    <div className="bg-white border-2 border-amber-500 rounded-xl p-5 shadow-lg h-full flex flex-col">
-      <h3 className="text-lg font-bold text-red-600 mb-2 border-b border-amber-100 pb-2">
+    <div className="bg-gray-800 border-2 border-gray-700 rounded-xl p-5 shadow-lg h-full flex flex-col">
+      <h3 className="text-lg font-bold text-red-400 mb-2 border-b border-gray-700 pb-2">
         Slices of Work: Focus vs Meetings
       </h3>
-      <p className="text-xs text-amber-700 mb-4">
+      <p className="text-xs text-gray-400 mb-4">
         Weekly Focus Hours vs. Meeting Overhead across different mandates.
       </p>
       
@@ -43,26 +44,26 @@ const WorkSlicesChart = ({ data }) => {
             data={chartData}
             margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#fef3c7" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
             <XAxis 
               dataKey="name" 
-              tick={{ fill: '#92400e', fontWeight: 600 }} 
-              axisLine={{ stroke: '#f59e0b' }}
+              tick={{ fill: '#9ca3af', fontWeight: 600 }} 
+              axisLine={{ stroke: '#4b5563' }}
               tickLine={false}
             />
             <YAxis 
-              tick={{ fill: '#92400e' }}
-              axisLine={{ stroke: '#f59e0b' }}
+              tick={{ fill: '#9ca3af' }}
+              axisLine={{ stroke: '#4b5563' }}
               tickLine={false}
-              label={{ value: 'Hours', angle: -90, position: 'insideLeft', fill: '#92400e' }}
+              label={{ value: 'Hours', angle: -90, position: 'insideLeft', fill: '#9ca3af' }}
             />
             <Tooltip 
-              cursor={{ fill: '#fef3c7', opacity: 0.4 }}
+              cursor={{ fill: '#374151', opacity: 0.4 }}
               contentStyle={{ 
-                backgroundColor: '#fffbeb', 
-                border: '2px solid #f59e0b',
+                backgroundColor: '#1f2937', 
+                border: '1px solid #4b5563',
                 borderRadius: '8px',
-                color: '#92400e',
+                color: '#e5e7eb',
                 fontWeight: 'bold'
               }}
             />
@@ -77,3 +78,4 @@ const WorkSlicesChart = ({ data }) => {
 };
 
 export default WorkSlicesChart;
+

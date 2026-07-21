@@ -23,7 +23,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 
 | # | Improvement | Status | Score (V×D÷E) | Claude model | Gemini model | ROI rationale |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Demographic Analytics (Age, Industry, Gender) | Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Good segmentation value) * 1.0 / 4 (Standard UI/Data implementation) = 1.75 |
+| 1 | Demographic Analytics (Age, Industry, Gender) | Done (2026-07-21) | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Good segmentation value) * 1.0 / 4 (Standard UI/Data implementation) = 1.75 |
 | 2 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 1.0 / 4 (Can piggyback on interruption data) = 1.75 |
 | 3 | Interruption & Context Switch Impact Dashboard | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value for productivity insights) * 1.0 / 5 (Complex live data correlation) = 1.6 |
 | 4 | Live Data Ingestion API / Backend | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core requirement for live data) * 1.0 / 6 (Significant backend work) = 1.33 |
@@ -34,6 +34,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 1. Demographic Analytics (Age, Industry, Gender)
 **Description:** Add demographic breakdowns to the metrics. Understand how different age ranges, industries, and genders interact with the product or experience different levels of productivity.
 **Context:** Ensure data pipelines aggregate this securely and anonymized. 
+**Done note (2026-07-21):** Implemented new UI components using Recharts for Age and Gender breakdowns. Data structure updated to support these dimensions, and the dashboard aesthetic upgraded to dark mode.
 
 ### 2. [Agent Suggestion] Meeting vs. Maker Time Analysis
 **Description:** Analyze calendar data to show the ratio of uninterrupted "Maker Time" versus fragmented "Meeting Time."

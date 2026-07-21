@@ -1,170 +1,3922 @@
 [
     {
-        "industry":"Arts Entertain",
-        "work_setup":{
-            "onsite_pct":45.32,
-            "hybrid_pct":30.9,
-            "remote_pct":23.78
+        "industry": "Arts Entertain",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":20.0,
-        "meeting_overhead":20.0,
-        "pizza_party_index":3.04,
-        "age_group":"All Ages"
+        "focus_hours": 20.29,
+        "meeting_overhead": 22.67,
+        "pizza_party_index": 3.16,
+        "age_group": "18-24",
+        "gender": "Male"
     },
     {
-        "industry":"Education",
-        "work_setup":{
-            "onsite_pct":67.53,
-            "hybrid_pct":22.96,
-            "remote_pct":9.51
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":14.29,
-        "meeting_overhead":25.71,
-        "pizza_party_index":5.53,
-        "age_group":"All Ages"
+        "focus_hours": 22.9,
+        "meeting_overhead": 21.28,
+        "pizza_party_index": 3.02,
+        "age_group": "18-24",
+        "gender": "Female"
     },
     {
-        "industry":"Finance Insurance",
-        "work_setup":{
-            "onsite_pct":37.44,
-            "hybrid_pct":40.28,
-            "remote_pct":22.28
+        "industry": "Arts Entertain",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":20.67,
-        "meeting_overhead":19.33,
-        "pizza_party_index":2.79,
-        "age_group":"All Ages"
+        "focus_hours": 17.86,
+        "meeting_overhead": 17,
+        "pizza_party_index": 3.13,
+        "age_group": "18-24",
+        "gender": "Non-binary"
     },
     {
-        "industry":"Government",
-        "work_setup":{
-            "onsite_pct":63.72,
-            "hybrid_pct":28.89,
-            "remote_pct":7.39
+        "industry": "Arts Entertain",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":14.32,
-        "meeting_overhead":25.68,
-        "pizza_party_index":5.46,
-        "age_group":"All Ages"
+        "focus_hours": 19.47,
+        "meeting_overhead": 18.44,
+        "pizza_party_index": 3.23,
+        "age_group": "18-24",
+        "gender": "Other"
     },
     {
-        "industry":"Healthcare",
-        "work_setup":{
-            "onsite_pct":60.17,
-            "hybrid_pct":24.82,
-            "remote_pct":15.01
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":16.34,
-        "meeting_overhead":23.66,
-        "pizza_party_index":4.44,
-        "age_group":"All Ages"
+        "focus_hours": 16.67,
+        "meeting_overhead": 22.82,
+        "pizza_party_index": 2.62,
+        "age_group": "25-34",
+        "gender": "Male"
     },
     {
-        "industry":"Hospitaility Food",
-        "work_setup":{
-            "onsite_pct":79.3,
-            "hybrid_pct":17.12,
-            "remote_pct":3.58
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":11.6,
-        "meeting_overhead":28.4,
-        "pizza_party_index":7.58,
-        "age_group":"All Ages"
+        "focus_hours": 16.86,
+        "meeting_overhead": 16.97,
+        "pizza_party_index": 2.84,
+        "age_group": "25-34",
+        "gender": "Female"
     },
     {
-        "industry":"Information",
-        "work_setup":{
-            "onsite_pct":28.86,
-            "hybrid_pct":49.08,
-            "remote_pct":22.06
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":21.69,
-        "meeting_overhead":18.31,
-        "pizza_party_index":2.46,
-        "age_group":"All Ages"
+        "focus_hours": 17.41,
+        "meeting_overhead": 23.45,
+        "pizza_party_index": 2.79,
+        "age_group": "25-34",
+        "gender": "Non-binary"
     },
     {
-        "industry":"Manufacturing",
-        "work_setup":{
-            "onsite_pct":73.66,
-            "hybrid_pct":21.56,
-            "remote_pct":4.79
+        "industry": "Arts Entertain",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":12.55,
-        "meeting_overhead":27.45,
-        "pizza_party_index":6.73,
-        "age_group":"All Ages"
+        "focus_hours": 23.37,
+        "meeting_overhead": 17.99,
+        "pizza_party_index": 2.69,
+        "age_group": "25-34",
+        "gender": "Other"
     },
     {
-        "industry":"Prof Bus Services",
-        "work_setup":{
-            "onsite_pct":43.82,
-            "hybrid_pct":35.3,
-            "remote_pct":20.88
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":19.59,
-        "meeting_overhead":20.41,
-        "pizza_party_index":3.14,
-        "age_group":"All Ages"
+        "focus_hours": 21.71,
+        "meeting_overhead": 20.85,
+        "pizza_party_index": 3.01,
+        "age_group": "35-44",
+        "gender": "Male"
     },
     {
-        "industry":"Realestate",
-        "work_setup":{
-            "onsite_pct":40.68,
-            "hybrid_pct":47.48,
-            "remote_pct":11.84
+        "industry": "Arts Entertain",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":18.1,
-        "meeting_overhead":21.9,
-        "pizza_party_index":3.56,
-        "age_group":"All Ages"
+        "focus_hours": 23.03,
+        "meeting_overhead": 17.63,
+        "pizza_party_index": 2.81,
+        "age_group": "35-44",
+        "gender": "Female"
     },
     {
-        "industry":"Retail",
-        "work_setup":{
-            "onsite_pct":74.37,
-            "hybrid_pct":18.87,
-            "remote_pct":6.76
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":12.87,
-        "meeting_overhead":27.13,
-        "pizza_party_index":6.51,
-        "age_group":"All Ages"
+        "focus_hours": 19.49,
+        "meeting_overhead": 16.66,
+        "pizza_party_index": 2.67,
+        "age_group": "35-44",
+        "gender": "Non-binary"
     },
     {
-        "industry":"Transp Warehousing",
-        "work_setup":{
-            "onsite_pct":70.42,
-            "hybrid_pct":19.24,
-            "remote_pct":10.34
+        "industry": "Arts Entertain",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":14.1,
-        "meeting_overhead":25.9,
-        "pizza_party_index":5.68,
-        "age_group":"All Ages"
+        "focus_hours": 16.08,
+        "meeting_overhead": 19.07,
+        "pizza_party_index": 2.74,
+        "age_group": "35-44",
+        "gender": "Other"
     },
     {
-        "industry":"Utilities",
-        "work_setup":{
-            "onsite_pct":62.11,
-            "hybrid_pct":29.49,
-            "remote_pct":8.41
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":14.73,
-        "meeting_overhead":25.27,
-        "pizza_party_index":5.22,
-        "age_group":"All Ages"
+        "focus_hours": 22.21,
+        "meeting_overhead": 18.09,
+        "pizza_party_index": 2.65,
+        "age_group": "45-54",
+        "gender": "Male"
     },
     {
-        "industry":"Wholesale",
-        "work_setup":{
-            "onsite_pct":63.06,
-            "hybrid_pct":29.67,
-            "remote_pct":7.27
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
         },
-        "focus_hours":14.38,
-        "meeting_overhead":25.62,
-        "pizza_party_index":5.42,
-        "age_group":"All Ages"
+        "focus_hours": 17.46,
+        "meeting_overhead": 16.51,
+        "pizza_party_index": 3.05,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
+        },
+        "focus_hours": 22.48,
+        "meeting_overhead": 23.21,
+        "pizza_party_index": 2.5,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
+        },
+        "focus_hours": 19.92,
+        "meeting_overhead": 19.41,
+        "pizza_party_index": 3.03,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
+        },
+        "focus_hours": 17.12,
+        "meeting_overhead": 21.46,
+        "pizza_party_index": 2.69,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Arts Entertain",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
+        },
+        "focus_hours": 17.1,
+        "meeting_overhead": 23.22,
+        "pizza_party_index": 2.6,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
+        },
+        "focus_hours": 19.32,
+        "meeting_overhead": 21.52,
+        "pizza_party_index": 3.15,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Arts Entertain",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 45.32,
+            "hybrid_pct": 30.9,
+            "remote_pct": 23.78
+        },
+        "focus_hours": 19.35,
+        "meeting_overhead": 22.15,
+        "pizza_party_index": 2.91,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 15.93,
+        "meeting_overhead": 29.11,
+        "pizza_party_index": 5.33,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 14.48,
+        "meeting_overhead": 20.75,
+        "pizza_party_index": 6.49,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 15.37,
+        "meeting_overhead": 20.98,
+        "pizza_party_index": 6.04,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 14.53,
+        "meeting_overhead": 24.34,
+        "pizza_party_index": 6.33,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 16.55,
+        "meeting_overhead": 28.84,
+        "pizza_party_index": 6.25,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 12.69,
+        "meeting_overhead": 30.62,
+        "pizza_party_index": 5,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 13.36,
+        "meeting_overhead": 28.81,
+        "pizza_party_index": 5.84,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 14.84,
+        "meeting_overhead": 27.24,
+        "pizza_party_index": 6.21,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 14.55,
+        "meeting_overhead": 27.53,
+        "pizza_party_index": 5.22,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 14.57,
+        "meeting_overhead": 23.52,
+        "pizza_party_index": 4.53,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 15.82,
+        "meeting_overhead": 30.49,
+        "pizza_party_index": 4.71,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 13.59,
+        "meeting_overhead": 29.06,
+        "pizza_party_index": 4.96,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 14.89,
+        "meeting_overhead": 22.64,
+        "pizza_party_index": 6.02,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 11.78,
+        "meeting_overhead": 28.38,
+        "pizza_party_index": 5.49,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 13.32,
+        "meeting_overhead": 29.44,
+        "pizza_party_index": 6.28,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 15.89,
+        "meeting_overhead": 28.88,
+        "pizza_party_index": 4.96,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 12.49,
+        "meeting_overhead": 25.27,
+        "pizza_party_index": 4.94,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 12.06,
+        "meeting_overhead": 21.55,
+        "pizza_party_index": 6.12,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 16.14,
+        "meeting_overhead": 22.49,
+        "pizza_party_index": 4.62,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Education",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 67.53,
+            "hybrid_pct": 22.96,
+            "remote_pct": 9.51
+        },
+        "focus_hours": 16.2,
+        "meeting_overhead": 22.7,
+        "pizza_party_index": 5.32,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 18.53,
+        "meeting_overhead": 18.34,
+        "pizza_party_index": 2.26,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 23.58,
+        "meeting_overhead": 18.79,
+        "pizza_party_index": 2.27,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 17.7,
+        "meeting_overhead": 19.53,
+        "pizza_party_index": 3.15,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 18,
+        "meeting_overhead": 19.5,
+        "pizza_party_index": 3.08,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 23.61,
+        "meeting_overhead": 22.09,
+        "pizza_party_index": 2.59,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 24.6,
+        "meeting_overhead": 16.14,
+        "pizza_party_index": 2.88,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 22.25,
+        "meeting_overhead": 17.91,
+        "pizza_party_index": 2.44,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 22.99,
+        "meeting_overhead": 18,
+        "pizza_party_index": 2.5,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 22.35,
+        "meeting_overhead": 16.94,
+        "pizza_party_index": 2.57,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 19.67,
+        "meeting_overhead": 15.8,
+        "pizza_party_index": 2.91,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 23.8,
+        "meeting_overhead": 20.45,
+        "pizza_party_index": 2.97,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 19.26,
+        "meeting_overhead": 21.48,
+        "pizza_party_index": 2.84,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 20.95,
+        "meeting_overhead": 17.69,
+        "pizza_party_index": 2.24,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 19.35,
+        "meeting_overhead": 20.4,
+        "pizza_party_index": 2.85,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 19.6,
+        "meeting_overhead": 20.3,
+        "pizza_party_index": 2.61,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 16.95,
+        "meeting_overhead": 16.55,
+        "pizza_party_index": 2.62,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 19.23,
+        "meeting_overhead": 20.9,
+        "pizza_party_index": 2.67,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 22.04,
+        "meeting_overhead": 22.43,
+        "pizza_party_index": 3.22,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 22.21,
+        "meeting_overhead": 19.86,
+        "pizza_party_index": 2.82,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Finance Insurance",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 37.44,
+            "hybrid_pct": 40.28,
+            "remote_pct": 22.28
+        },
+        "focus_hours": 18.96,
+        "meeting_overhead": 21.07,
+        "pizza_party_index": 2.76,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 15.03,
+        "meeting_overhead": 25.78,
+        "pizza_party_index": 5.9,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 14.26,
+        "meeting_overhead": 26.96,
+        "pizza_party_index": 4.46,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.07,
+        "meeting_overhead": 25.3,
+        "pizza_party_index": 5.14,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.05,
+        "meeting_overhead": 30.35,
+        "pizza_party_index": 5.11,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 14.36,
+        "meeting_overhead": 22.74,
+        "pizza_party_index": 6.41,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 15.15,
+        "meeting_overhead": 21.24,
+        "pizza_party_index": 6.06,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.47,
+        "meeting_overhead": 24.81,
+        "pizza_party_index": 4.79,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 17.04,
+        "meeting_overhead": 25.24,
+        "pizza_party_index": 4.61,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 16.45,
+        "meeting_overhead": 21.47,
+        "pizza_party_index": 5.7,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.16,
+        "meeting_overhead": 24.86,
+        "pizza_party_index": 4.59,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 12.73,
+        "meeting_overhead": 27.19,
+        "pizza_party_index": 5.48,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 16.91,
+        "meeting_overhead": 30.45,
+        "pizza_party_index": 5.55,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 11.98,
+        "meeting_overhead": 29.1,
+        "pizza_party_index": 5.7,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.91,
+        "meeting_overhead": 23.97,
+        "pizza_party_index": 5.62,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.28,
+        "meeting_overhead": 23.16,
+        "pizza_party_index": 4.83,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.09,
+        "meeting_overhead": 27.74,
+        "pizza_party_index": 4.47,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 14.04,
+        "meeting_overhead": 25.13,
+        "pizza_party_index": 4.84,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 14.29,
+        "meeting_overhead": 30.08,
+        "pizza_party_index": 6.39,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 12.04,
+        "meeting_overhead": 21.26,
+        "pizza_party_index": 5.59,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Government",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.72,
+            "hybrid_pct": 28.89,
+            "remote_pct": 7.39
+        },
+        "focus_hours": 13.81,
+        "meeting_overhead": 27.75,
+        "pizza_party_index": 6.23,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 14.82,
+        "meeting_overhead": 21.66,
+        "pizza_party_index": 3.73,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 15.32,
+        "meeting_overhead": 28.33,
+        "pizza_party_index": 4.51,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 18.59,
+        "meeting_overhead": 24.88,
+        "pizza_party_index": 4.52,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 13.78,
+        "meeting_overhead": 25.5,
+        "pizza_party_index": 3.68,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 16.56,
+        "meeting_overhead": 23.44,
+        "pizza_party_index": 3.64,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 14.38,
+        "meeting_overhead": 24.92,
+        "pizza_party_index": 5.27,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 15.52,
+        "meeting_overhead": 22.41,
+        "pizza_party_index": 4.01,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 18.18,
+        "meeting_overhead": 20,
+        "pizza_party_index": 5.23,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 13.14,
+        "meeting_overhead": 27.82,
+        "pizza_party_index": 5.2,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 16.58,
+        "meeting_overhead": 20.17,
+        "pizza_party_index": 5.11,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 14.99,
+        "meeting_overhead": 20.81,
+        "pizza_party_index": 5.27,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 14.24,
+        "meeting_overhead": 20.81,
+        "pizza_party_index": 4.5,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 13.43,
+        "meeting_overhead": 23.44,
+        "pizza_party_index": 5.09,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 17.59,
+        "meeting_overhead": 27.39,
+        "pizza_party_index": 3.73,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 18.4,
+        "meeting_overhead": 21.63,
+        "pizza_party_index": 3.87,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 18.53,
+        "meeting_overhead": 28.2,
+        "pizza_party_index": 4.54,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 13.22,
+        "meeting_overhead": 27.04,
+        "pizza_party_index": 4.41,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 19.33,
+        "meeting_overhead": 25.26,
+        "pizza_party_index": 4.2,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 16.46,
+        "meeting_overhead": 27.9,
+        "pizza_party_index": 4.08,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Healthcare",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 60.17,
+            "hybrid_pct": 24.82,
+            "remote_pct": 15.01
+        },
+        "focus_hours": 15.61,
+        "meeting_overhead": 24.45,
+        "pizza_party_index": 3.92,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 11.73,
+        "meeting_overhead": 23.24,
+        "pizza_party_index": 7.17,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 10.8,
+        "meeting_overhead": 30.5,
+        "pizza_party_index": 7.76,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 11.5,
+        "meeting_overhead": 33.15,
+        "pizza_party_index": 7.91,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 11.04,
+        "meeting_overhead": 31.11,
+        "pizza_party_index": 7.32,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 11.74,
+        "meeting_overhead": 31.85,
+        "pizza_party_index": 6.29,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 11.95,
+        "meeting_overhead": 25.21,
+        "pizza_party_index": 7.02,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 9.4,
+        "meeting_overhead": 31.98,
+        "pizza_party_index": 6.25,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 12.54,
+        "meeting_overhead": 28.58,
+        "pizza_party_index": 6.63,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 9.41,
+        "meeting_overhead": 27.89,
+        "pizza_party_index": 7.87,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 12.79,
+        "meeting_overhead": 32.04,
+        "pizza_party_index": 8.99,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 13.03,
+        "meeting_overhead": 24.71,
+        "pizza_party_index": 8.87,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 13.83,
+        "meeting_overhead": 28.97,
+        "pizza_party_index": 6.72,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 9.56,
+        "meeting_overhead": 29.07,
+        "pizza_party_index": 7.7,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 13.44,
+        "meeting_overhead": 23.79,
+        "pizza_party_index": 7.94,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 10.5,
+        "meeting_overhead": 24.02,
+        "pizza_party_index": 8.64,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 9.57,
+        "meeting_overhead": 29.24,
+        "pizza_party_index": 8.25,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 12.2,
+        "meeting_overhead": 29.68,
+        "pizza_party_index": 8.27,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 13.16,
+        "meeting_overhead": 28.5,
+        "pizza_party_index": 7.29,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 12.18,
+        "meeting_overhead": 24.97,
+        "pizza_party_index": 8.52,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Hospitaility Food",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 79.3,
+            "hybrid_pct": 17.12,
+            "remote_pct": 3.58
+        },
+        "focus_hours": 12.22,
+        "meeting_overhead": 31.42,
+        "pizza_party_index": 8.54,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 23.38,
+        "meeting_overhead": 19.33,
+        "pizza_party_index": 2.16,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 21.18,
+        "meeting_overhead": 20.57,
+        "pizza_party_index": 2.92,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 24.42,
+        "meeting_overhead": 21.15,
+        "pizza_party_index": 2.36,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 18.98,
+        "meeting_overhead": 14.72,
+        "pizza_party_index": 2.67,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 25.89,
+        "meeting_overhead": 17.73,
+        "pizza_party_index": 2.18,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 21.09,
+        "meeting_overhead": 16.99,
+        "pizza_party_index": 2.55,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 19.54,
+        "meeting_overhead": 19.47,
+        "pizza_party_index": 2.26,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 25.58,
+        "meeting_overhead": 16.51,
+        "pizza_party_index": 2.24,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 21.06,
+        "meeting_overhead": 17.15,
+        "pizza_party_index": 2.94,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 25.99,
+        "meeting_overhead": 18.75,
+        "pizza_party_index": 2.01,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 22.47,
+        "meeting_overhead": 18.18,
+        "pizza_party_index": 2.09,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 21.58,
+        "meeting_overhead": 17.46,
+        "pizza_party_index": 2.33,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 24.28,
+        "meeting_overhead": 17.54,
+        "pizza_party_index": 2.92,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 23,
+        "meeting_overhead": 16.21,
+        "pizza_party_index": 2.32,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 20.96,
+        "meeting_overhead": 17.63,
+        "pizza_party_index": 2.23,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 25.26,
+        "meeting_overhead": 17.08,
+        "pizza_party_index": 2.18,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 18.83,
+        "meeting_overhead": 19.5,
+        "pizza_party_index": 2.22,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 20.24,
+        "meeting_overhead": 19.91,
+        "pizza_party_index": 2.87,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 20.54,
+        "meeting_overhead": 21.54,
+        "pizza_party_index": 2.27,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Information",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 28.86,
+            "hybrid_pct": 49.08,
+            "remote_pct": 22.06
+        },
+        "focus_hours": 21.15,
+        "meeting_overhead": 16.85,
+        "pizza_party_index": 2.77,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.65,
+        "meeting_overhead": 23.4,
+        "pizza_party_index": 7.88,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.18,
+        "meeting_overhead": 32.05,
+        "pizza_party_index": 5.81,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 10.68,
+        "meeting_overhead": 30.39,
+        "pizza_party_index": 7,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 13.28,
+        "meeting_overhead": 22.87,
+        "pizza_party_index": 6.9,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 10.65,
+        "meeting_overhead": 26.58,
+        "pizza_party_index": 5.76,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.25,
+        "meeting_overhead": 32.38,
+        "pizza_party_index": 6.9,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 11.57,
+        "meeting_overhead": 25.15,
+        "pizza_party_index": 8,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.06,
+        "meeting_overhead": 26.97,
+        "pizza_party_index": 5.93,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 13.78,
+        "meeting_overhead": 23.92,
+        "pizza_party_index": 5.74,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 13.12,
+        "meeting_overhead": 23.99,
+        "pizza_party_index": 6.01,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 11.03,
+        "meeting_overhead": 31.25,
+        "pizza_party_index": 5.58,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 11.45,
+        "meeting_overhead": 32.48,
+        "pizza_party_index": 7.93,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 10.12,
+        "meeting_overhead": 29.88,
+        "pizza_party_index": 5.42,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.12,
+        "meeting_overhead": 28.24,
+        "pizza_party_index": 5.63,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 12.21,
+        "meeting_overhead": 27.28,
+        "pizza_party_index": 8.01,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.13,
+        "meeting_overhead": 24.53,
+        "pizza_party_index": 6.04,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 14.69,
+        "meeting_overhead": 31.72,
+        "pizza_party_index": 7.19,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 12.87,
+        "meeting_overhead": 27.06,
+        "pizza_party_index": 7.55,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 12.52,
+        "meeting_overhead": 22.68,
+        "pizza_party_index": 8.02,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Manufacturing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 73.66,
+            "hybrid_pct": 21.56,
+            "remote_pct": 4.79
+        },
+        "focus_hours": 10.42,
+        "meeting_overhead": 30.36,
+        "pizza_party_index": 6.62,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 16.68,
+        "meeting_overhead": 23.12,
+        "pizza_party_index": 2.64,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 17.99,
+        "meeting_overhead": 18.41,
+        "pizza_party_index": 3.47,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 21.34,
+        "meeting_overhead": 24.41,
+        "pizza_party_index": 2.55,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 18.31,
+        "meeting_overhead": 22.14,
+        "pizza_party_index": 3.55,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 18.99,
+        "meeting_overhead": 18.21,
+        "pizza_party_index": 2.83,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 19.27,
+        "meeting_overhead": 19.83,
+        "pizza_party_index": 3.31,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 20.53,
+        "meeting_overhead": 22.56,
+        "pizza_party_index": 2.61,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 17.44,
+        "meeting_overhead": 18.04,
+        "pizza_party_index": 2.62,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 19.4,
+        "meeting_overhead": 21.52,
+        "pizza_party_index": 2.98,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 20.38,
+        "meeting_overhead": 22.31,
+        "pizza_party_index": 3.05,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 19.43,
+        "meeting_overhead": 22.85,
+        "pizza_party_index": 2.97,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 20.54,
+        "meeting_overhead": 21.86,
+        "pizza_party_index": 3.21,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 23.45,
+        "meeting_overhead": 18.3,
+        "pizza_party_index": 3.3,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 18.07,
+        "meeting_overhead": 18.32,
+        "pizza_party_index": 3.53,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 18.27,
+        "meeting_overhead": 23.77,
+        "pizza_party_index": 3.19,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 20.64,
+        "meeting_overhead": 23.57,
+        "pizza_party_index": 3.65,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 22.49,
+        "meeting_overhead": 21.51,
+        "pizza_party_index": 3.52,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 17.29,
+        "meeting_overhead": 17.48,
+        "pizza_party_index": 2.63,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 21.69,
+        "meeting_overhead": 24.43,
+        "pizza_party_index": 3.43,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Prof Bus Services",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 43.82,
+            "hybrid_pct": 35.3,
+            "remote_pct": 20.88
+        },
+        "focus_hours": 17.13,
+        "meeting_overhead": 20.05,
+        "pizza_party_index": 3.71,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 14.91,
+        "meeting_overhead": 18.76,
+        "pizza_party_index": 4.2,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 21.68,
+        "meeting_overhead": 25.07,
+        "pizza_party_index": 2.97,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 21.62,
+        "meeting_overhead": 20.62,
+        "pizza_party_index": 3.2,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 18.22,
+        "meeting_overhead": 21.59,
+        "pizza_party_index": 2.98,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 17.32,
+        "meeting_overhead": 21.16,
+        "pizza_party_index": 3.42,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 16.3,
+        "meeting_overhead": 19.8,
+        "pizza_party_index": 3.29,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 16,
+        "meeting_overhead": 20.39,
+        "pizza_party_index": 4.23,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 18.06,
+        "meeting_overhead": 25.05,
+        "pizza_party_index": 3.55,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 19.45,
+        "meeting_overhead": 21.72,
+        "pizza_party_index": 3.04,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 19.26,
+        "meeting_overhead": 20.62,
+        "pizza_party_index": 3.39,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 14.63,
+        "meeting_overhead": 22.24,
+        "pizza_party_index": 3.54,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 16.63,
+        "meeting_overhead": 24.28,
+        "pizza_party_index": 3.08,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 20.66,
+        "meeting_overhead": 19.05,
+        "pizza_party_index": 3.43,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 16.59,
+        "meeting_overhead": 18.72,
+        "pizza_party_index": 3.67,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 21.54,
+        "meeting_overhead": 23.13,
+        "pizza_party_index": 3.72,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 17.21,
+        "meeting_overhead": 22.08,
+        "pizza_party_index": 3.56,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 18.78,
+        "meeting_overhead": 20.45,
+        "pizza_party_index": 4,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 15.83,
+        "meeting_overhead": 23.98,
+        "pizza_party_index": 3.95,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 16.18,
+        "meeting_overhead": 23.75,
+        "pizza_party_index": 4.15,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Realestate",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 40.68,
+            "hybrid_pct": 47.48,
+            "remote_pct": 11.84
+        },
+        "focus_hours": 16.07,
+        "meeting_overhead": 23.1,
+        "pizza_party_index": 3.77,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.67,
+        "meeting_overhead": 27.65,
+        "pizza_party_index": 5.4,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.46,
+        "meeting_overhead": 24.67,
+        "pizza_party_index": 6.51,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 11.85,
+        "meeting_overhead": 32.34,
+        "pizza_party_index": 6.23,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 11.1,
+        "meeting_overhead": 28.83,
+        "pizza_party_index": 6.8,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 13.97,
+        "meeting_overhead": 21.72,
+        "pizza_party_index": 6.3,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 12.91,
+        "meeting_overhead": 22.98,
+        "pizza_party_index": 6.39,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.27,
+        "meeting_overhead": 30.9,
+        "pizza_party_index": 5.95,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.74,
+        "meeting_overhead": 27.13,
+        "pizza_party_index": 6.92,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.41,
+        "meeting_overhead": 28.28,
+        "pizza_party_index": 7.48,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 11.46,
+        "meeting_overhead": 28.52,
+        "pizza_party_index": 6.12,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.49,
+        "meeting_overhead": 25.75,
+        "pizza_party_index": 6.04,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.58,
+        "meeting_overhead": 23.04,
+        "pizza_party_index": 7.8,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 13.65,
+        "meeting_overhead": 32.12,
+        "pizza_party_index": 5.55,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.09,
+        "meeting_overhead": 29.99,
+        "pizza_party_index": 6.02,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 15.11,
+        "meeting_overhead": 29.11,
+        "pizza_party_index": 6.21,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 13.89,
+        "meeting_overhead": 24.11,
+        "pizza_party_index": 6.6,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 10.32,
+        "meeting_overhead": 28.24,
+        "pizza_party_index": 5.76,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 15.38,
+        "meeting_overhead": 31.95,
+        "pizza_party_index": 7.25,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 14.06,
+        "meeting_overhead": 29.73,
+        "pizza_party_index": 7.06,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Retail",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 74.37,
+            "hybrid_pct": 18.87,
+            "remote_pct": 6.76
+        },
+        "focus_hours": 11.72,
+        "meeting_overhead": 23.87,
+        "pizza_party_index": 6.63,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 15.55,
+        "meeting_overhead": 31.02,
+        "pizza_party_index": 4.9,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 14.38,
+        "meeting_overhead": 29.39,
+        "pizza_party_index": 6.63,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 13.29,
+        "meeting_overhead": 23.03,
+        "pizza_party_index": 5.2,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 13.11,
+        "meeting_overhead": 25.11,
+        "pizza_party_index": 5.74,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 11.91,
+        "meeting_overhead": 29.24,
+        "pizza_party_index": 4.68,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 14.49,
+        "meeting_overhead": 26.19,
+        "pizza_party_index": 6.73,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 15.32,
+        "meeting_overhead": 20.97,
+        "pizza_party_index": 5.21,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 12.86,
+        "meeting_overhead": 29.71,
+        "pizza_party_index": 5.78,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 14.72,
+        "meeting_overhead": 27.03,
+        "pizza_party_index": 4.8,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 16.6,
+        "meeting_overhead": 26.49,
+        "pizza_party_index": 5.89,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 12.4,
+        "meeting_overhead": 21.73,
+        "pizza_party_index": 5.82,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 11.6,
+        "meeting_overhead": 23.43,
+        "pizza_party_index": 5.71,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 14.22,
+        "meeting_overhead": 27.98,
+        "pizza_party_index": 6.31,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 16.59,
+        "meeting_overhead": 24.77,
+        "pizza_party_index": 5.53,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 11.78,
+        "meeting_overhead": 28.77,
+        "pizza_party_index": 5.68,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 12.73,
+        "meeting_overhead": 30.54,
+        "pizza_party_index": 4.92,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 11.57,
+        "meeting_overhead": 22.48,
+        "pizza_party_index": 5.88,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 16.21,
+        "meeting_overhead": 27.14,
+        "pizza_party_index": 5.55,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 15,
+        "meeting_overhead": 22.15,
+        "pizza_party_index": 5.85,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Transp Warehousing",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 70.42,
+            "hybrid_pct": 19.24,
+            "remote_pct": 10.34
+        },
+        "focus_hours": 11.81,
+        "meeting_overhead": 20.92,
+        "pizza_party_index": 6.49,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 12.87,
+        "meeting_overhead": 29.53,
+        "pizza_party_index": 5.1,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 14.43,
+        "meeting_overhead": 22.04,
+        "pizza_party_index": 5.48,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 16.71,
+        "meeting_overhead": 21.61,
+        "pizza_party_index": 5.75,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 16.07,
+        "meeting_overhead": 28.06,
+        "pizza_party_index": 4.86,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 15.64,
+        "meeting_overhead": 26.06,
+        "pizza_party_index": 5.83,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 17.56,
+        "meeting_overhead": 26.4,
+        "pizza_party_index": 4.38,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 16.48,
+        "meeting_overhead": 29.2,
+        "pizza_party_index": 5.73,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 14.61,
+        "meeting_overhead": 28.04,
+        "pizza_party_index": 4.19,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 16.11,
+        "meeting_overhead": 28.33,
+        "pizza_party_index": 5.42,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 17.25,
+        "meeting_overhead": 20.88,
+        "pizza_party_index": 4.69,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 15.13,
+        "meeting_overhead": 21.86,
+        "pizza_party_index": 5.16,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 13.83,
+        "meeting_overhead": 25.99,
+        "pizza_party_index": 5.84,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 15.13,
+        "meeting_overhead": 29.35,
+        "pizza_party_index": 5.38,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 12.46,
+        "meeting_overhead": 25.38,
+        "pizza_party_index": 5.17,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 14.56,
+        "meeting_overhead": 20.42,
+        "pizza_party_index": 6.19,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 15.94,
+        "meeting_overhead": 27.19,
+        "pizza_party_index": 5.01,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 12.65,
+        "meeting_overhead": 28.33,
+        "pizza_party_index": 4.2,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 16.36,
+        "meeting_overhead": 27.94,
+        "pizza_party_index": 4.73,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 15.11,
+        "meeting_overhead": 22.51,
+        "pizza_party_index": 4.75,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Utilities",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 62.11,
+            "hybrid_pct": 29.49,
+            "remote_pct": 8.41
+        },
+        "focus_hours": 16.21,
+        "meeting_overhead": 28.88,
+        "pizza_party_index": 4.69,
+        "age_group": "55+",
+        "gender": "Other"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 13.89,
+        "meeting_overhead": 23.42,
+        "pizza_party_index": 6.04,
+        "age_group": "18-24",
+        "gender": "Male"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.65,
+        "meeting_overhead": 24.52,
+        "pizza_party_index": 6.27,
+        "age_group": "18-24",
+        "gender": "Female"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 15.88,
+        "meeting_overhead": 29.5,
+        "pizza_party_index": 6.23,
+        "age_group": "18-24",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 13.73,
+        "meeting_overhead": 21.4,
+        "pizza_party_index": 5.56,
+        "age_group": "18-24",
+        "gender": "Other"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.76,
+        "meeting_overhead": 29.89,
+        "pizza_party_index": 6.48,
+        "age_group": "25-34",
+        "gender": "Male"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 16.47,
+        "meeting_overhead": 30,
+        "pizza_party_index": 5.89,
+        "age_group": "25-34",
+        "gender": "Female"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 11.58,
+        "meeting_overhead": 30.5,
+        "pizza_party_index": 4.89,
+        "age_group": "25-34",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.64,
+        "meeting_overhead": 29.46,
+        "pizza_party_index": 6.49,
+        "age_group": "25-34",
+        "gender": "Other"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 15.97,
+        "meeting_overhead": 24.17,
+        "pizza_party_index": 4.47,
+        "age_group": "35-44",
+        "gender": "Male"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 13.06,
+        "meeting_overhead": 21.18,
+        "pizza_party_index": 5.35,
+        "age_group": "35-44",
+        "gender": "Female"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.13,
+        "meeting_overhead": 30.09,
+        "pizza_party_index": 4.68,
+        "age_group": "35-44",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 13.34,
+        "meeting_overhead": 27.72,
+        "pizza_party_index": 4.37,
+        "age_group": "35-44",
+        "gender": "Other"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.98,
+        "meeting_overhead": 27.74,
+        "pizza_party_index": 6.34,
+        "age_group": "45-54",
+        "gender": "Male"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 15.19,
+        "meeting_overhead": 21.79,
+        "pizza_party_index": 5.83,
+        "age_group": "45-54",
+        "gender": "Female"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Hybrid",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.15,
+        "meeting_overhead": 25.68,
+        "pizza_party_index": 5.01,
+        "age_group": "45-54",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 17.13,
+        "meeting_overhead": 28.75,
+        "pizza_party_index": 4.82,
+        "age_group": "45-54",
+        "gender": "Other"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 13.43,
+        "meeting_overhead": 21.95,
+        "pizza_party_index": 4.45,
+        "age_group": "55+",
+        "gender": "Male"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Onsite-Heavy",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 15.74,
+        "meeting_overhead": 29.48,
+        "pizza_party_index": 4.99,
+        "age_group": "55+",
+        "gender": "Female"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.87,
+        "meeting_overhead": 29.32,
+        "pizza_party_index": 4.7,
+        "age_group": "55+",
+        "gender": "Non-binary"
+    },
+    {
+        "industry": "Wholesale",
+        "work_setup_category": "Remote-First",
+        "work_setup": {
+            "onsite_pct": 63.06,
+            "hybrid_pct": 29.67,
+            "remote_pct": 7.27
+        },
+        "focus_hours": 12.62,
+        "meeting_overhead": 21.49,
+        "pizza_party_index": 4.68,
+        "age_group": "55+",
+        "gender": "Other"
     }
 ]

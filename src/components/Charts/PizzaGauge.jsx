@@ -17,23 +17,23 @@ const PizzaGauge = ({ data }) => {
     { name: 'Remaining', value: remainingValue }
   ];
 
-  const COLORS = ['#ef4444', '#fef3c7']; // red-500, amber-50
+  const COLORS = ['#ef4444', '#374151']; // red-500, gray-700
 
   const renderCustomNeedle = () => {
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-16">
-        <span className="text-4xl font-extrabold text-red-600">{avgIndex.toFixed(1)}</span>
-        <span className="text-sm font-semibold text-amber-800">Avg Index</span>
+        <span className="text-4xl font-extrabold text-red-500 drop-shadow-md">{avgIndex.toFixed(1)}</span>
+        <span className="text-sm font-semibold text-gray-400">Avg Index</span>
       </div>
     );
   };
 
   return (
-    <div className="bg-white border-2 border-amber-500 rounded-xl p-5 shadow-lg h-full flex flex-col relative">
-      <h3 className="text-lg font-bold text-red-600 mb-2 border-b border-amber-100 pb-2">
+    <div className="bg-gray-800 border-2 border-gray-700 rounded-xl p-5 shadow-lg h-full flex flex-col relative">
+      <h3 className="text-lg font-bold text-red-400 mb-2 border-b border-gray-700 pb-2">
         Pizza Party Index Gauge
       </h3>
-      <p className="text-xs text-amber-700 mb-4">
+      <p className="text-xs text-gray-400 mb-4">
         Correlation of in-office perks with fragmented focus time. Higher = More Performative.
       </p>
       
@@ -58,7 +58,7 @@ const PizzaGauge = ({ data }) => {
             </Pie>
             <Tooltip 
               formatter={(value, name) => [value.toFixed(2), name]}
-              contentStyle={{ borderRadius: '8px', border: '2px solid #f59e0b' }}
+              contentStyle={{ backgroundColor: '#1f2937', borderRadius: '8px', border: '1px solid #4b5563', color: '#e5e7eb' }}
             />
           </PieChart>
         </ResponsiveContainer>
@@ -69,3 +69,4 @@ const PizzaGauge = ({ data }) => {
 };
 
 export default PizzaGauge;
+
