@@ -31,7 +31,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 5 | [Agent Suggestion] Data Pipeline: Add Module-Level Documentation & Decouple Configuration | Done (2026-07-21) | 3.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Good code hygiene) * 1.0 / 2 = 3.00 |
 | 6 | [Agent Suggestion] Accessibility: Form Control Association & ARIA charts | Done (2026-07-21) | 2.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Compliance issue) * 1.0 (decay) / 3 = 2.67 |
 | 12 | [Agent Suggestion] Data Pipeline: Real GitHub Collaboration Data Integration | Done (2026-07-21) | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.6-flash | 8 (Mandate for real data) * 1.0 (new capability) / 5 = 1.60 |
-| 8 | [Agent Suggestion] Data Transparency: Analytics Methodology Page | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Addresses data trust) * 0.5 (decay) / 3 = 1.33 |
+| 8 | [Agent Suggestion] Data Transparency: Analytics Methodology Page | Done (2026-07-21) | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Addresses data trust) * 0.5 (decay) / 3 = 1.33 |
 | 14 | Live Data Ingestion API / Backend | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core requirement) * 1.0 (new capability) / 6 = 1.33 |
 | 16 | [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Security) * 0.5 (decay) / 4 = 1.00 |
 | 22 | [Agent Suggestion] Predictive Burnout Modeling | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
@@ -86,6 +86,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 8. [Agent Suggestion] Data Transparency: Analytics Methodology Page
 **Description:** Create a dedicated methodology view (or modal) explaining exactly how metrics (like the Pizza Party Index and Velocity Proxy) are derived from the raw data. Fulfills the requirement for structured documentation of analytical objectives, data sources, and inputs.
 **Context:** Derived from the `data_analyst` documentation principles to establish maximum trust in the remote-work statistics being presented.
+**Done note (2026-07-21):** Implemented `MethodologyModal.jsx` and added a trigger button to `Header.jsx`. Evaluates both Pizza Party Index and Velocity Proxy generation steps.
 
 ### 9. [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks
 **Description:** Implement strict assertions at the ETL ingestion layer to check for missing values (`NaN`), duplicates, and data type inconsistencies. Fail the pipeline loudly if the source datasets degrade in quality.
