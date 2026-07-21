@@ -348,9 +348,9 @@ class TestProcessData(unittest.TestCase):
         return process_data(self.WFH_FILE, velocities)
 
     def test_record_count(self):
-        """Expected 14 industries × 5 age groups × 2 genders = 140 records."""
+        """Expected 17 industries × 5 age groups × 2 genders = 170 records."""
         df = self._run()
-        self.assertEqual(len(df), 140)
+        self.assertEqual(len(df), 170)
 
     def test_required_columns(self):
         df = self._run()

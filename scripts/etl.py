@@ -604,6 +604,18 @@ def process_data(
         if col.startswith('full_onsite_') and not pd.isna(latest_row[col])
     ]
 
+    # Extend with additional tech and key industries
+    additional_industries = [
+        'it_infrastructure',
+        'software_engineering',
+        'finance',
+        'healthcare',
+        'education',
+    ]
+    for ind in additional_industries:
+        if ind not in industries:
+            industries.append(ind)
+
     # Normalise github_velocities to a dict
     if isinstance(github_velocities, (int, float)):
         scalar = float(github_velocities)

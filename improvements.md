@@ -46,7 +46,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 22 | [Agent Suggestion] Predictive Burnout Modeling | Done (2026-07-21) | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
 | 32 | Deep Collaboration Metric: Cross-Team Issue Resolution | ⚠️ below floor | 0.20 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core thesis) * 0.125 (decay) / 5 = 0.20 |
 | 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.25 (decay) / 4 = 0.44 |
-| 24 | Data Pipeline: Add IT, Software, and Other Relevant Industries | ⚠️ below floor | 0.38 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.125 (decay) / 2 = 0.38 |
+| 24 | Data Pipeline: Add IT, Software, and Other Relevant Industries | Done (2026-07-21) | 0.38 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.125 (decay) / 2 = 0.38 |
 | 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | ⚠️ below floor | 0.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.125 (decay) / 3 = 0.33 |
 | 28 | Data Pipeline: Ingest Additional Relevant Datasets for Higher Accuracy | ⚠️ below floor | 0.25 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Improves core metric accuracy) * 0.125 (decay) / 4 = 0.25 |
 | 9 | [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks | ⚠️ below floor | 0.25 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Stops bad pipelines) * 0.125 (decay) / 4 = 0.25 |
@@ -187,8 +187,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 24. Data Pipeline: Add IT, Software, and Other Relevant Industries
 **Description:** Add 'IT/Infrastructure', 'Software/Engineering', and other relevant industries (e.g., 'Finance', 'Healthcare', 'Education') to the list of industries in the ETL script to ensure better representation of technical fields in the survey data.
 **Context:** Expands the dataset to be more relevant to our core audience and enriches demographic segments.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
+**Done note (2026-07-21):** Appended 'it_infrastructure', 'software_engineering', 'finance', 'healthcare', and 'education' to the dynamically discovered industries list in etl.py.
 
 ### 25. Data Pipeline: Add Other Relevant Industries
 **Description:** Identify and add other relevant industries (e.g., 'Finance', 'Healthcare', 'Education') to the ETL pipeline to provide a more holistic demographic breakdown.
