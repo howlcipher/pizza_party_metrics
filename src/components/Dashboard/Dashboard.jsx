@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import Header from './Header';
 import PizzaBoxFilter from '../Filters/PizzaBoxFilter';
-import PizzaGauge from '../Charts/PizzaGauge';
-import WorkSlicesChart from '../Charts/WorkSlicesChart';
-import CollaborationChart from '../Charts/CollaborationChart';
-import DemographicsChart from '../Charts/DemographicsChart';
 import pizzaMetricsData from '../../data/pizza_metrics.json';
+
+const PizzaGauge = lazy(() => import('../Charts/PizzaGauge'));
+const WorkSlicesChart = lazy(() => import('../Charts/WorkSlicesChart'));
+const CollaborationChart = lazy(() => import('../Charts/CollaborationChart'));
+const DemographicsChart = lazy(() => import('../Charts/DemographicsChart'));
 
 const Dashboard = () => {
   const [rawData, setRawData] = useState([]);
@@ -45,27 +46,29 @@ const Dashboard = () => {
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/20 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute bottom-0 right-0 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none"></div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10">
-            {/* Gauge takes 1 column */}
-            <div className="col-span-1">
-              <PizzaGauge data={filteredData} />
-            </div>
-            
-            {/* Slices of Work takes 1 column (or 2 on XL) */}
-            <div className="col-span-1 xl:col-span-2">
-              <WorkSlicesChart data={filteredData} />
-            </div>
+          <Suspense fallback={<div className="flex items-center justify-center p-12 text-amber-900 font-bold text-lg animate-pulse">Loading chart...</div>}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10">
+              {/* Gauge takes 1 column */}
+              <div className="col-span-1">
+                <PizzaGauge data={filteredData} />
+              </div>
+              
+              {/* Slices of Work takes 1 column (or 2 on XL) */}
+              <div className="col-span-1 xl:col-span-2">
+                <WorkSlicesChart data={filteredData} />
+              </div>
 
-            {/* Collaboration Chart takes 1 or 2 cols */}
-            <div className="col-span-1 xl:col-span-2">
-              <CollaborationChart data={filteredData} />
-            </div>
+              {/* Collaboration Chart takes 1 or 2 cols */}
+              <div className="col-span-1 xl:col-span-2">
+                <CollaborationChart data={filteredData} />
+              </div>
 
-            {/* Demographics Chart takes full width or remaining cols */}
-            <div className="col-span-1 lg:col-span-2 xl:col-span-1">
-              <DemographicsChart data={filteredData} />
+              {/* Demographics Chart takes full width or remaining cols */}
+              <div className="col-span-1 lg:col-span-2 xl:col-span-1">
+                <DemographicsChart data={filteredData} />
+              </div>
             </div>
-          </div>
+          </Suspense>
         </section>
 
         {filteredData.length === 0 && (
