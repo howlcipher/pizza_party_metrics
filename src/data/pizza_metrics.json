@@ -1,0 +1,170 @@
+[
+    {
+        "industry":"Arts Entertain",
+        "work_setup":{
+            "onsite_pct":45.32,
+            "hybrid_pct":30.9,
+            "remote_pct":23.78
+        },
+        "focus_hours":20.0,
+        "meeting_overhead":20.0,
+        "pizza_party_index":3.04,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Education",
+        "work_setup":{
+            "onsite_pct":67.53,
+            "hybrid_pct":22.96,
+            "remote_pct":9.51
+        },
+        "focus_hours":14.29,
+        "meeting_overhead":25.71,
+        "pizza_party_index":5.53,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Finance Insurance",
+        "work_setup":{
+            "onsite_pct":37.44,
+            "hybrid_pct":40.28,
+            "remote_pct":22.28
+        },
+        "focus_hours":20.67,
+        "meeting_overhead":19.33,
+        "pizza_party_index":2.79,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Government",
+        "work_setup":{
+            "onsite_pct":63.72,
+            "hybrid_pct":28.89,
+            "remote_pct":7.39
+        },
+        "focus_hours":14.32,
+        "meeting_overhead":25.68,
+        "pizza_party_index":5.46,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Healthcare",
+        "work_setup":{
+            "onsite_pct":60.17,
+            "hybrid_pct":24.82,
+            "remote_pct":15.01
+        },
+        "focus_hours":16.34,
+        "meeting_overhead":23.66,
+        "pizza_party_index":4.44,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Hospitaility Food",
+        "work_setup":{
+            "onsite_pct":79.3,
+            "hybrid_pct":17.12,
+            "remote_pct":3.58
+        },
+        "focus_hours":11.6,
+        "meeting_overhead":28.4,
+        "pizza_party_index":7.58,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Information",
+        "work_setup":{
+            "onsite_pct":28.86,
+            "hybrid_pct":49.08,
+            "remote_pct":22.06
+        },
+        "focus_hours":21.69,
+        "meeting_overhead":18.31,
+        "pizza_party_index":2.46,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Manufacturing",
+        "work_setup":{
+            "onsite_pct":73.66,
+            "hybrid_pct":21.56,
+            "remote_pct":4.79
+        },
+        "focus_hours":12.55,
+        "meeting_overhead":27.45,
+        "pizza_party_index":6.73,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Prof Bus Services",
+        "work_setup":{
+            "onsite_pct":43.82,
+            "hybrid_pct":35.3,
+            "remote_pct":20.88
+        },
+        "focus_hours":19.59,
+        "meeting_overhead":20.41,
+        "pizza_party_index":3.14,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Realestate",
+        "work_setup":{
+            "onsite_pct":40.68,
+            "hybrid_pct":47.48,
+            "remote_pct":11.84
+        },
+        "focus_hours":18.1,
+        "meeting_overhead":21.9,
+        "pizza_party_index":3.56,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Retail",
+        "work_setup":{
+            "onsite_pct":74.37,
+            "hybrid_pct":18.87,
+            "remote_pct":6.76
+        },
+        "focus_hours":12.87,
+        "meeting_overhead":27.13,
+        "pizza_party_index":6.51,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Transp Warehousing",
+        "work_setup":{
+            "onsite_pct":70.42,
+            "hybrid_pct":19.24,
+            "remote_pct":10.34
+        },
+        "focus_hours":14.1,
+        "meeting_overhead":25.9,
+        "pizza_party_index":5.68,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Utilities",
+        "work_setup":{
+            "onsite_pct":62.11,
+            "hybrid_pct":29.49,
+            "remote_pct":8.41
+        },
+        "focus_hours":14.73,
+        "meeting_overhead":25.27,
+        "pizza_party_index":5.22,
+        "age_group":"All Ages"
+    },
+    {
+        "industry":"Wholesale",
+        "work_setup":{
+            "onsite_pct":63.06,
+            "hybrid_pct":29.67,
+            "remote_pct":7.27
+        },
+        "focus_hours":14.38,
+        "meeting_overhead":25.62,
+        "pizza_party_index":5.42,
+        "age_group":"All Ages"
+    }
+]
