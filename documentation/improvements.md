@@ -23,6 +23,11 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 
 | # | Improvement | Status | Score (V×D÷E) | Claude model | Gemini model | ROI rationale |
 | --- | --- | --- | --- | --- | --- | --- |
+| 41 | [Agent Suggestion] Data Pipeline: Remove Hardcoded Bias | Open | 2.67 | - | gemini-3.1-pro-high | 8 (Data integrity) * 1.0 / 3 = 2.67 |
+| 42 | [Agent Suggestion] Data Pipeline: Fix ML Data Leakage | Open | 2.00 | - | gemini-3.1-pro-high | 6 (Statistical validity) * 1.0 / 3 = 2.00 |
+| 43 | [Agent Suggestion] Data Pipeline: Use Pandas .assign() | Open | 1.50 | - | gemini-3.1-pro-high | 3 (Code hygiene) * 1.0 / 2 = 1.50 |
+| 44 | [Agent Suggestion] Frontend: Move Aggregations to ETL | Open | 2.33 | - | gemini-3.1-pro-high | 7 (Performance) * 1.0 / 3 = 2.33 |
+| 45 | [Agent Suggestion] Data Pipeline: Sync Local JSON Data | Open | 4.00 | - | gemini-3.1-pro-high | 8 (Data corruption) * 1.0 / 2 = 4.00 |
 | 33 | [Agent Suggestion] DevOps: Enforce QA Guardrails & Trivy Security Checks | Open | 4.00 | - | gemini-3.1-pro-high | 8 (High risk) * 1.0 / 2 = 4.00 |
 | 34 | [Agent Suggestion] Data Pipeline: Remove Silent Exceptions in ETL | Open | 4.00 | - | gemini-3.1-pro-high | 8 (Fixes silent failures) * 1.0 / 2 = 4.00 |
 | 35 | [Agent Suggestion] UI/UX: Fix Export Race Condition & Accessibility Contrast | Open | 3.50 | - | gemini-3.1-pro-high | 7 (Compliance/Bugs) * 1.0 / 2 = 3.50 |
@@ -279,4 +284,29 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 40. [Agent Suggestion] Accessibility: Use Native HTML5 Dialog
 **Description:** Refactor `MethodologyModal.jsx` to use the native HTML5 `<dialog>` element for out-of-the-box keyboard navigation, focus trapping, and screen-reader support.
 **Context:** Based on the Multi-Agent Taskforce audit using `accessibility` skills to fix modal interaction friction.
+**Status:** Open
+
+### 41. [Agent Suggestion] Data Pipeline: Remove Hardcoded Bias
+**Description:** Remove the hardcoded `turnaround_base` values in `etl.py` that intentionally handicap the "Onsite-Heavy" category. Use actual telemetry data from the `VelocityAnalyzer`.
+**Context:** Based on the Data Analyst subagent audit. Enforces strict data integrity and prevents observational bias.
+**Status:** Open
+
+### 42. [Agent Suggestion] Data Pipeline: Fix ML Data Leakage
+**Description:** Refactor the `LogisticRegression` pipeline in `etl.py` to use proper train/test splits (`cross_val_score` or `train_test_split`) instead of predicting directly on the training dataset.
+**Context:** Based on the Data Analyst subagent audit. Prevents overfitting and ensures the burnout prediction model is statistically valid.
+**Status:** Open
+
+### 43. [Agent Suggestion] Data Pipeline: Use Pandas .assign()
+**Description:** Refactor column assignments in `etl.py` to use `.assign()` or strict `.loc` indexing to avoid `SettingWithCopyWarning` and enforce immutability.
+**Context:** Adheres to the strict `data_analyst` skill guidelines for idiomatic pandas usage.
+**Status:** Open
+
+### 44. [Agent Suggestion] Frontend: Move Aggregations to ETL
+**Description:** Refactor `WorkSlicesChart.jsx` and `CollaborationChart.jsx` to consume pre-aggregated data metrics rather than running expensive `.reduce()` operations on the raw dataset locally.
+**Context:** Improves React dashboard rendering performance and Time-To-Interactive (TTI).
+**Status:** Open
+
+### 45. [Agent Suggestion] Data Pipeline: Sync Local JSON Data
+**Description:** Re-run the local `etl.py` script to update `pizza_metrics.json` so that the local data matches the new mathematical formulas (specifically fixing the mathematically impossible Pizza Party Index scores in the local environment).
+**Context:** Resolves a discrepancy where the local JSON has outdated metrics causing the gauge charts to invert.
 **Status:** Open
