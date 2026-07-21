@@ -39,6 +39,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.5 (decay) / 4 = 0.88 |
 | 11 | [Agent Suggestion] Async Collaboration Velocity Metric | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 0.5 (decay) / 5 = 0.80 |
 | 20 | Interruption & Context Switch Impact Dashboard | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 0.5 (decay) / 5 = 0.80 |
+| 24 | Data Pipeline: Add IT/Infrastructure and Software/Engineering Industries | Pending | 0.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.25 (decay) / 2 = 0.75 |
+| 25 | Data Pipeline: Add Other Relevant Industries | Pending | 0.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.25 (decay) / 2 = 0.75 |
 | 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | Pending | 0.70 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 0.5 (decay) / 5 = 0.70 |
 | 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | Pending | 0.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.25 (decay) / 3 = 0.67 |
 | 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | Pending | 0.58 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 0.5 (decay) / 6 = 0.58 |
@@ -155,3 +157,11 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 **Description:** Add demographic breakdowns to the metrics. Understand how different age ranges, industries, and genders interact with the product or experience different levels of productivity.
 **Context:** Ensure data pipelines aggregate this securely and anonymized. 
 **Done note (2026-07-21):** Implemented new UI components using Recharts for Age and Gender breakdowns. Data structure updated to support these dimensions, and the dashboard aesthetic upgraded to dark mode.
+
+### 24. Data Pipeline: Add IT/Infrastructure and Software/Engineering Industries
+**Description:** Add 'IT/Infrastructure' and 'Software/Engineering' to the list of industries in the ETL script to ensure better representation of technical fields in the survey data.
+**Context:** Expands the dataset to be more relevant to our core audience.
+
+### 25. Data Pipeline: Add Other Relevant Industries
+**Description:** Identify and add other relevant industries (e.g., 'Finance', 'Healthcare', 'Education') to the ETL pipeline to provide a more holistic demographic breakdown.
+**Context:** Further enriches the generated demographic segments.
