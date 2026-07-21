@@ -38,13 +38,13 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 29 | Automated README Update Hook | Done (2026-07-21) | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Keeps docs fresh) * 1.0 (new capability) / 3 = 2.00 |
 | 31 | Deep Collaboration Metric: Code Review Turnaround | Done (2026-07-21) | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves velocity) * 1.0 / 4 = 2.00 |
 | 30 | [Agent Suggestion] Multi-Agent Metric Processing | Done (2026-07-21) | 2.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Deep analysis) * 1.0 (new capability) / 3 = 2.67 |
-| 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 1.0 (decay) / 4 = 1.75 |
-| 11 | [Agent Suggestion] Async Collaboration Velocity Metric | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 1.0 (decay) / 5 = 1.60 |
-| 20 | Interruption & Context Switch Impact Dashboard | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 1.0 (decay) / 5 = 1.60 |
-| 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | Pending | 1.40 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 1.0 (decay) / 5 = 1.40 |
-| 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | Pending | 1.17 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 1.0 (decay) / 6 = 1.17 |
+| 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | ⚠️ below floor | 0.22 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 0.125 (decay) / 4 = 0.22 |
+| 11 | [Agent Suggestion] Async Collaboration Velocity Metric | ⚠️ below floor | 0.20 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 0.125 (decay) / 5 = 0.20 |
+| 20 | Interruption & Context Switch Impact Dashboard | ⚠️ below floor | 0.20 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 0.125 (decay) / 5 = 0.20 |
+| 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | ⚠️ below floor | 0.18 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 0.125 (decay) / 5 = 0.18 |
+| 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | ⚠️ below floor | 0.15 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 0.125 (decay) / 6 = 0.15 |
 | 22 | [Agent Suggestion] Predictive Burnout Modeling | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
-| 32 | Deep Collaboration Metric: Cross-Team Issue Resolution | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core thesis) * 0.5 (decay) / 5 = 0.80 |
+| 32 | Deep Collaboration Metric: Cross-Team Issue Resolution | ⚠️ below floor | 0.20 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core thesis) * 0.125 (decay) / 5 = 0.20 |
 | 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.25 (decay) / 4 = 0.44 |
 | 24 | Data Pipeline: Add IT, Software, and Other Relevant Industries | ⚠️ below floor | 0.38 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.125 (decay) / 2 = 0.38 |
 | 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | ⚠️ below floor | 0.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.125 (decay) / 3 = 0.33 |
@@ -114,6 +114,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 11. [Agent Suggestion] Async Collaboration Velocity Metric
 **Description:** Measure and compare PR merge times and issue resolution times across different work setups (remote vs hybrid vs onsite). Use data from GitHub APIs or similar sources to prove that async, remote-first workflows actually lead to faster or higher-quality task completion, countering the claim that in-person collaboration is always faster.
 **Context:** Addresses the core product thesis by providing hard data that remote teams can outpace onsite teams when it comes to concrete deliverables.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 12. [Agent Suggestion] Data Pipeline: Real GitHub Collaboration Data Integration
 **Description:** Expand the `etl.py` script to pull live, real-world data (e.g., from WFH Research APIs, GitHub GraphQL, or similar) to accurately power the collaboration and velocity metrics, fulfilling the mandate to strictly use "real data".
@@ -123,6 +125,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 13. [Agent Suggestion] Documentation & Knowledge Transfer Health
 **Description:** Analyze the volume and quality of written documentation (wiki updates, PR descriptions, ADRs) to prove remote teams over-index on scalable knowledge transfer compared to the ephemeral, unrecorded watercooler chats of onsite teams.
 **Context:** Quantifies the often-ignored benefit of remote work: forcing teams to build a robust, searchable knowledge base.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 14. Live Data Ingestion API / Backend
 **Description:** Build a backend or integration layer (e.g., WebSockets or a polling API) to ingest real and live data for the dashboard, replacing any static or mocked data.
@@ -132,6 +136,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 15. [Agent Suggestion] Cross-Time-Zone Collaboration Index
 **Description:** Highlight the "follow the sun" advantage of remote teams by visualizing 24/7 continuous output metrics. This shows how distributed teams can keep projects moving around the clock without individual burnout.
 **Context:** Demonstrates a unique structural advantage of remote work that in-office environments fundamentally cannot replicate.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 16. [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates
 **Description:** Split the monolithic `build-and-deploy` job in `deploy.yml` into `validate`, `build`, and `deploy` jobs with security scanning (Trivy/npm audit).
@@ -153,10 +159,14 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 19. [Agent Suggestion] Meeting vs. Maker Time Analysis
 **Description:** Analyze calendar data to show the ratio of uninterrupted "Maker Time" versus fragmented "Meeting Time."
 **Context:** A natural extension to the context-switching metrics that provides highly actionable insights for teams.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 20. Interruption & Context Switch Impact Dashboard
 **Description:** Visualize how interruptions destroy context switching. We need to track the frequency of interruptions (e.g., Slack messages, ad-hoc calls) and correlate them with task completion times or velocity drops.
 **Context:** This requires tracking the "cost" of a context switch. As defined by the product strategy (MVP), we should start with a simple time-loss calculation before moving to complex models.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 21. Stereotype Pizza Parlor Aesthetic Overhaul
 **Description:** Redesign the dashboard to lean heavily into a stereotypical pizza parlor theme. Think red and white checkered tablecloth patterns, Italian flag color accents (green/red/white), and rustic UI elements.
@@ -220,3 +230,5 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 32. Deep Collaboration Metric: Cross-Team Issue Resolution
 **Description:** Track how quickly cross-functional issues are closed in remote-first organizations vs. hybrid.
 **Context:** Further proves the async collaboration thesis.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
