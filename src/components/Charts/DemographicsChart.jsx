@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
   PieChart, Pie, Cell, Legend
@@ -17,30 +17,31 @@ const srOnlyStyle = {
 };
 
 const DemographicsChart = ({ data }) => {
-  // Aggregate data for Age
-  const ageData = data.reduce((acc, curr) => {
-    const existing = acc.find(item => item.age === curr.age_group);
-    if (existing) {
-      existing.count += 1;
-    } else {
-      acc.push({ age: curr.age_group, count: 1 });
-    }
-    return acc;
-  }, []);
-  
-  // Sort age groups naturally
-  ageData.sort((a, b) => a.age.localeCompare(b.age));
+  const { ageData, genderData } = useMemo(() => {
+    if (!data || data.length === 0) return { ageData: [], genderData: [] };
 
-  // Aggregate data for Gender
-  const genderData = data.reduce((acc, curr) => {
-    const existing = acc.find(item => item.name === curr.gender);
-    if (existing) {
-      existing.value += 1;
-    } else {
-      acc.push({ name: curr.gender, value: 1 });
+    const ageMap = {};
+    const genderMap = {};
+
+    for (let i = 0; i < data.length; i++) {
+      const curr = data[i];
+      if (curr.age_group) {
+        ageMap[curr.age_group] = (ageMap[curr.age_group] || 0) + 1;
+      }
+      if (curr.gender) {
+        genderMap[curr.gender] = (genderMap[curr.gender] || 0) + 1;
+      }
     }
-    return acc;
-  }, []);
+
+    const ages = Object.entries(ageMap)
+      .map(([age, count]) => ({ age, count }))
+      .sort((a, b) => a.age.localeCompare(b.age));
+
+    const genders = Object.entries(genderMap)
+      .map(([name, value]) => ({ name, value }));
+
+    return { ageData: ages, genderData: genders };
+  }, [data]);
 
   const PIE_COLORS = ['#16a34a', '#e3342f', '#fcd34d', '#3b82f6']; // Italian green, red, cheese yellow, blue
 

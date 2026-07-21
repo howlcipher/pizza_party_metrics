@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
@@ -16,30 +16,28 @@ const srOnlyStyle = {
 };
 
 const WorkSlicesChart = ({ data }) => {
-  // Aggregate data by work_setup to compare
-  const aggregatedData = data.reduce((acc, curr) => {
-    // using work_setup_category now instead of work_setup object
-    const existing = acc.find(item => item.work_setup === curr.work_setup_category);
-    if (existing) {
-      existing.focus_hours += curr.focus_hours;
-      existing.meeting_overhead += curr.meeting_overhead;
-      existing.count += 1;
-    } else {
-      acc.push({
-        work_setup: curr.work_setup_category,
-        focus_hours: curr.focus_hours,
-        meeting_overhead: curr.meeting_overhead,
-        count: 1
-      });
-    }
-    return acc;
-  }, []);
+  // Aggregate data by work_setup_category using memoized single-pass accumulator
+  const chartData = useMemo(() => {
+    if (!data || data.length === 0) return [];
 
-  const chartData = aggregatedData.map(item => ({
-    name: item.work_setup,
-    "Focus Hours": Number((item.focus_hours / item.count).toFixed(1)),
-    "Meeting Overhead": Number((item.meeting_overhead / item.count).toFixed(1))
-  }));
+    const setupMap = {};
+    for (let i = 0; i < data.length; i++) {
+      const curr = data[i];
+      const cat = curr.work_setup_category;
+      if (!setupMap[cat]) {
+        setupMap[cat] = { focus_hours: 0, meeting_overhead: 0, count: 0 };
+      }
+      setupMap[cat].focus_hours += curr.focus_hours;
+      setupMap[cat].meeting_overhead += curr.meeting_overhead;
+      setupMap[cat].count += 1;
+    }
+
+    return Object.entries(setupMap).map(([cat, item]) => ({
+      name: cat,
+      "Focus Hours": Number((item.focus_hours / item.count).toFixed(1)),
+      "Meeting Overhead": Number((item.meeting_overhead / item.count).toFixed(1))
+    }));
+  }, [data]);
 
   return (
     <div className="bg-white/95 border border-gray-200 rounded p-5 shadow-sm h-full flex flex-col">

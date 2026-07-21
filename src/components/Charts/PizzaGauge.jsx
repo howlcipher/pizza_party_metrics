@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const srOnlyStyle = {
@@ -14,28 +14,32 @@ const srOnlyStyle = {
 };
 
 const PizzaGauge = ({ data }) => {
-  // Find the best option (highest average index among work setups) instead of flat mean
-  let bestScore = 0;
-  let bestSetup = "No Data";
+  const { bestScore, bestSetup } = useMemo(() => {
+    let topScore = 0;
+    let topSetup = "No Data";
 
-  if (data.length > 0) {
-    const setupScores = data.reduce((acc, curr) => {
-      if (!acc[curr.work_setup_category]) {
-        acc[curr.work_setup_category] = { total: 0, count: 0 };
+    if (data && data.length > 0) {
+      const setupScores = {};
+      for (let i = 0; i < data.length; i++) {
+        const cat = data[i].work_setup_category;
+        if (!setupScores[cat]) {
+          setupScores[cat] = { total: 0, count: 0 };
+        }
+        setupScores[cat].total += data[i].pizza_party_index;
+        setupScores[cat].count += 1;
       }
-      acc[curr.work_setup_category].total += curr.pizza_party_index;
-      acc[curr.work_setup_category].count += 1;
-      return acc;
-    }, {});
 
-    for (const [setup, stats] of Object.entries(setupScores)) {
-      const avg = stats.total / stats.count;
-      if (avg > bestScore) {
-        bestScore = avg;
-        bestSetup = setup;
+      for (const [setup, stats] of Object.entries(setupScores)) {
+        const avg = stats.total / stats.count;
+        if (avg > topScore) {
+          topScore = avg;
+          topSetup = setup;
+        }
       }
     }
-  }
+
+    return { bestScore: topScore, bestSetup: topSetup };
+  }, [data]);
 
   // Assume max index is 40 for the gauge
   const maxIndex = 40;

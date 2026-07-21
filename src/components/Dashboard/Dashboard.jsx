@@ -9,7 +9,6 @@ import pizzaMetricsData from '../../data/pizza_metrics.json';
 
 const Dashboard = () => {
   const [rawData, setRawData] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
     industry: '',
     age_group: '',
@@ -29,7 +28,6 @@ const Dashboard = () => {
   useEffect(() => {
     // Load local JSON data instead of fetching from API for GitHub Pages compatibility
     setRawData(pizzaMetricsData);
-    setLoading(false);
   }, []);
 
   return (
