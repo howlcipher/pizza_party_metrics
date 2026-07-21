@@ -29,23 +29,23 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 23 | Demographic Analytics (Age, Industry, Gender) | Done (2026-07-21) | - | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | Shipped! |
 | 3 | [Agent Suggestion] UI/UX: Reset Filters CTA | Done (2026-07-21) | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Saves users from dead ends) * 1.0 / 2 = 3.50 |
 | 5 | [Agent Suggestion] Data Pipeline: Add Module-Level Documentation & Decouple Configuration | Done (2026-07-21) | 3.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Good code hygiene) * 1.0 / 2 = 3.00 |
-| 6 | [Agent Suggestion] Accessibility: Form Control Association & ARIA charts | Pending | 2.66 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Compliance issue) * 1.0 / 3 = 2.66 |
+| 6 | [Agent Suggestion] Accessibility: Form Control Association & ARIA charts | Pending | 2.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Compliance issue) * 1.0 (decay) / 3 = 2.67 |
 | 12 | [Agent Suggestion] Data Pipeline: Real GitHub Collaboration Data Integration | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Mandate for real data) * 1.0 (new capability) / 5 = 1.60 |
 | 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.5 (decay) / 3 = 1.33 |
 | 8 | [Agent Suggestion] Data Transparency: Analytics Methodology Page | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Addresses data trust) * 0.5 (decay) / 3 = 1.33 |
 | 14 | Live Data Ingestion API / Backend | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core requirement) * 1.0 (new capability) / 6 = 1.33 |
 | 16 | [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Security) * 0.5 (decay) / 4 = 1.00 |
 | 22 | [Agent Suggestion] Predictive Burnout Modeling | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
-| 17 | Theme Options: Light, Dark, and Color-blind Modes | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (high UX value) * 0.5 (decay) / 4 = 0.88 |
+| 9 | [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Stops bad pipelines) * 0.5 (decay) / 4 = 1.00 |
 | 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 0.5 (decay) / 4 = 0.88 |
-| 9 | [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks | Pending | 0.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Stops bad pipelines) * 0.25 (decay) / 4 = 0.50 |
-| 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.25 (decay) / 4 = 0.44 |
-| 11 | [Agent Suggestion] Async Collaboration Velocity Metric | ⚠️ below floor | 0.40 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 0.25 (decay) / 5 = 0.40 |
+| 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.5 (decay) / 4 = 0.88 |
+| 10 | [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Idiomatic & fast) * 0.5 (decay) / 4 = 0.88 |
+| 11 | [Agent Suggestion] Async Collaboration Velocity Metric | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 0.5 (decay) / 5 = 0.80 |
+| 20 | Interruption & Context Switch Impact Dashboard | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 0.5 (decay) / 5 = 0.80 |
+| 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | Pending | 0.70 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 0.5 (decay) / 5 = 0.70 |
+| 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | Pending | 0.58 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 0.5 (decay) / 6 = 0.58 |
+| 17 | Theme Options: Light, Dark, and Color-blind Modes | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (high UX value) * 0.25 (decay) / 4 = 0.44 |
 | 21 | Stereotype Pizza Parlor Aesthetic Overhaul | ⚠️ below floor | 0.30 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Fun branding) * 0.25 (decay) / 5 = 0.30 |
-| 10 | [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations | ⚠️ below floor | 0.22 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Idiomatic & fast) * 0.125 (decay) / 4 = 0.22 |
-| 20 | Interruption & Context Switch Impact Dashboard | ⚠️ below floor | 0.20 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 0.125 (decay) / 5 = 0.20 |
-| 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | ⚠️ below floor | 0.09 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 0.0625 (decay) / 5 = 0.09 |
-| 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | ⚠️ below floor | 0.04 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 0.03125 (decay) / 6 = 0.04 |
 
 ## Details
 
@@ -93,14 +93,10 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 10. [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations
 **Description:** Refactor the `process_data` function in `etl.py` to use vectorized pandas operations instead of iterating with `.iloc[0]`.
 **Context:** Adheres to `data_analyst` principles for optimal DataFrame performance and readability.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 11. [Agent Suggestion] Async Collaboration Velocity Metric
 **Description:** Measure and compare PR merge times and issue resolution times across different work setups (remote vs hybrid vs onsite). Use data from GitHub APIs or similar sources to prove that async, remote-first workflows actually lead to faster or higher-quality task completion, countering the claim that in-person collaboration is always faster.
 **Context:** Addresses the core product thesis by providing hard data that remote teams can outpace onsite teams when it comes to concrete deliverables.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 12. [Agent Suggestion] Data Pipeline: Real GitHub Collaboration Data Integration
 **Description:** Expand the `etl.py` script to pull live, real-world data (e.g., from WFH Research APIs, GitHub GraphQL, or similar) to accurately power the collaboration and velocity metrics, fulfilling the mandate to strictly use "real data".
@@ -109,8 +105,6 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 13. [Agent Suggestion] Documentation & Knowledge Transfer Health
 **Description:** Analyze the volume and quality of written documentation (wiki updates, PR descriptions, ADRs) to prove remote teams over-index on scalable knowledge transfer compared to the ephemeral, unrecorded watercooler chats of onsite teams.
 **Context:** Quantifies the often-ignored benefit of remote work: forcing teams to build a robust, searchable knowledge base.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 14. Live Data Ingestion API / Backend
 **Description:** Build a backend or integration layer (e.g., WebSockets or a polling API) to ingest real and live data for the dashboard, replacing any static or mocked data.
@@ -119,8 +113,6 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 15. [Agent Suggestion] Cross-Time-Zone Collaboration Index
 **Description:** Highlight the "follow the sun" advantage of remote teams by visualizing 24/7 continuous output metrics. This shows how distributed teams can keep projects moving around the clock without individual burnout.
 **Context:** Demonstrates a unique structural advantage of remote work that in-office environments fundamentally cannot replicate.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 16. [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates
 **Description:** Split the monolithic `build-and-deploy` job in `deploy.yml` into `validate`, `build`, and `deploy` jobs with security scanning (Trivy/npm audit).
@@ -129,12 +121,12 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 17. Theme Options: Light, Dark, and Color-blind Modes
 **Description:** Add a theme switcher that allows users to toggle between Light Mode, Dark Mode (currently default), and a Color-blind friendly mode.
 **Context:** This improves accessibility (see `accessibility` skill) and gives users control over their dashboard viewing experience.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay (2 UI items shipped).
 
 ### 18. [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency
 **Description:** Extract the Python ETL script to its own `data-pipeline` GitHub Actions job and pass the JSON artifact to the `build` job.
 **Context:** Ensures absolute separation between the Python execution environment and Node.js build per `devops_sre` standards.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 19. [Agent Suggestion] Meeting vs. Maker Time Analysis
 **Description:** Analyze calendar data to show the ratio of uninterrupted "Maker Time" versus fragmented "Meeting Time."
@@ -143,8 +135,6 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 20. Interruption & Context Switch Impact Dashboard
 **Description:** Visualize how interruptions destroy context switching. We need to track the frequency of interruptions (e.g., Slack messages, ad-hoc calls) and correlate them with task completion times or velocity drops.
 **Context:** This requires tracking the "cost" of a context switch. As defined by the product strategy (MVP), we should start with a simple time-loss calculation before moving to complex models.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 21. Stereotype Pizza Parlor Aesthetic Overhaul
 **Description:** Redesign the dashboard to lean heavily into a stereotypical pizza parlor theme. Think red and white checkered tablecloth patterns, Italian flag color accents (green/red/white), and rustic UI elements.
