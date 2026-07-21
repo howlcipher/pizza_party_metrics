@@ -307,6 +307,52 @@ def _resolution_hours(item: dict) -> float | None:
     return None
 
 
+def _fetch_pr_reviews(repo: str, pr_number: int) -> list:
+    """Fetch reviews for a specific PR."""
+    url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/reviews?per_page=100"
+    cache_path = _cache_key(repo, f"pulls_{pr_number}_reviews")
+    cached = _load_cache(cache_path)
+    if cached is not None:
+        return cached
+
+    logging.info(f"  → GET reviews for {repo} PR #{pr_number} …")
+    items = _fetch_with_backoff(url, _github_headers(), f"{repo}/pulls/{pr_number}/reviews")
+    if items is None:
+        items = []
+    _save_cache(cache_path, items)
+    return items
+
+
+def _pr_review_turnaround_hours(pr: dict, reviews: list) -> float | None:
+    """Calculate the hours from PR creation to the first review (excluding the author)."""
+    created_raw = pr.get('created_at')
+    if not created_raw or not reviews:
+        return None
+
+    try:
+        created = pd.to_datetime(created_raw, utc=True)
+        pr_author = pr.get('user', {}).get('login')
+        
+        valid_times = []
+        for r in reviews:
+            if pr_author and r.get('user', {}).get('login') == pr_author:
+                continue
+            if r.get('submitted_at'):
+                valid_times.append(pd.to_datetime(r['submitted_at'], utc=True))
+                
+        if not valid_times:
+            return None
+            
+        earliest_review = min(valid_times)
+        hours = (earliest_review - created).total_seconds() / 3600.0
+        
+        if 0.0 <= hours <= MAX_RESOLUTION_HOURS:
+            return hours
+    except Exception:
+        pass
+    return None
+
+
 # ---------------------------------------------------------------------------
 # Core velocity fetching
 # ---------------------------------------------------------------------------
@@ -315,7 +361,7 @@ def fetch_work_setup_velocities(
     setup_repos: dict[str, list[str]] | None = None,
     issues_per_repo: int = GITHUB_ISSUES_PER_REPO,
     pulls_per_repo:  int = GITHUB_PULLS_PER_REPO,
-) -> tuple[dict[str, float], dict[str, dict]]:
+) -> tuple[dict[str, float], dict[str, float], dict[str, dict]]:
     """
     Fetch closed PR merge times **and** closed issue resolution times for every
     repository in each work-setup category, then compute a distinct velocity
@@ -342,6 +388,8 @@ def fetch_work_setup_velocities(
     -------
     velocities : dict[str, float]
         ``{category: velocity_proxy}``
+    turnarounds : dict[str, float]
+        ``{category: avg_review_turnaround_hours}``
     metadata : dict[str, dict]
         Provenance block per category, suitable for writing to
         ``velocity_metadata.json``.
@@ -350,6 +398,7 @@ def fetch_work_setup_velocities(
         setup_repos = SETUP_REPOS
 
     velocities: dict[str, float] = {}
+    turnarounds: dict[str, float] = {}
     metadata:   dict[str, dict]  = {}
     fetch_ts = datetime.now(timezone.utc).isoformat()
 
@@ -360,11 +409,13 @@ def fetch_work_setup_velocities(
         all_hours:   list[float] = []
         pr_hours:    list[float] = []
         issue_hours: list[float] = []
+        cat_turnarounds: list[float] = []
         repo_stats:  list[dict]  = []
 
         for repo in repos:
             repo_pr_times    = []
             repo_issue_times = []
+            repo_turnaround_times = []
 
             # --- Closed PRs -------------------------------------------------
             pulls = _fetch_repo_endpoint(
@@ -376,6 +427,13 @@ def fetch_work_setup_velocities(
                 h = _resolution_hours(pr)
                 if h is not None:
                     repo_pr_times.append(h)
+                
+                pr_number = pr.get('number')
+                if pr_number:
+                    reviews = _fetch_pr_reviews(repo, pr_number)
+                    turnaround = _pr_review_turnaround_hours(pr, reviews)
+                    if turnaround is not None:
+                        repo_turnaround_times.append(turnaround)
 
             # --- Closed Issues ----------------------------------------------
             # The /issues endpoint returns both issues *and* PRs; skip PRs
@@ -394,17 +452,21 @@ def fetch_work_setup_velocities(
             all_hours.extend(combined)
             pr_hours.extend(repo_pr_times)
             issue_hours.extend(repo_issue_times)
+            cat_turnarounds.extend(repo_turnaround_times)
 
             repo_stats.append({
                 'repo':          repo,
                 'pr_samples':    len(repo_pr_times),
                 'issue_samples': len(repo_issue_times),
+                'review_samples': len(repo_turnaround_times),
                 'median_pr_hours':    round(float(np.median(repo_pr_times)),    2) if repo_pr_times    else None,
                 'median_issue_hours': round(float(np.median(repo_issue_times)), 2) if repo_issue_times else None,
+                'avg_review_turnaround_hours': round(float(np.mean(repo_turnaround_times)), 2) if repo_turnaround_times else None,
             })
             logging.info(
                 f"    {repo}: {len(repo_pr_times)} PR samples, "
-                f"{len(repo_issue_times)} issue samples"
+                f"{len(repo_issue_times)} issue samples, "
+                f"{len(repo_turnaround_times)} review turnarounds"
             )
 
         if all_hours:
@@ -423,19 +485,24 @@ def fetch_work_setup_velocities(
                 f"  No valid data for '{category}'. Using fallback velocity {velocity:.5f}"
             )
 
+        avg_cat_turnaround = float(np.mean(cat_turnarounds)) if cat_turnarounds else 24.0
+
         velocities[category] = velocity
+        turnarounds[category] = avg_cat_turnaround
         metadata[category]   = {
             'velocity_proxy':       round(velocity, 6),
             'median_resolution_h':  round(median_hours, 2) if median_hours is not None else None,
+            'avg_review_turnaround_hours': round(avg_cat_turnaround, 2) if cat_turnarounds else None,
             'total_samples':        sample_count,
             'pr_samples':           len(pr_hours),
             'issue_samples':        len(issue_hours),
+            'review_turnaround_samples': len(cat_turnarounds),
             'repos':                repo_stats,
             'fetched_at':           fetch_ts,
             'is_fallback':          sample_count == 0,
         }
 
-    return velocities, metadata
+    return velocities, turnarounds, metadata
 
 
 # ---------------------------------------------------------------------------
@@ -496,6 +563,7 @@ def download_wfh_data(filepath: str = "wfh_data.xlsx") -> str:
 def process_data(
     wfh_filepath: str,
     github_velocities: dict[str, float] | float,
+    github_turnarounds: dict[str, float] | None = None,
 ) -> pd.DataFrame:
     """
     Process the WFH data and compute the Pizza Party Index using distinct
@@ -508,6 +576,8 @@ def process_data(
     github_velocities:
         Either a ``dict`` mapping category names to velocity proxies
         (preferred), or a scalar float (legacy fallback).
+    github_turnarounds:
+        A ``dict`` mapping category names to average review turnaround hours.
 
     Returns
     -------
@@ -515,7 +585,7 @@ def process_data(
         One row per (industry × age_group × gender) combination, with columns:
         ``industry``, ``work_setup_category``, ``work_setup``,
         ``focus_hours``, ``meeting_overhead``, ``pizza_party_index``,
-        ``age_group``, ``gender``.
+        ``review_turnaround_hours``, ``age_group``, ``gender``.
     """
     logging.info("Reading WFH data …")
     df = pd.read_excel(wfh_filepath, sheet_name='Work Arrangements by Industry')
@@ -541,6 +611,9 @@ def process_data(
         }
     elif not isinstance(github_velocities, dict):
         github_velocities = dict(FALLBACK_VELOCITIES)
+
+    if not github_turnarounds:
+        github_turnarounds = {}
 
     categories    = list(FALLBACK_VELOCITIES.keys())
     base_focus_h  = 40.0
@@ -571,6 +644,7 @@ def process_data(
                 # Sample a work-setup category weighted by industry WFH proportions
                 cat     = np.random.choice(categories, p=probs)
                 cat_vel = github_velocities.get(cat, FALLBACK_VELOCITIES.get(cat, 0.05))
+                cat_turn = github_turnarounds.get(cat, 24.0)
 
                 # Focus / perks factors differ by category
                 if cat == 'Remote-First':
@@ -602,6 +676,7 @@ def process_data(
                     'focus_hours':       round(float(focus_hours),        2),
                     'meeting_overhead':  round(float(meeting_overhead),   2),
                     'pizza_party_index': round(float(pizza_party_index),  2),
+                    'review_turnaround_hours': round(float(cat_turn),     2),
                     'age_group':         age,
                     'gender':            gender,
                 })
@@ -618,8 +693,9 @@ def main() -> None:
     os.makedirs('src/data', exist_ok=True)
 
     # Step 1: Fetch distinct velocity proxies for all work-setup categories
-    velocities, vel_metadata = fetch_work_setup_velocities()
+    velocities, turnarounds, vel_metadata = fetch_work_setup_velocities()
     logging.info(f"Computed work-setup velocities: {velocities}")
+    logging.info(f"Computed review turnarounds: {turnarounds}")
 
     # Step 2: Persist velocity metadata for frontend data-provenance display
     meta_path = 'src/data/velocity_metadata.json'
@@ -631,7 +707,7 @@ def main() -> None:
     wfh_file = download_wfh_data()
 
     # Step 4: Process data and compute all metrics
-    final_df = process_data(wfh_file, velocities)
+    final_df = process_data(wfh_file, velocities, turnarounds)
 
     # Step 5: Write the per-record metrics JSON consumed by the frontend
     output_path = 'src/data/pizza_metrics.json'

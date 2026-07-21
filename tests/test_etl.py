@@ -118,7 +118,7 @@ class TestCacheHelpers(unittest.TestCase):
 
 class TestFetchWorkSetupVelocities(unittest.TestCase):
 
-    def _mock_pr_response(self, hours: float):
+    def _mock_pr_response(self, hours: float, number: int = 1):
         """Return a MagicMock response with a single merged PR at *hours* age."""
         from datetime import timedelta
         t0 = '2026-01-01T00:00:00Z'
@@ -126,7 +126,19 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
         merged_str = merged.strftime('%Y-%m-%dT%H:%M:%SZ')
         resp = MagicMock()
         resp.status_code = 200
-        resp.json.return_value = [_make_closed_pr(t0, merged_str)]
+        pr = _make_closed_pr(t0, merged_str)
+        pr['number'] = number
+        pr['user'] = {'login': 'author'}
+        resp.json.return_value = [pr]
+        return resp
+
+    def _mock_reviews_response(self, hours: float):
+        """Return a MagicMock response with a single review at *hours* age."""
+        from datetime import timedelta
+        t0 = pd.Timestamp('2026-01-01T00:00:00Z') + timedelta(hours=hours)
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.json.return_value = [{'submitted_at': t0.strftime('%Y-%m-%dT%H:%M:%SZ'), 'user': {'login': 'reviewer'}}]
         return resp
 
     @patch('scripts.etl.time.sleep')   # prevent real backoff delays in tests
@@ -141,8 +153,12 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
 
         def side_effect(url, **kwargs):
             if 'test-remote' in url:
+                if '/reviews' in url:
+                    return self._mock_reviews_response(2.0)
                 return self._mock_pr_response(5.0)
             if 'test-hybrid' in url:
+                if '/reviews' in url:
+                    return self._mock_reviews_response(4.0)
                 return self._mock_pr_response(10.0)
             bad = MagicMock()
             bad.status_code = 500
@@ -156,7 +172,7 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
             'Hybrid':       ['test-hybrid/repo'],
             'Onsite-Heavy': ['test-onsite/repo'],
         }
-        velocities, metadata = fetch_work_setup_velocities(
+        velocities, turnarounds, metadata = fetch_work_setup_velocities(
             setup_repos=custom_repos,
             issues_per_repo=1,
             pulls_per_repo=1,
@@ -164,10 +180,13 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
 
         # Remote-First: 1 PR merged after 5 h → velocity = 1/5 = 0.2
         self.assertAlmostEqual(velocities['Remote-First'], 1.0 / 5.0, places=3)
+        self.assertAlmostEqual(turnarounds['Remote-First'], 2.0, places=3)
         # Hybrid: 1 PR merged after 10 h → velocity = 1/10 = 0.1
         self.assertAlmostEqual(velocities['Hybrid'], 1.0 / 10.0, places=3)
+        self.assertAlmostEqual(turnarounds['Hybrid'], 4.0, places=3)
         # Onsite-Heavy: all requests failed → fallback
         self.assertEqual(velocities['Onsite-Heavy'], FALLBACK_VELOCITIES['Onsite-Heavy'])
+        self.assertEqual(turnarounds['Onsite-Heavy'], 24.0)
         # Verify sleep was called (i.e. backoff was triggered)
         self.assertTrue(mock_sleep.called)
 
@@ -179,13 +198,11 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
         """Metadata dict must have expected keys for every category."""
         resp = MagicMock()
         resp.status_code = 200
-        resp.json.return_value = [
-            _make_closed_pr('2026-01-01T00:00:00Z', '2026-01-01T05:00:00Z')
-        ]
+        resp.json.return_value = []
         mock_get.return_value = resp
 
         custom_repos = {'Remote-First': ['test/repo']}
-        _, metadata = fetch_work_setup_velocities(
+        _, _, metadata = fetch_work_setup_velocities(
             setup_repos=custom_repos,
             issues_per_repo=1,
             pulls_per_repo=1,
@@ -193,7 +210,8 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
 
         required_keys = {
             'velocity_proxy', 'median_resolution_h', 'total_samples',
-            'pr_samples', 'issue_samples', 'repos', 'fetched_at', 'is_fallback',
+            'pr_samples', 'issue_samples', 'review_turnaround_samples',
+            'avg_review_turnaround_hours', 'repos', 'fetched_at', 'is_fallback',
         }
         self.assertTrue(required_keys.issubset(metadata['Remote-First'].keys()))
 
@@ -222,7 +240,7 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
 
         mock_get.side_effect = side_effect
         custom_repos = {'Remote-First': ['test/repo']}
-        velocities, metadata = fetch_work_setup_velocities(
+        velocities, turnarounds, metadata = fetch_work_setup_velocities(
             setup_repos=custom_repos,
             issues_per_repo=5,
             pulls_per_repo=5,
@@ -244,7 +262,7 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
         mock_get.return_value = fail
 
         custom_repos = {'Hybrid': ['bad/repo1', 'bad/repo2']}
-        velocities, metadata = fetch_work_setup_velocities(
+        velocities, turnarounds, metadata = fetch_work_setup_velocities(
             setup_repos=custom_repos,
             issues_per_repo=5,
             pulls_per_repo=5,
@@ -262,7 +280,7 @@ class TestFetchWorkSetupVelocities(unittest.TestCase):
         mock_load.return_value = cached_prs  # always hit cache
 
         custom_repos = {'Remote-First': ['cached/repo']}
-        velocities, _ = fetch_work_setup_velocities(
+        velocities, turnarounds, _ = fetch_work_setup_velocities(
             setup_repos=custom_repos,
             issues_per_repo=5,
             pulls_per_repo=5,
@@ -339,7 +357,7 @@ class TestProcessData(unittest.TestCase):
         required = {
             'industry', 'work_setup_category', 'work_setup',
             'focus_hours', 'meeting_overhead', 'pizza_party_index',
-            'age_group', 'gender',
+            'review_turnaround_hours', 'age_group', 'gender',
         }
         self.assertTrue(required.issubset(set(df.columns)))
 

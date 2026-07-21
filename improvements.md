@@ -37,7 +37,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 25 | Data Pipeline: Add Other Relevant Industries | Closed | - | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | Merged into #24 |
 | 29 | Automated README Update Hook | Done (2026-07-21) | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Keeps docs fresh) * 1.0 (new capability) / 3 = 2.00 |
 | 30 | [Agent Suggestion] Multi-Agent Metric Processing | Pending | 2.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Deep analysis) * 1.0 (new capability) / 3 = 2.67 |
-| 31 | Deep Collaboration Metric: Code Review Turnaround | Pending | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves velocity) * 1.0 / 4 = 2.00 |
+| 31 | Deep Collaboration Metric: Code Review Turnaround | Done (2026-07-21) | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves velocity) * 1.0 / 4 = 2.00 |
 | 32 | Deep Collaboration Metric: Cross-Team Issue Resolution | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core thesis) * 1.0 / 5 = 1.60 |
 | 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 1.0 (decay) / 4 = 1.75 |
 | 11 | [Agent Suggestion] Async Collaboration Velocity Metric | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 1.0 (decay) / 5 = 1.60 |
@@ -214,6 +214,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 31. Deep Collaboration Metric: Code Review Turnaround
 **Description:** Measure the time from PR creation to first review, comparing Remote vs. In-Office setups, to prove whether in-person teams actually collaborate faster on code.
 **Context:** Enforces the core product thesis of focusing on hard collaboration metrics.
+**Done note (2026-07-21):** Implemented GitHub Reviews API integration in `etl.py` to calculate PR review turnaround hours and aggregated it by organizational structure.
 
 ### 32. Deep Collaboration Metric: Cross-Team Issue Resolution
 **Description:** Track how quickly cross-functional issues are closed in remote-first organizations vs. hybrid.
