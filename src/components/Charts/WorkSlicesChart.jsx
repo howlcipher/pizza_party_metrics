@@ -3,6 +3,18 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
 
+const srOnlyStyle = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
+
 const WorkSlicesChart = ({ data }) => {
   // Aggregate data by work_setup to compare
   const aggregatedData = data.reduce((acc, curr) => {
@@ -38,7 +50,10 @@ const WorkSlicesChart = ({ data }) => {
         Weekly Focus Hours vs. Meeting Overhead across different mandates.
       </p>
       
-      <div className="flex-grow min-h-[300px]">
+      <div className="flex-grow min-h-[300px]" role="img" aria-label="Bar chart comparing Focus Hours versus Meeting Overhead by work setup category.">
+        <div style={srOnlyStyle}>
+          This bar chart displays the breakdown of weekly focus hours versus meeting overhead in hours across different work setup categories, such as In-Office, Hybrid, and Remote.
+        </div>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}

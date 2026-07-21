@@ -4,6 +4,18 @@ import {
   PieChart, Pie, Cell, Legend
 } from 'recharts';
 
+const srOnlyStyle = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
+
 const DemographicsChart = ({ data }) => {
   // Aggregate data for Age
   const ageData = data.reduce((acc, curr) => {
@@ -40,8 +52,11 @@ const DemographicsChart = ({ data }) => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
         {/* Age Bar Chart */}
-        <div className="flex flex-col min-h-[250px]">
+        <div className="flex flex-col min-h-[250px]" role="img" aria-label="Bar chart showing age distribution of respondents.">
           <p className="text-sm text-gray-400 mb-2 text-center font-semibold">Age Ranges</p>
+          <div style={srOnlyStyle}>
+            This bar chart displays the number of respondents for each age range.
+          </div>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={ageData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
@@ -57,8 +72,11 @@ const DemographicsChart = ({ data }) => {
         </div>
 
         {/* Gender Pie Chart */}
-        <div className="flex flex-col min-h-[250px]">
+        <div className="flex flex-col min-h-[250px]" role="img" aria-label="Pie chart showing gender breakdown of respondents.">
           <p className="text-sm text-gray-400 mb-2 text-center font-semibold">Gender Breakdown</p>
+          <div style={srOnlyStyle}>
+            This pie chart displays the gender breakdown of the survey respondents.
+          </div>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

@@ -25,8 +25,9 @@ const PizzaBoxFilter = ({ filters, setFilters, data }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
         {/* Industry Filter */}
         <div className="flex flex-col gap-1">
-          <label className="text-sm font-bold text-gray-400 uppercase tracking-wide">Industry</label>
+          <label htmlFor="industry-select" className="text-sm font-bold text-gray-400 uppercase tracking-wide">Industry</label>
           <select 
+            id="industry-select"
             className="p-2 rounded-md border border-gray-600 bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
             value={filters.industry || ''}
             onChange={(e) => handleFilterChange('industry', e.target.value)}
@@ -40,8 +41,9 @@ const PizzaBoxFilter = ({ filters, setFilters, data }) => {
 
         {/* Age Group Filter */}
         <div className="flex flex-col gap-1">
-          <label className="text-sm font-bold text-gray-400 uppercase tracking-wide">Age Group</label>
+          <label htmlFor="age-group-select" className="text-sm font-bold text-gray-400 uppercase tracking-wide">Age Group</label>
           <select 
+            id="age-group-select"
             className="p-2 rounded-md border border-gray-600 bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
             value={filters.age_group || ''}
             onChange={(e) => handleFilterChange('age_group', e.target.value)}
@@ -55,8 +57,9 @@ const PizzaBoxFilter = ({ filters, setFilters, data }) => {
 
         {/* Work Setup Filter */}
         <div className="flex flex-col gap-1">
-          <label className="text-sm font-bold text-gray-400 uppercase tracking-wide">Work Setup</label>
+          <label htmlFor="work-setup-select" className="text-sm font-bold text-gray-400 uppercase tracking-wide">Work Setup</label>
           <select 
+            id="work-setup-select"
             className="p-2 rounded-md border border-gray-600 bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
             value={filters.work_setup || ''}
             onChange={(e) => handleFilterChange('work_setup', e.target.value)}

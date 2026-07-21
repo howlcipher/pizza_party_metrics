@@ -1,6 +1,18 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
+const srOnlyStyle = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
+
 const PizzaGauge = ({ data }) => {
   // Calculate average index
   const avgIndex = data.length > 0 
@@ -37,7 +49,10 @@ const PizzaGauge = ({ data }) => {
         Correlation of in-office perks with fragmented focus time. Higher = More Performative.
       </p>
       
-      <div className="flex-grow relative min-h-[200px]">
+      <div className="flex-grow relative min-h-[200px]" role="img" aria-label={`Pizza Party Index Gauge. Current average index is ${avgIndex.toFixed(1)} out of 5.`}>
+        <div style={srOnlyStyle}>
+          This gauge displays the Pizza Party Index, reflecting the correlation of in-office perks with fragmented focus time. The current average index is {avgIndex.toFixed(1)} out of 5.
+        </div>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie

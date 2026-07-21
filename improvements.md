@@ -29,7 +29,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 23 | Demographic Analytics (Age, Industry, Gender) | Done (2026-07-21) | - | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | Shipped! |
 | 3 | [Agent Suggestion] UI/UX: Reset Filters CTA | Done (2026-07-21) | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Saves users from dead ends) * 1.0 / 2 = 3.50 |
 | 5 | [Agent Suggestion] Data Pipeline: Add Module-Level Documentation & Decouple Configuration | Done (2026-07-21) | 3.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Good code hygiene) * 1.0 / 2 = 3.00 |
-| 6 | [Agent Suggestion] Accessibility: Form Control Association & ARIA charts | Pending | 2.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Compliance issue) * 1.0 (decay) / 3 = 2.67 |
+| 6 | [Agent Suggestion] Accessibility: Form Control Association & ARIA charts | Done (2026-07-21) | 2.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Compliance issue) * 1.0 (decay) / 3 = 2.67 |
 | 12 | [Agent Suggestion] Data Pipeline: Real GitHub Collaboration Data Integration | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Mandate for real data) * 1.0 (new capability) / 5 = 1.60 |
 | 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.5 (decay) / 3 = 1.33 |
 | 8 | [Agent Suggestion] Data Transparency: Analytics Methodology Page | Pending | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Addresses data trust) * 0.5 (decay) / 3 = 1.33 |
@@ -77,6 +77,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 6. [Agent Suggestion] Accessibility: Form Control Association & ARIA charts
 **Description:** Map `<label>` elements to `<select>` tags using `htmlFor` and `id`. Add `.sr-only` descriptions or `aria-labels` to the Recharts graphics.
 **Context:** Based on the `accessibility` skill for WCAG compliance.
+**Done note (2026-07-21):** Mapped labels to selects in `PizzaBoxFilter.jsx` using `htmlFor` and `id`. Added `srOnlyStyle` helper to all Recharts wrapper components and provided them with `.sr-only` descriptions and `role="img"` with descriptive `aria-label` tags.
 
 ### 7. [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling
 **Description:** Wrap all API and download calls (`requests.get`) in `etl.py` with explicit `timeout=15` settings and `try...except` blocks emitting structured JSON logs.
