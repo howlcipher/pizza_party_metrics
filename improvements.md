@@ -34,23 +34,24 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 8 | [Agent Suggestion] Data Transparency: Analytics Methodology Page | Done (2026-07-21) | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Addresses data trust) * 0.5 (decay) / 3 = 1.33 |
 | 14 | Live Data Ingestion API / Backend | Done (2026-07-21) | 1.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Core requirement) * 1.0 (new capability) / 6 = 1.33 |
 | 16 | [Agent Suggestion] DevOps: Implement Multi-Stage Job Separation with Quality & Security Gates | Done (2026-07-21) | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Security) * 0.5 (decay) / 4 = 1.00 |
-| 22 | [Agent Suggestion] Predictive Burnout Modeling | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
-| 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 0.5 (decay) / 4 = 0.88 |
-| 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | Pending | 0.88 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.5 (decay) / 4 = 0.88 |
-| 11 | [Agent Suggestion] Async Collaboration Velocity Metric | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 0.5 (decay) / 5 = 0.80 |
-| 20 | Interruption & Context Switch Impact Dashboard | Pending | 0.80 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 0.5 (decay) / 5 = 0.80 |
-| 24 | Data Pipeline: Add IT, Software, and Other Relevant Industries | Pending | 0.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.25 (decay) / 2 = 0.75 |
 | 25 | Data Pipeline: Add Other Relevant Industries | Closed | - | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | Merged into #24 |
-| 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | Pending | 0.70 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 0.5 (decay) / 5 = 0.70 |
-| 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | Pending | 0.67 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.25 (decay) / 3 = 0.67 |
-| 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | Pending | 0.58 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 0.5 (decay) / 6 = 0.58 |
-| 9 | [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks | Pending | 0.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Stops bad pipelines) * 0.25 (decay) / 4 = 0.50 |
-| 10 | [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Idiomatic & fast) * 0.25 (decay) / 4 = 0.44 |
-| 17 | Theme Options: Light, Dark, and Color-blind Modes | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (high UX value) * 0.25 (decay) / 4 = 0.44 |
-| 21 | Stereotype Pizza Parlor Aesthetic Overhaul | ⚠️ below floor | 0.30 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Fun branding) * 0.25 (decay) / 5 = 0.30 |
-| 26 | UI/UX: Metric Tooltips & Explanations | Pending | 0.58 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Clearer metrics) * 0.25 (decay) / 3 = 0.58 |
-| 27 | UI/UX: Mobile Responsiveness | Pending | 0.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Usability) * 0.25 (decay) / 4 = 0.50 |
-| 28 | Data Pipeline: Ingest Additional Relevant Datasets for Higher Accuracy | Pending | 0.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Improves core metric accuracy) * 0.25 (decay) / 4 = 0.50 |
+| 29 | Automated README Update Hook | Pending | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Keeps docs fresh) * 1.0 (new capability) / 3 = 2.00 |
+| 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 1.0 (decay) / 4 = 1.75 |
+| 11 | [Agent Suggestion] Async Collaboration Velocity Metric | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 1.0 (decay) / 5 = 1.60 |
+| 20 | Interruption & Context Switch Impact Dashboard | Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 1.0 (decay) / 5 = 1.60 |
+| 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | Pending | 1.40 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 1.0 (decay) / 5 = 1.40 |
+| 15 | [Agent Suggestion] Cross-Time-Zone Collaboration Index | Pending | 1.17 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Remote advantage) * 1.0 (decay) / 6 = 1.17 |
+| 22 | [Agent Suggestion] Predictive Burnout Modeling | Pending | 1.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Advanced ML) * 1.0 (new capability) / 6 = 1.00 |
+| 18 | [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency | ⚠️ below floor | 0.44 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Decouples failure) * 0.25 (decay) / 4 = 0.44 |
+| 24 | Data Pipeline: Add IT, Software, and Other Relevant Industries | ⚠️ below floor | 0.38 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Better representation) * 0.125 (decay) / 2 = 0.38 |
+| 7 | [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling | ⚠️ below floor | 0.33 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Prevents crashes) * 0.125 (decay) / 3 = 0.33 |
+| 28 | Data Pipeline: Ingest Additional Relevant Datasets for Higher Accuracy | ⚠️ below floor | 0.25 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Improves core metric accuracy) * 0.125 (decay) / 4 = 0.25 |
+| 9 | [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks | ⚠️ below floor | 0.25 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Stops bad pipelines) * 0.125 (decay) / 4 = 0.25 |
+| 10 | [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations | ⚠️ below floor | 0.22 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Idiomatic & fast) * 0.125 (decay) / 4 = 0.22 |
+| 26 | UI/UX: Metric Tooltips & Explanations | ⚠️ below floor | 0.07 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Clearer metrics) * 0.03125 (decay) / 3 = 0.07 |
+| 27 | UI/UX: Mobile Responsiveness | ⚠️ below floor | 0.06 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Usability) * 0.03125 (decay) / 4 = 0.06 |
+| 17 | Theme Options: Light, Dark, and Color-blind Modes | ⚠️ below floor | 0.05 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (high UX value) * 0.03125 (decay) / 4 = 0.05 |
+| 21 | Stereotype Pizza Parlor Aesthetic Overhaul | ⚠️ below floor | 0.04 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Fun branding) * 0.03125 (decay) / 5 = 0.04 |
 
 ## Details
 
@@ -87,6 +88,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 7. [Agent Suggestion] Data Pipeline: Defensive Network Requests & Error Handling
 **Description:** Wrap all API and download calls (`requests.get`) in `etl.py` with explicit `timeout=15` settings and `try...except` blocks emitting structured JSON logs.
 **Context:** Enforces `software_development` guidelines for strict error handling and resilience.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 8. [Agent Suggestion] Data Transparency: Analytics Methodology Page
 **Description:** Create a dedicated methodology view (or modal) explaining exactly how metrics (like the Pizza Party Index and Velocity Proxy) are derived from the raw data. Fulfills the requirement for structured documentation of analytical objectives, data sources, and inputs.
@@ -96,12 +99,14 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 9. [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks
 **Description:** Implement strict assertions at the ETL ingestion layer to check for missing values (`NaN`), duplicates, and data type inconsistencies. Fail the pipeline loudly if the source datasets degrade in quality.
 **Context:** Directly enforces the `data_analyst` "Data Quality" principle, preventing corrupted real-world data from skewing the collaboration metrics.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 10. [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations
 **Description:** Refactor the `process_data` function in `etl.py` to use vectorized pandas operations instead of iterating with `.iloc[0]`.
 **Context:** Adheres to `data_analyst` principles for optimal DataFrame performance and readability.
 **Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to data pipeline theme decay.
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 11. [Agent Suggestion] Async Collaboration Velocity Metric
 **Description:** Measure and compare PR merge times and issue resolution times across different work setups (remote vs hybrid vs onsite). Use data from GitHub APIs or similar sources to prove that async, remote-first workflows actually lead to faster or higher-quality task completion, countering the claim that in-person collaboration is always faster.
@@ -134,11 +139,13 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 **Description:** Add a theme switcher that allows users to toggle between Light Mode, Dark Mode (currently default), and a Color-blind friendly mode.
 **Context:** This improves accessibility (see `accessibility` skill) and gives users control over their dashboard viewing experience.
 **Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay (2 UI items shipped).
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 18. [Agent Suggestion] DevOps: Isolate ETL Data Pipeline and Ensure Idempotency
 **Description:** Extract the Python ETL script to its own `data-pipeline` GitHub Actions job and pass the JSON artifact to the `build` job.
 **Context:** Ensures absolute separation between the Python execution environment and Node.js build per `devops_sre` standards.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 19. [Agent Suggestion] Meeting vs. Maker Time Analysis
 **Description:** Analyze calendar data to show the ratio of uninterrupted "Maker Time" versus fragmented "Meeting Time."
@@ -166,6 +173,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 24. Data Pipeline: Add IT, Software, and Other Relevant Industries
 **Description:** Add 'IT/Infrastructure', 'Software/Engineering', and other relevant industries (e.g., 'Finance', 'Healthcare', 'Education') to the list of industries in the ETL script to ensure better representation of technical fields in the survey data.
 **Context:** Expands the dataset to be more relevant to our core audience and enriches demographic segments.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 25. Data Pipeline: Add Other Relevant Industries
 **Description:** Identify and add other relevant industries (e.g., 'Finance', 'Healthcare', 'Education') to the ETL pipeline to provide a more holistic demographic breakdown.
@@ -175,11 +184,21 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 26. UI/UX: Metric Tooltips & Explanations
 **Description:** Explain the metrics better to the user by adding tooltips or an explanatory modal/section. Users should understand exactly what each chart represents without needing to guess.
 **Context:** Improves the overall user experience and ensures the data transparency goals are actually understood by end users.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 27. UI/UX: Mobile Responsiveness
 **Description:** Make sure the dashboard looks good and functions well on mobile devices. Ensure charts resize correctly, navigation is accessible, and the layout doesn't break on smaller screens.
 **Context:** A core requirement for modern web applications. Currently, the dashboard may only be optimized for desktop displays.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
 
 ### 28. Data Pipeline: Ingest Additional Relevant Datasets for Higher Accuracy
 **Description:** Expand the data ingestion pipeline to include more diverse and relevant datasets (e.g., from additional repositories, surveys, or productivity APIs) to increase the accuracy and reliability of our collaboration and velocity metrics.
 **Context:** Ensures the insights generated are statistically significant and representative across different team structures and industries.
+**Status:** ⚠️ below floor
+**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
+
+### 29. Automated README Update Hook
+**Description:** Implement a hook (e.g., git pre-commit or GitHub Actions step) that automatically updates the `README.md` file whenever relevant project files or data metrics change.
+**Context:** Ensures documentation stays fresh without requiring manual intervention.
