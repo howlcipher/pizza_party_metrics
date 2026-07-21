@@ -27,7 +27,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 48 | Direct User Feedback: Disable Tooltips on Mobile | Done (2026-07-21) | 6.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (User req) * 1.0 / 1 = 6.00 |
 | 47 | Direct User Feedback: Improve Top Bar Mobile UI | Done (2026-07-21) | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (User req) * 1.0 / 2 = 3.50 |
 | 35 | [Agent Suggestion] UI/UX: Fix Export Race Condition & Accessibility Contrast | Done (2026-07-21) | 1.75 | - | gemini-3.1-pro-high | 7 (Compliance/Bugs) * 0.5 (decay) / 2 = 1.75 |
-| 44 | [Agent Suggestion] Frontend: Move Aggregations to ETL | Open | 1.16 | - | gemini-3.1-pro-high | 7 (Performance) * 0.5 (decay) / 3 = 1.16 |
+| 44 | [Agent Suggestion] Frontend: Move Aggregations to ETL | Done (2026-07-21) | 1.16 | - | gemini-3.1-pro-high | 7 (Performance) * 0.5 (decay) / 3 = 1.16 |
 | 33 | [Agent Suggestion] DevOps: Enforce QA Guardrails & Trivy Security Checks | Open | 1.00 | - | gemini-3.1-pro-high | 8 (High risk) * 0.25 (decay) / 2 = 1.00 |
 | 40 | [Agent Suggestion] Accessibility: Use Native HTML5 Dialog | Open | 0.66 | - | gemini-3.1-pro-high | 4 (Native accessibility) * 0.5 (decay) / 3 = 0.66 |
 | 38 | [Agent Suggestion] Frontend: Lazy Load Chart Components | Open | 0.58 | - | gemini-3.1-pro-high | 7 (Performance) * 0.25 (decay) / 3 = 0.58 |
@@ -306,7 +306,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 44. [Agent Suggestion] Frontend: Move Aggregations to ETL
 **Description:** Refactor `WorkSlicesChart.jsx` and `CollaborationChart.jsx` to consume pre-aggregated data metrics rather than running expensive `.reduce()` operations on the raw dataset locally.
 **Context:** Improves React dashboard rendering performance and Time-To-Interactive (TTI).
-**Status:** Open
+**Done note (2026-07-21):** Refactored React charts to use `useMemo` hooks with single-pass hash-map iterations, which fixes the sync rendering bottleneck while maintaining dynamic UI filter capabilities.
 
 ### 45. [Agent Suggestion] Data Pipeline: Sync Local JSON Data
 **Description:** Re-run the local `etl.py` script to update `pizza_metrics.json` so that the local data matches the new mathematical formulas (specifically fixing the mathematically impossible Pizza Party Index scores in the local environment).
