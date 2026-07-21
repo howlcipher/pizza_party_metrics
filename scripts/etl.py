@@ -106,7 +106,7 @@ class VelocityAnalyzer:
                 
                 repo_pr_times, repo_turnaround_times = [], []
                 for pr in pulls:
-                    h = self.resolution_hours(pr)
+                    h = self._resolution_hours(pr)
                     if h is not None:
                         repo_pr_times.append(h)
                     if pr.get('number'):
