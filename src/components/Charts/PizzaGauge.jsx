@@ -14,14 +14,32 @@ const srOnlyStyle = {
 };
 
 const PizzaGauge = ({ data }) => {
-  // Calculate average index
-  const avgIndex = data.length > 0 
-    ? data.reduce((acc, curr) => acc + curr.pizza_party_index, 0) / data.length 
-    : 0;
-  
-  // Assume max index is 40 for the gauge (based on typical 20-30 averages)
+  // Find the best option (highest average index among work setups) instead of flat mean
+  let bestScore = 0;
+  let bestSetup = "No Data";
+
+  if (data.length > 0) {
+    const setupScores = data.reduce((acc, curr) => {
+      if (!acc[curr.work_setup_category]) {
+        acc[curr.work_setup_category] = { total: 0, count: 0 };
+      }
+      acc[curr.work_setup_category].total += curr.pizza_party_index;
+      acc[curr.work_setup_category].count += 1;
+      return acc;
+    }, {});
+
+    for (const [setup, stats] of Object.entries(setupScores)) {
+      const avg = stats.total / stats.count;
+      if (avg > bestScore) {
+        bestScore = avg;
+        bestSetup = setup;
+      }
+    }
+  }
+
+  // Assume max index is 40 for the gauge
   const maxIndex = 40;
-  const normalizedValue = Math.min(avgIndex, maxIndex);
+  const normalizedValue = Math.min(bestScore, maxIndex);
   const remainingValue = maxIndex - normalizedValue;
 
   const gaugeData = [
@@ -32,21 +50,19 @@ const PizzaGauge = ({ data }) => {
   const COLORS = ['#16a34a', '#f0e6d2']; // Green (good performance) and dough color
 
   // Determine environment optimization based on score
-  let optimizationLabel = "⚖️ Hybrid-Balanced";
+  let optimizationLabel = `Best: ${bestSetup}`;
   let optimizationColor = "text-yellow-600";
-  if (avgIndex >= 22) {
-    optimizationLabel = "🏠 Remote-Optimized (High Focus)";
+  if (bestScore >= 22) {
     optimizationColor = "text-green-600";
-  } else if (avgIndex < 18 && avgIndex > 0) {
-    optimizationLabel = "🏢 Office-Optimized (High Sync/Meetings)";
+  } else if (bestScore < 18 && bestScore > 0) {
     optimizationColor = "text-red-600";
   }
 
   const renderCustomNeedle = () => {
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mt-20">
-        <span className="text-5xl font-extrabold text-gray-800 drop-shadow-md">{avgIndex.toFixed(1)}</span>
-        <span className="text-sm font-extrabold text-gray-500 uppercase mt-1">Avg Index</span>
+        <span className="text-5xl font-extrabold text-gray-800 drop-shadow-md">{bestScore.toFixed(1)}</span>
+        <span className="text-sm font-extrabold text-gray-500 uppercase mt-1">Top Score</span>
         <span className={`text-xs font-bold mt-2 px-3 py-1 bg-white border border-gray-200 rounded-full shadow-sm ${optimizationColor}`}>
           {optimizationLabel}
         </span>
@@ -60,12 +76,12 @@ const PizzaGauge = ({ data }) => {
         The Pizza Party Index Gauge
       </h3>
       <p className="text-sm text-gray-600 mb-4 font-bold">
-        Collaboration Speed + Focus Hours. Higher scores = Better suited for Remote work. Lower scores = Better suited for Onsite/Meetings.
+        Displays the highest-scoring Work Setup for your filters. Higher scores = Better performance.
       </p>
       
-      <div className="flex-grow relative min-h-[200px]" role="img" aria-label={`Pizza Party Index Gauge. Current average index is ${avgIndex.toFixed(1)} out of 40.`}>
+      <div className="flex-grow relative min-h-[200px]" role="img" aria-label={`Pizza Party Index Gauge. Top score is ${bestScore.toFixed(1)} out of 40.`}>
         <div style={srOnlyStyle}>
-          This gauge displays the Pizza Party Index, reflecting collaboration speed and actual productivity. The current average index is {avgIndex.toFixed(1)} out of 40.
+          This gauge displays the highest Pizza Party Index among work setups. The top score is {bestScore.toFixed(1)} out of 40 for {bestSetup}.
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
