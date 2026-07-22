@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { X, Info } from 'lucide-react';
 
-const MethodologyModal = ({ isOpen, onClose }) => {
+const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const dialogRef = useRef(null);
 
   useEffect(() => {

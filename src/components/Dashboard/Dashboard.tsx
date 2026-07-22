@@ -8,9 +8,10 @@ const WorkSlicesChart = lazy(() => import('../Charts/WorkSlicesChart'));
 const CollaborationChart = lazy(() => import('../Charts/CollaborationChart'));
 const DemographicsChart = lazy(() => import('../Charts/DemographicsChart'));
 
+
 const Dashboard = () => {
   const [rawData, setRawData] = useState([]);
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<Record<string, string>>({
     industry: '',
     age_group: '',
     work_setup: '' // this will filter by work_setup_category

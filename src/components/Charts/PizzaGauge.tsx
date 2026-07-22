@@ -1,3 +1,4 @@
+import { PizzaData } from "../../types";
 import React, { useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
@@ -13,7 +14,7 @@ const srOnlyStyle = {
   border: 0,
 };
 
-const PizzaGauge = ({ data }) => {
+const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
   const { bestScore, bestSetup } = useMemo(() => {
     let topScore = 0;
     let topSetup = "No Data";

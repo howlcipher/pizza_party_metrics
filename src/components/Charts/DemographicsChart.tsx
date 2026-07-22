@@ -1,3 +1,4 @@
+import { PizzaData } from "../../types";
 import React, { useMemo } from 'react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
@@ -16,7 +17,7 @@ const srOnlyStyle = {
   border: 0,
 };
 
-const DemographicsChart = ({ data }) => {
+const DemographicsChart = ({ data }: { data: PizzaData[] }) => {
   const { ageData, genderData } = useMemo(() => {
     if (!data || data.length === 0) return { ageData: [], genderData: [] };
 
