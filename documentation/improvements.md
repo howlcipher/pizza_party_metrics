@@ -68,8 +68,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 28 | Data Pipeline: Ingest Additional Relevant Datasets for Higher Accuracy | ⚠️ below floor | 0.25 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Improves core metric accuracy) * 0.125 (decay) / 4 = 0.25 |
 | 9 | [Agent Suggestion] Data Pipeline: Ingestion Layer Quality Checks | Done (2026-07-21) | 0.25 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Stops bad pipelines) * 0.125 (decay) / 4 = 0.25 |
 | 10 | [Agent Suggestion] Data Pipeline: Vectorize Pandas Operations | Done (2026-07-21) | 0.22 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Idiomatic & fast) * 0.125 (decay) / 4 = 0.22 |
-| 26 | UI/UX: Metric Tooltips & Explanations | ⚠️ below floor | 0.07 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Clearer metrics) * 0.03125 (decay) / 3 = 0.07 |
-| 27 | UI/UX: Mobile Responsiveness | ⚠️ below floor | 0.06 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Usability) * 0.03125 (decay) / 4 = 0.06 |
+| 26 | UI/UX: Metric Tooltips & Explanations | Done (2026-07-21) | 0.07 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Clearer metrics) * 0.03125 (decay) / 3 = 0.07 |
+| 27 | UI/UX: Mobile Responsiveness | Done (2026-07-21) | 0.06 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Usability) * 0.03125 (decay) / 4 = 0.06 |
 | 17 | Theme Options: Light, Dark, and Color-blind Modes | Done (2026-07-21) | 0.05 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (high UX value) * 0.03125 (decay) / 4 = 0.05 |
 | 21 | Stereotype Pizza Parlor Aesthetic Overhaul | Done (2026-07-21) | 0.04 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (Fun branding) * 0.03125 (decay) / 5 = 0.04 |
 ## Details
@@ -212,14 +212,12 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 26. UI/UX: Metric Tooltips & Explanations
 **Description:** Explain the metrics better to the user by adding tooltips or an explanatory modal/section. Users should understand exactly what each chart represents without needing to guess.
 **Context:** Improves the overall user experience and ensures the data transparency goals are actually understood by end users.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
+**Done note (2026-07-21):** Created a reusable `TooltipInfo` component and integrated it into all charts to explain metrics clearly.
 
 ### 27. UI/UX: Mobile Responsiveness
 **Description:** Make sure the dashboard looks good and functions well on mobile devices. Ensure charts resize correctly, navigation is accessible, and the layout doesn't break on smaller screens.
 **Context:** A core requirement for modern web applications. Currently, the dashboard may only be optimized for desktop displays.
-**Status:** ⚠️ below floor
-**Scoring Note (2026-07-21):** Re-scored below 0.5 ROI floor due to theme decay.
+**Done note (2026-07-21):** Updated Tailwind grid layouts, flex containers, and ResponsiveContainers to scale gracefully and ensure layout remains clean on mobile devices.
 
 ### 28. Data Pipeline: Ingest Additional Relevant Datasets for Higher Accuracy
 **Description:** Expand the data ingestion pipeline to include more diverse and relevant datasets (e.g., from additional repositories, surveys, or productivity APIs) to increase the accuracy and reliability of our collaboration and velocity metrics.
