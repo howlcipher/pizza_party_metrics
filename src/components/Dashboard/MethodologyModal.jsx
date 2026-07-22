@@ -73,7 +73,7 @@ const MethodologyModal = ({ isOpen, onClose }) => {
             <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700 font-medium">
               <li><strong>Productivity:</strong> Calculated as base Focus Hours, adjusted by the industry's meeting overhead.</li>
               <li><strong>Collaboration:</strong> Derived from asynchronous online collaboration metrics (e.g., turnaround times on digital approvals, document reviews, or task resolutions). Faster turnarounds boost the score!</li>
-              <li><strong>The Formula:</strong> <code>Focus Hours + (Collaboration Score * 2.0)</code></li>
+              <li><strong>The Formula:</strong> <code>(Focus Hours + (Collaboration Score × 2.0), up to a max of 40)</code></li>
             </ul>
           </div>
         </section>

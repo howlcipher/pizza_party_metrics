@@ -81,6 +81,9 @@ const PizzaGauge = ({ data }) => {
       </h3>
       <p className="text-sm text-gray-600 mb-4 font-bold">
         Displays the highest-scoring Work Setup for your filters. Higher scores = Better performance.
+        <span className="block font-normal text-xs text-gray-500 mt-1">
+          Formula: Focus Hours + (Collaboration Score × 2.0), up to a max of 40.
+        </span>
       </p>
       
       <div className="flex-grow relative min-h-[200px]" role="figure" aria-label={`Pizza Party Index Gauge. Top score is ${bestScore.toFixed(1)} out of 40.`}>
