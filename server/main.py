@@ -7,7 +7,10 @@ from fastapi.middleware.cors import CORSMiddleware
 # Add the project root to sys.path to import scripts.etl
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from scripts.etl import fetch_work_setup_velocities, download_wfh_data, process_data  # noqa: E402
+from scripts.etl.github_client import GitHubClient  # noqa: E402
+from scripts.etl.velocity_analyzer import VelocityAnalyzer  # noqa: E402
+from scripts.etl.wfh_extractor import WFHDataExtractor  # noqa: E402
+from scripts.etl.metrics_processor import MetricsProcessor  # noqa: E402
 
 app = FastAPI(title="Pizza Party Metrics API")
 
@@ -27,21 +30,24 @@ CACHE_TTL = 3600 * 12  # 12 hours
 
 
 @app.get("/api/metrics")
-def get_metrics():
+async def get_metrics():
     current_time = time.time()
     if CACHE["data"] is not None and (current_time - CACHE["timestamp"]) < CACHE_TTL:
         return CACHE["data"]
 
     # Run ETL
-    velocities, vel_metadata = fetch_work_setup_velocities()
-    wfh_file = download_wfh_data()
-    final_df = process_data(wfh_file, velocities)
+    client = GitHubClient()
+    analyzer = VelocityAnalyzer(client)
+    velocities, turnarounds, metadata = await analyzer.analyze()
+    wfh_file = WFHDataExtractor.download()
+    processor = MetricsProcessor(wfh_file, velocities, turnarounds)
+    final_df = processor.process()
     
     data = final_df.to_dict(orient="records")
     
     result = {
         "metrics": data,
-        "metadata": vel_metadata
+        "metadata": metadata
     }
     
     CACHE["data"] = result
