@@ -7,15 +7,13 @@ from unittest.mock import MagicMock, patch, AsyncMock
 import pandas as pd
 import pytest
 
-from scripts.etl import (
-    FALLBACK_VELOCITIES,
-    _load_cache,
-    _resolution_hours,
-    _save_cache,
-    download_wfh_data,
-    fetch_work_setup_velocities,
-    process_data,
-)
+from scripts.config import FALLBACK_VELOCITIES
+from scripts.etl.github_client import GitHubClient, _load_cache, _save_cache
+from scripts.etl.velocity_analyzer import VelocityAnalyzer
+from scripts.etl.wfh_extractor import WFHDataExtractor
+from scripts.etl.metrics_processor import MetricsProcessor
+import asyncio
+
 
 def _make_closed_pr(created: str, merged: str | None, closed: str | None = None) -> dict:
     return {'created_at': created, 'merged_at': merged, 'closed_at': closed or merged or created}
@@ -26,21 +24,21 @@ def _make_closed_issue(created: str, closed: str) -> dict:
 class TestResolutionHours(unittest.TestCase):
     def test_pr_uses_merged_at_over_closed_at(self):
         pr = _make_closed_pr('2026-01-01T00:00:00Z', '2026-01-01T05:00:00Z', '2026-01-01T10:00:00Z')
-        self.assertAlmostEqual(_resolution_hours(pr), 5.0, places=2)
+        self.assertAlmostEqual(VelocityAnalyzer(GitHubClient())._resolution_hours(pr), 5.0, places=2)
 
     def test_pr_without_merged_at_falls_back_to_closed_at(self):
         pr = {'created_at': '2026-01-01T00:00:00Z', 'merged_at': None, 'closed_at': '2026-01-01T08:00:00Z'}
-        self.assertAlmostEqual(_resolution_hours(pr), 8.0, places=2)
+        self.assertAlmostEqual(VelocityAnalyzer(GitHubClient())._resolution_hours(pr), 8.0, places=2)
 
     def test_below_minimum_returns_none(self):
-        self.assertIsNone(_resolution_hours(_make_closed_pr('2026-01-01T00:00:00Z', '2026-01-01T00:00:01Z')))
+        self.assertIsNone(VelocityAnalyzer(GitHubClient())._resolution_hours(_make_closed_pr('2026-01-01T00:00:00Z', '2026-01-01T00:00:01Z')))
 
     def test_above_maximum_returns_none(self):
-        self.assertIsNone(_resolution_hours(_make_closed_pr('2024-01-01T00:00:00Z', '2026-01-01T00:00:00Z')))
+        self.assertIsNone(VelocityAnalyzer(GitHubClient())._resolution_hours(_make_closed_pr('2024-01-01T00:00:00Z', '2026-01-01T00:00:00Z')))
 
     def test_missing_dates_returns_none(self):
-        self.assertIsNone(_resolution_hours({'created_at': None, 'closed_at': None}))
-        self.assertIsNone(_resolution_hours({}))
+        self.assertIsNone(VelocityAnalyzer(GitHubClient())._resolution_hours({'created_at': None, 'closed_at': None}))
+        self.assertIsNone(VelocityAnalyzer(GitHubClient())._resolution_hours({}))
 
 class TestCacheHelpers(unittest.TestCase):
     def setUp(self):
@@ -63,19 +61,19 @@ class TestCacheHelpers(unittest.TestCase):
         self.assertIsNone(_load_cache('/nonexistent/path/cache.json'))
 
 class TestDownloadWfhData(unittest.TestCase):
-    @patch('scripts.etl.requests.get')
+    @patch('scripts.etl.wfh_extractor.requests.get')
     def test_skips_download_if_file_exists(self, mock_get):
         import tempfile
         with tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False) as tmp:
             tmp_path = tmp.name
         try:
-            result = download_wfh_data(filepath=tmp_path)
+            result = WFHDataExtractor.download(filepath=tmp_path)
             mock_get.assert_not_called()
             self.assertEqual(result, tmp_path)
         finally:
             os.unlink(tmp_path)
 
-    @patch('scripts.etl.requests.get')
+    @patch('scripts.etl.wfh_extractor.requests.get')
     def test_tries_fallback_urls(self, mock_get):
         import tempfile
         fail_resp = MagicMock()
@@ -87,7 +85,7 @@ class TestDownloadWfhData(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmpdir:
             out_path = os.path.join(tmpdir, 'wfh.xlsx')
-            result = download_wfh_data(filepath=out_path)
+            result = WFHDataExtractor.download(filepath=out_path)
             self.assertEqual(result, out_path)
             self.assertTrue(os.path.exists(out_path))
             self.assertEqual(mock_get.call_count, 2)
@@ -104,7 +102,7 @@ class TestProcessData(unittest.TestCase):
             velocities = {'Remote-First': 0.07, 'Hybrid': 0.05, 'Onsite-Heavy': 0.03}
         if turnarounds is None:
             turnarounds = {'Remote-First': 12.0, 'Hybrid': 24.0, 'Onsite-Heavy': 110.0}
-        return process_data(self.WFH_FILE, velocities, turnarounds)
+        return MetricsProcessor(self.WFH_FILE, velocities, turnarounds).process()
 
     def test_record_count(self):
         self.assertEqual(len(self._run()), 170)
@@ -118,7 +116,7 @@ class TestProcessData(unittest.TestCase):
         self.assertEqual(set(self._run()['work_setup_category']), set(FALLBACK_VELOCITIES.keys()))
 
     def test_scalar_velocity_normalised(self):
-        df = process_data(self.WFH_FILE, {}, {})
+        df = MetricsProcessor(self.WFH_FILE, {}, {}).process()
         self.assertEqual(set(df['work_setup_category']), set(FALLBACK_VELOCITIES.keys()))
 
     def test_focus_hours_positive(self):
