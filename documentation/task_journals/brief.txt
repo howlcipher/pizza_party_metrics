@@ -1,11 +1,20 @@
-Please implement the following refactor in the `pizza_party_metrics` repository:
+Objective:
+Add a leaderboard or benchmark comparison component using the `industry_profile` array from `/run/media/system/tallgeese/dev/pizza_party_metrics/src/data/advanced_collaboration_insights.json`.
 
-**Goal:** Address issue #49: "Direct User Feedback: Display Pizza Party Index Math"
-**Description:** Add a tooltip, subtitle, or Methodology Modal note to explain exactly how the Pizza Party Index is calculated: `(focus_hours + collaboration_score * 2.0)`, up to a max of 40.
+Context:
+This should allow users to compare their selected filters against baseline industry averages for Focus Hours and Meeting Overhead.
+The `Dashboard` component currently has a `filters` state. You can pass `filters.industry` as a prop to highlight the selected industry.
 
-**Instructions:**
-1. Open `/run/media/system/tallgeese/dev/pizza_party_metrics/src/components/Charts/PizzaGauge.jsx`.
-2. Find the description paragraph that says: "Displays the highest-scoring Work Setup for your filters. Higher scores = Better performance."
-3. Add a line or subtitle under it (or in a tooltip next to the title) stating: `Formula: Focus Hours + (Collaboration Score × 2.0), up to a max of 40.`
-4. Also open `/run/media/system/tallgeese/dev/pizza_party_metrics/src/components/Dashboard/MethodologyModal.jsx` and add this exact formula math `(Focus Hours + (Collaboration Score × 2.0), up to a max of 40)` to the explanation for the Pizza Party Index section so it is completely transparent.
-5. Save the files cleanly. You do not need to run a build or commit.
+Files involved:
+- `/run/media/system/tallgeese/dev/pizza_party_metrics/src/components/Charts/IndustryBenchmarksChart.tsx` (Create this file)
+- `/run/media/system/tallgeese/dev/pizza_party_metrics/src/components/Dashboard/Dashboard.tsx` (Add `IndustryBenchmarksChart` lazy load and embed it in the UI, below `DemographicsChart`)
+- `/run/media/system/tallgeese/dev/pizza_party_metrics/src/data/advanced_collaboration_insights.json` (Source of the data)
+
+Tasks:
+1. Create `/run/media/system/tallgeese/dev/pizza_party_metrics/src/components/Charts/IndustryBenchmarksChart.tsx`. It should import `advanced_collaboration_insights.json` and read the `industry_profile` data. Render a bar chart or leaderboard UI comparing `avg_focus_hours` and `avg_meeting_overhead` across industries. Sort the data nicely.
+2. In `/run/media/system/tallgeese/dev/pizza_party_metrics/src/components/Dashboard/Dashboard.tsx`, lazy import `IndustryBenchmarksChart` and place it inside the grid below `DemographicsChart`. You can pass `selectedIndustry={filters.industry}`. Make it span an appropriate number of columns.
+3. Keep styling consistent with existing charts (e.g., Recharts, TailwindCSS).
+
+Constraints:
+- Only edit the mentioned files. Do not modify other charts.
+- Use Recharts for charts if you need to, or just Tailwind for a leaderboard.
