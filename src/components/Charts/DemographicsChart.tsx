@@ -4,6 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
   PieChart, Pie, Cell, Legend
 } from 'recharts';
+import { Users } from 'lucide-react';
 import TooltipInfo from '../TooltipInfo';
 
 const srOnlyStyle: React.CSSProperties = {
@@ -65,7 +66,8 @@ const DemographicsChart = ({ data }: { data: PizzaData[] }) => {
 
   return (
     <div className="pizza-card p-5 h-full flex flex-col gap-6">
-      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center">
+      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center gap-2">
+        <Users className="text-red-600 w-6 h-6 shrink-0" />
         Demographic Distribution & Work Setup
         <TooltipInfo content={
           <div>

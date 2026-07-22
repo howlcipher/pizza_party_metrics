@@ -29,10 +29,12 @@ const Header = ({ rawData = [] }) => {
   };
 
   return (
-    <header className="bg-[var(--card-bg)] border-b-8 border-[var(--chart-danger)] text-[var(--card-text)] p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.15)] relative overflow-hidden">
+    <header className="bg-[var(--card-bg)] text-[var(--card-text)] p-4 md:p-6 pb-6 md:pb-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.15)] relative overflow-hidden">
       {/* Decorative green top border */}
       <div className="absolute top-0 left-0 w-full h-2 bg-green-600"></div>
-      
+      {/* Checkered trattoria-ribbon bottom border */}
+      <div className="pizza-checker absolute bottom-0 left-0 w-full h-3 shadow-[0_-1px_3px_rgba(0,0,0,0.15)]"></div>
+
       <div className="flex items-center gap-4 relative z-10">
         <div className="bg-green-600 p-3 rounded-full text-white shadow-lg border-2 border-white transform -rotate-12">
           <Pizza size={36} fill="#ffcc00" />
@@ -67,7 +69,7 @@ const Header = ({ rawData = [] }) => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
           </span>
-          <span className="text-sm font-extrabold text-[var(--chart-primary)] uppercase">Oven is Hot</span>
+          <span className="pizza-card-title text-sm font-extrabold text-[var(--chart-primary)] uppercase">Oven is Hot</span>
         </div>
       </div>
       <MethodologyModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

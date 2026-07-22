@@ -52,55 +52,55 @@ const Dashboard = () => {
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/20 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute bottom-0 right-0 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none"></div>
           
-          <Suspense fallback={<div className="flex items-center justify-center p-12 text-amber-900 font-bold text-lg animate-pulse">Loading chart...</div>}>
+          <Suspense fallback={<div className="flex items-center justify-center gap-2 p-12 text-amber-900 font-bold text-lg"><span className="animate-spin text-2xl" style={{ display: 'inline-block' }}>🍕</span> Baking your charts...</div>}>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10">
               {/* Gauge takes 1 column */}
-              <div className="col-span-1">
+              <div className="col-span-1 min-w-0">
                 <PizzaGauge data={filteredData} />
               </div>
               
               {/* Slices of Work takes 1 column (or 2 on XL) */}
-              <div className="col-span-1 xl:col-span-2">
+              <div className="col-span-1 xl:col-span-2 min-w-0">
                 <WorkSlicesChart data={filteredData} />
               </div>
 
               {/* Commuter Cost & Vehicle Wear Analysis */}
-              <div className="col-span-1 lg:col-span-2 xl:col-span-3">
+              <div className="col-span-1 lg:col-span-2 xl:col-span-3 min-w-0">
                 <CommuterCostCard data={filteredData} selectedWorkSetup={filters.work_setup} />
               </div>
 
               {/* Commute Time Opportunity Cost Card */}
-              <div className="col-span-1 lg:col-span-2 xl:col-span-3">
+              <div className="col-span-1 lg:col-span-2 xl:col-span-3 min-w-0">
                 <CommuteTimeCard data={filteredData} selectedWorkSetup={filters.work_setup} />
               </div>
 
               {/* Commute CO2 & Environmental Impact Card */}
-              <div className="col-span-1 lg:col-span-2 xl:col-span-3">
+              <div className="col-span-1 lg:col-span-2 xl:col-span-3 min-w-0">
                 <CommuteCO2Card data={filteredData} selectedWorkSetup={filters.work_setup} />
               </div>
 
               {/* Collaboration Chart takes 1 or 2 cols */}
-              <div className="col-span-1 xl:col-span-2">
+              <div className="col-span-1 xl:col-span-2 min-w-0">
                 <CollaborationChart data={filteredData} />
               </div>
 
               {/* Meeting vs. Maker Time Analysis Chart */}
-              <div className="col-span-1 xl:col-span-2">
+              <div className="col-span-1 xl:col-span-2 min-w-0">
                 <MakerVsMeetingChart data={filteredData} />
               </div>
 
               {/* Demographics Chart takes full width or remaining cols */}
-              <div className="col-span-1 lg:col-span-2 xl:col-span-1">
+              <div className="col-span-1 lg:col-span-2 xl:col-span-1 min-w-0">
                 <DemographicsChart data={filteredData} />
               </div>
 
               {/* Industry Benchmarks & Leaderboard Chart */}
-              <div className="col-span-1 lg:col-span-2 xl:col-span-3">
+              <div className="col-span-1 lg:col-span-2 xl:col-span-3 min-w-0">
                 <IndustryBenchmarksChart selectedIndustry={filters.industry} />
               </div>
 
               {/* Statistical Insights & Key Takeaways Card */}
-              <div className="col-span-1 lg:col-span-2 xl:col-span-3">
+              <div className="col-span-1 lg:col-span-2 xl:col-span-3 min-w-0">
                 <StatisticalInsightsCard />
               </div>
             </div>
@@ -109,7 +109,7 @@ const Dashboard = () => {
 
         {filteredData.length === 0 && (
           <div className="bg-red-100 border-4 border-red-600 p-6 rounded-xl text-center shadow-md">
-            <p className="text-red-800 font-extrabold text-2xl mb-4 font-serif italic">Mamma mia! No slices left! Try adjusting your filters.</p>
+            <p className="text-red-800 font-extrabold text-2xl mb-4" style={{ fontFamily: 'var(--font-brand)' }}>Mamma mia! No slices left! Try adjusting your filters.</p>
             <button 
               onClick={() => setFilters({ industry: '', age_group: '', work_setup: '' })}
               className="px-8 py-3 bg-green-600 hover:bg-green-500 text-white rounded-full font-bold text-lg transition-colors cursor-pointer shadow-lg border-2 border-green-800"
@@ -120,8 +120,9 @@ const Dashboard = () => {
         )}
       </main>
       
-      <footer className="text-center py-8 text-gray-800 text-sm font-bold mt-auto space-y-2 bg-[var(--card-bg)] border-t-4 border-green-600 backdrop-blur-sm">
-        <p className="text-lg">Telemetry generated with 🧀 & 🍅</p>
+      <footer className="text-center pt-8 pb-6 text-gray-800 text-sm font-bold mt-auto space-y-2 bg-[var(--card-bg)] backdrop-blur-sm relative">
+        <div className="pizza-checker absolute top-0 left-0 w-full h-3 shadow-[0_1px_3px_rgba(0,0,0,0.15)]"></div>
+        <p className="text-xl text-[var(--chart-danger)]" style={{ fontFamily: 'var(--font-brand)' }}>Telemetry generated with 🧀 &amp; 🍅</p>
         <p className="text-xs font-normal">
           <strong>Live Data Sources:</strong> <a href="https://wfhresearch.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-700">WFH Research (SWAA)</a> &amp; <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-700">GitHub REST API</a>
         </p>
@@ -131,6 +132,7 @@ const Dashboard = () => {
             View Source Code on GitHub
           </a>
         </p>
+        <p className="text-xs font-normal text-gray-500 italic pt-1">Grazie mille &amp; buon appetito! 🍕</p>
       </footer>
     </div>
   );

@@ -1,6 +1,7 @@
 import { PizzaData } from "../../types";
 import React, { useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { Gauge } from 'lucide-react';
 import TooltipInfo from '../TooltipInfo';
 
 const srOnlyStyle: React.CSSProperties = {
@@ -85,7 +86,8 @@ const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
 
   return (
     <div className="pizza-card p-5 h-full flex flex-col relative">
-      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center">
+      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center gap-2">
+        <Gauge className="text-amber-600 w-6 h-6 shrink-0" />
         The Pizza Party Index Gauge
         <TooltipInfo content={
           <div>

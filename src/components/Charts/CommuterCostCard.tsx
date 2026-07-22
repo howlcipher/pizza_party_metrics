@@ -379,7 +379,7 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-3 text-xs font-mono">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono">
                     <span className="text-gray-500">
                       ${setup.dailyCost.toFixed(2)}/day
                     </span>

@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
+import { GitPullRequest } from 'lucide-react';
 import TooltipInfo from '../TooltipInfo';
 import velocityMetadata from '../../data/velocity_metadata.json';
 
@@ -44,7 +45,8 @@ const CollaborationChart = ({ data }: { data: PizzaData[] }) => {
 
   return (
     <div className="pizza-card p-5 h-full flex flex-col">
-      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center">
+      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center gap-2">
+        <GitPullRequest className="text-green-600 w-6 h-6 shrink-0" />
         Async Collaboration Velocity
         <TooltipInfo content={
           <div>

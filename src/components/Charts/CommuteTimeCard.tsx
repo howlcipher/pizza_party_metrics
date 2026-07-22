@@ -660,7 +660,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                     )}
                   </div>
 
-                  <div className="flex items-center gap-4 text-xs font-mono">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono">
                     <span className="text-gray-500">
                       {(dailyCommuteHours * setup.days).toFixed(1)} hrs/wk
                     </span>

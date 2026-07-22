@@ -3,6 +3,7 @@ import { PizzaData } from '../../types';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
+import { Clock } from 'lucide-react';
 import TooltipInfo from '../TooltipInfo';
 
 const srOnlyStyle: React.CSSProperties = {
@@ -59,7 +60,8 @@ const MakerVsMeetingChart = ({ data }: { data: PizzaData[] }) => {
 
   return (
     <div className="pizza-card p-5 h-full flex flex-col">
-      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center">
+      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center gap-2">
+        <Clock className="text-green-600 w-6 h-6 shrink-0" />
         Maker vs. Meeting Time Ratio
         <TooltipInfo content={
           <div>

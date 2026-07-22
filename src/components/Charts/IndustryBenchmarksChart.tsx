@@ -257,7 +257,7 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
 
       {/* Sorting & Filter bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gray-50 p-3 rounded border border-gray-200">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto min-w-0">
           <label htmlFor="benchmark-sort" className="text-xs font-bold uppercase text-gray-700 tracking-wider">
             Sort Rankings By:
           </label>
@@ -265,7 +265,7 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
             id="benchmark-sort"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
-            className="text-xs font-bold bg-white border border-gray-300 rounded px-2.5 py-1.5 text-gray-800 focus:ring-2 focus:ring-amber-500 cursor-pointer"
+            className="w-full sm:w-auto min-w-0 text-xs font-bold bg-white border border-gray-300 rounded px-2.5 py-1.5 text-gray-800 focus:ring-2 focus:ring-amber-500 cursor-pointer"
           >
             <option value="focus">Focus Hours (Highest First)</option>
             <option value="meeting">Meeting Overhead (Lowest First)</option>
