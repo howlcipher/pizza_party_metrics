@@ -30,7 +30,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 58 | Data Analyst Insight: Commute CO2 / Environmental Impact | Done (2026-07-22) | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High Value) * 1 (new capability) / 4 = 2.00 |
 | 59 | Data Analyst Insight: Commute Fatigue vs. Deep Work Capacity | Done (2026-07-22) | 2.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High Value) * 1 (new capability) / 4 = 2.00 |
 | 54 | Data Pipeline & UI: Calculate and Display Optimal Setup by Industry | Done (2026-07-22) | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1 (new capability) / 4 = 1.75 |
-| 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | 📅 Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 1 (decay) / 4 = 1.75 |
+| 19 | [Agent Suggestion] Meeting vs. Maker Time Analysis | Done (2026-07-22) | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Actionable insight) * 1 (decay) / 4 = 1.75 |
 | 11 | [Agent Suggestion] Async Collaboration Velocity Metric | 📅 Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Proves thesis) * 1 (decay) / 5 = 1.60 |
 | 20 | Interruption & Context Switch Impact Dashboard | 📅 Pending | 1.60 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High value) * 1 (decay) / 5 = 1.60 |
 | 13 | [Agent Suggestion] Documentation & Knowledge Transfer Health | 📅 Pending | 1.40 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (Strong proxy for collab) * 1 (decay) / 5 = 1.40 |
@@ -186,7 +186,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 19. 19. [Agent Suggestion] Meeting vs. Maker Time Analysis
 **Description:** Analyze calendar data to show the ratio of uninterrupted "Maker Time" versus fragmented "Meeting Time."
 **Context:** A natural extension to the context-switching metrics that provides highly actionable insights for teams.
-**Status:** 📅 Pending
+**Done note (2026-07-22):** Created a `MakerVsMeetingChart.tsx` component that groups data by work setup category and visualizes the ratio of average uninterrupted `focus_hours` (Maker Time) versus fragmented `meeting_overhead` (Meeting Time) in a stacked bar chart. Added the chart to the dashboard.
 
 ### 20. 20. Interruption & Context Switch Impact Dashboard
 **Description:** Visualize how interruptions destroy context switching. We need to track the frequency of interruptions (e.g., Slack messages, ad-hoc calls) and correlate them with task completion times or velocity drops.

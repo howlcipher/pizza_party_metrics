@@ -9,6 +9,7 @@ const CommuterCostCard = lazy(() => import('../Charts/CommuterCostCard'));
 const CommuteTimeCard = lazy(() => import('../Charts/CommuteTimeCard'));
 const CommuteCO2Card = lazy(() => import('../Charts/CommuteCO2Card'));
 const CollaborationChart = lazy(() => import('../Charts/CollaborationChart'));
+const MakerVsMeetingChart = lazy(() => import('../Charts/MakerVsMeetingChart'));
 const DemographicsChart = lazy(() => import('../Charts/DemographicsChart'));
 const IndustryBenchmarksChart = lazy(() => import('../Charts/IndustryBenchmarksChart'));
 const StatisticalInsightsCard = lazy(() => import('../Charts/StatisticalInsightsCard'));
@@ -81,6 +82,11 @@ const Dashboard = () => {
               {/* Collaboration Chart takes 1 or 2 cols */}
               <div className="col-span-1 xl:col-span-2">
                 <CollaborationChart data={filteredData} />
+              </div>
+
+              {/* Meeting vs. Maker Time Analysis Chart */}
+              <div className="col-span-1 xl:col-span-2">
+                <MakerVsMeetingChart data={filteredData} />
               </div>
 
               {/* Demographics Chart takes full width or remaining cols */}
