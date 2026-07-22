@@ -53,8 +53,8 @@ const VEHICLE_PROFILES: Record<string, VehicleProfile> = {
     mpgLabel: '25 MPG',
     description: 'Standard gasoline passenger vehicle (~400g CO2/mile)',
     icon: Car,
-    badgeBg: 'bg-amber-100 dark:bg-amber-900/40',
-    badgeText: 'text-amber-800 dark:text-amber-300'
+    badgeBg: 'bg-amber-100',
+    badgeText: 'text-amber-800',
   },
   gas_suv: {
     id: 'gas_suv',
@@ -63,8 +63,8 @@ const VEHICLE_PROFILES: Record<string, VehicleProfile> = {
     mpgLabel: '18 MPG',
     description: 'Larger gas vehicle or light truck (~520g CO2/mile)',
     icon: Fuel,
-    badgeBg: 'bg-red-100 dark:bg-red-900/40',
-    badgeText: 'text-red-800 dark:text-red-300'
+    badgeBg: 'bg-red-100',
+    badgeText: 'text-red-800',
   },
   hybrid: {
     id: 'hybrid',
@@ -73,8 +73,8 @@ const VEHICLE_PROFILES: Record<string, VehicleProfile> = {
     mpgLabel: '45 MPG',
     description: 'High-efficiency hybrid sedan (~220g CO2/mile)',
     icon: Leaf,
-    badgeBg: 'bg-emerald-100 dark:bg-emerald-900/40',
-    badgeText: 'text-emerald-800 dark:text-emerald-300'
+    badgeBg: 'bg-emerald-100',
+    badgeText: 'text-emerald-800',
   },
   ev: {
     id: 'ev',
@@ -83,8 +83,8 @@ const VEHICLE_PROFILES: Record<string, VehicleProfile> = {
     mpgLabel: '0 Direct CO2',
     description: 'Zero tailpipe emissions (100% electric drive)',
     icon: Zap,
-    badgeBg: 'bg-cyan-100 dark:bg-cyan-900/40',
-    badgeText: 'text-cyan-800 dark:text-cyan-300'
+    badgeBg: 'bg-cyan-100',
+    badgeText: 'text-cyan-800',
   },
   transit: {
     id: 'transit',
@@ -93,8 +93,8 @@ const VEHICLE_PROFILES: Record<string, VehicleProfile> = {
     mpgLabel: 'Shared Commute',
     description: 'Public transit shared passenger emissions (~150g CO2/mile)',
     icon: Bus,
-    badgeBg: 'bg-indigo-100 dark:bg-indigo-900/40',
-    badgeText: 'text-indigo-800 dark:text-indigo-300'
+    badgeBg: 'bg-indigo-100',
+    badgeText: 'text-indigo-800',
   }
 };
 
@@ -190,18 +190,18 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
   }, [roundTripMiles, weeksPerYear, activeVehicle.co2PerMileKg, maxOnsiteAnnualCO2Kg, selectedWorkSetup]);
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded-lg p-5 lg:p-6 shadow-md transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 flex flex-col h-full relative overflow-hidden">
+    <div className="pizza-card p-5 lg:p-6 transition-all flex flex-col h-full relative overflow-hidden">
       {/* Background Decorative Accent */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 dark:bg-emerald-400/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-200 dark:border-gray-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 pizza-divider">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400">
+            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600">
               <Leaf className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-extrabold text-[var(--card-text)] dark:text-amber-100 flex items-center">
+            <h3 className="pizza-card-title text-xl font-extrabold text-[var(--card-text)] flex items-center">
               Commute CO₂ &amp; Corporate ESG Impact Analysis
               <TooltipInfo content={
                 <div className="space-y-2 text-xs">
@@ -222,7 +222,7 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
               } />
             </h3>
           </div>
-          <p className="text-sm text-[var(--card-subtext)] dark:text-gray-400 mt-1">
+          <p className="text-sm text-[var(--card-subtext)] mt-1">
             Tracks estimated carbon emissions from commuting and calculates tree offsets to support corporate ESG goals.
           </p>
         </div>
@@ -230,7 +230,7 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
         {/* Action Controls */}
         <div className="flex items-center gap-2 self-start sm:self-auto">
           {selectedWorkSetup && (
-            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500/15 text-emerald-700 border border-emerald-500/30 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               Filtered: {selectedWorkSetup} ({SETUP_DAYS_MAP[selectedWorkSetup]?.days ?? 0} days/wk)
             </span>
@@ -240,7 +240,7 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
             className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 border ${
               showCalculator
                 ? 'bg-emerald-600 text-white border-emerald-700 shadow-sm'
-                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700'
+                : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
             }`}
             aria-label="Toggle custom environmental calculator settings"
           >
@@ -252,9 +252,9 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
 
       {/* Interactive Calculator Drawer */}
       {showCalculator && (
-        <div className="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 transition-all">
+        <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 transition-all">
           <div className="flex items-center justify-between mb-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
               <Calculator className="w-4 h-4 text-emerald-500" />
               Adjust Commute &amp; Vehicle Sustainability Parameters
             </h4>
@@ -265,7 +265,7 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
                 setWeeksPerYear(50);
                 setSelectedVehicleKey('gas_avg');
               }}
-              className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline font-semibold flex items-center gap-1"
+              className="text-xs text-emerald-600 hover:underline font-semibold flex items-center gap-1"
             >
               <RotateCcw className="w-3 h-3" /> Reset Defaults
             </button>
@@ -275,10 +275,10 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
             {/* Slider 1: One-way distance */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label htmlFor="co2-distance-input" className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <label htmlFor="co2-distance-input" className="text-xs font-medium text-slate-600">
                   One-Way Commute Distance
                 </label>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white dark:bg-slate-900 border rounded text-emerald-600 dark:text-emerald-400">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white border rounded text-emerald-600">
                   {distanceMiles} mi
                 </span>
               </div>
@@ -300,10 +300,10 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
             {/* Slider 2: Office Days per Week */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label htmlFor="co2-days-input" className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <label htmlFor="co2-days-input" className="text-xs font-medium text-slate-600">
                   Office Days / Week
                 </label>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white dark:bg-slate-900 border rounded text-emerald-600 dark:text-emerald-400">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white border rounded text-emerald-600">
                   {daysPerWeek} days
                 </span>
               </div>
@@ -325,10 +325,10 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
             {/* Slider 3: Weeks per Year */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label htmlFor="co2-weeks-input" className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <label htmlFor="co2-weeks-input" className="text-xs font-medium text-slate-600">
                   Work Weeks / Year
                 </label>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white dark:bg-slate-900 border rounded text-emerald-600 dark:text-emerald-400">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white border rounded text-emerald-600">
                   {weeksPerYear} wks
                 </span>
               </div>
@@ -349,14 +349,14 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
 
             {/* Dropdown: Vehicle Fuel Efficiency & Mode */}
             <div>
-              <label htmlFor="co2-vehicle-select" className="block text-xs font-medium text-slate-600 dark:text-slate-300 mb-1">
+              <label htmlFor="co2-vehicle-select" className="block text-xs font-medium text-slate-600 mb-1">
                 Vehicle Mode &amp; Fuel Efficiency
               </label>
               <select
                 id="co2-vehicle-select"
                 value={selectedVehicleKey}
                 onChange={(e) => setSelectedVehicleKey(e.target.value)}
-                className="w-full p-2 text-xs rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-medium"
+                className="w-full p-2 text-xs rounded border border-slate-300 bg-white text-slate-800 font-medium"
               >
                 {Object.values(VEHICLE_PROFILES).map((v) => (
                   <option key={v.id} value={v.id}>
@@ -375,10 +375,10 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
         {/* Card 1: Annual CO2 Emitted */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Factory className="w-3.5 h-3.5 text-emerald-500" />
               Annual CO₂ Emitted
             </span>
@@ -388,12 +388,12 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
           </div>
           <div>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-black text-gray-900 dark:text-white tracking-tight">
+              <span className="text-3xl font-black text-gray-900 tracking-tight">
                 {annualCO2Kg.toLocaleString(undefined, { maximumFractionDigits: 0 })}
               </span>
-              <span className="text-sm font-bold text-gray-500 dark:text-gray-400">kg CO₂/yr</span>
+              <span className="text-sm font-bold text-gray-500">kg CO₂/yr</span>
             </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 flex items-center gap-1">
+            <p className="text-xs text-gray-500 mt-1 flex items-center gap-1">
               <span>≈ <strong>{annualCO2MetricTons.toFixed(2)}</strong> Metric Tons</span>
               <span className="text-gray-400">•</span>
               <span><strong>{annualCommuteMiles.toLocaleString()}</strong> miles</span>
@@ -402,75 +402,75 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
         </div>
 
         {/* Card 2: Trees Needed to Offset */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Trees className="w-3.5 h-3.5 text-green-500" />
               Trees to Offset Emissions
             </span>
-            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300">
+            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-green-100 text-green-800">
               22 kg/tree/yr
             </span>
           </div>
           <div>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-black text-emerald-600 dark:text-emerald-400 tracking-tight">
+              <span className="text-3xl font-black text-emerald-600 tracking-tight">
                 {treesNeeded.toLocaleString()}
               </span>
-              <span className="text-sm font-bold text-gray-500 dark:text-gray-400">mature trees</span>
+              <span className="text-sm font-bold text-gray-500">mature trees</span>
             </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               Number of mature trees required to absorb this annual commute CO₂.
             </p>
           </div>
         </div>
 
         {/* Card 3: CO2 Savings vs 5-Day Onsite */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 to-cyan-500" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <TrendingDown className="w-3.5 h-3.5 text-teal-500" />
               Savings vs 5-Day Onsite
             </span>
-            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300">
+            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-teal-100 text-teal-800">
               -{annualCO2SavingsPercent}% CO₂
             </span>
           </div>
           <div>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-black text-teal-600 dark:text-teal-300 tracking-tight">
+              <span className="text-3xl font-black text-teal-600 tracking-tight">
                 {annualCO2SavingsKg > 0 ? `${annualCO2SavingsKg.toLocaleString(undefined, { maximumFractionDigits: 0 })}` : '0'}
               </span>
-              <span className="text-sm font-bold text-gray-500 dark:text-gray-400">kg saved/yr</span>
+              <span className="text-sm font-bold text-gray-500">kg saved/yr</span>
             </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               Avoided emissions compared to full 5-day mandatory office attendance.
             </p>
           </div>
         </div>
 
         {/* Card 4: Trees Preserved Equivalent */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 to-lime-500" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Globe className="w-3.5 h-3.5 text-lime-500" />
               Trees Saved Equivalent
             </span>
-            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-lime-100 dark:bg-lime-900/40 text-lime-800 dark:text-lime-300">
+            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold bg-lime-100 text-lime-800">
               ESG Gain
             </span>
           </div>
           <div>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-black text-lime-600 dark:text-lime-400 tracking-tight">
+              <span className="text-3xl font-black text-lime-600 tracking-tight">
                 +{treesSaved.toLocaleString()}
               </span>
-              <span className="text-sm font-bold text-gray-500 dark:text-gray-400">trees saved/yr</span>
+              <span className="text-sm font-bold text-gray-500">trees saved/yr</span>
             </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               Equivalent to planting {treesSaved} trees per year or saving {equivalentGallonsGas} gal gas.
             </p>
           </div>
@@ -479,7 +479,7 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
 
       {/* Comparative Breakdown Table across Work Setups */}
       <div className="mt-6">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3 flex items-center gap-1.5">
+        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3 flex items-center gap-1.5">
           <ShieldCheck className="w-4 h-4 text-emerald-500" />
           ESG Impact Comparison across Work Models ({distanceMiles} mi one-way)
         </h4>
@@ -492,8 +492,8 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
                 key={setup.key}
                 className={`p-4 rounded-xl border transition-all relative ${
                   isCurrent
-                    ? 'bg-emerald-500/10 border-emerald-500 dark:bg-emerald-950/40 dark:border-emerald-500/60 shadow-md'
-                    : 'bg-white/60 dark:bg-slate-800/40 border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'bg-emerald-500/10 border-emerald-500 shadow-md'
+                    : 'bg-white/60 border-gray-200 hover:border-gray-300'
                 }`}
               >
                 {isCurrent && (
@@ -503,36 +503,36 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
                 )}
 
                 <div className="flex items-center justify-between mb-2">
-                  <h5 className="font-extrabold text-sm text-gray-900 dark:text-white">
+                  <h5 className="font-extrabold text-sm text-gray-900">
                     {setup.label}
                   </h5>
-                  <span className="text-xs font-mono font-bold text-gray-500 dark:text-gray-400">
+                  <span className="text-xs font-mono font-bold text-gray-500">
                     {setup.days} days/wk
                   </span>
                 </div>
 
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+                <p className="text-xs text-gray-500 mb-3">
                   {setup.description}
                 </p>
 
-                <div className="space-y-2 pt-2 border-t border-gray-200/80 dark:border-gray-700/80">
+                <div className="space-y-2 pt-2 border-t border-gray-200/80">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-gray-500 dark:text-gray-400">Annual CO₂ Emitted:</span>
-                    <span className="font-bold text-gray-900 dark:text-white font-mono">
+                    <span className="text-gray-500">Annual CO₂ Emitted:</span>
+                    <span className="font-bold text-gray-900 font-mono">
                       {setup.annualCO2Kg.toLocaleString(undefined, { maximumFractionDigits: 0 })} kg
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-gray-500 dark:text-gray-400">Trees to Offset:</span>
-                    <span className="font-bold text-emerald-600 dark:text-emerald-400 font-mono">
+                    <span className="text-gray-500">Trees to Offset:</span>
+                    <span className="font-bold text-emerald-600 font-mono">
                       {setup.treesNeeded} trees
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-gray-500 dark:text-gray-400">Annual CO₂ Avoided:</span>
-                    <span className={`font-bold font-mono ${setup.co2SavingsKg > 0 ? 'text-teal-600 dark:text-teal-400' : 'text-gray-400'}`}>
+                    <span className="text-gray-500">Annual CO₂ Avoided:</span>
+                    <span className={`font-bold font-mono ${setup.co2SavingsKg > 0 ? 'text-teal-600' : 'text-gray-400'}`}>
                       {setup.co2SavingsKg > 0 ? `-${Math.round(setup.co2SavingsKg).toLocaleString()} kg` : 'Baseline'}
                     </span>
                   </div>
@@ -544,12 +544,12 @@ const CommuteCO2Card: React.FC<CommuteCO2CardProps> = ({
       </div>
 
       {/* Corporate ESG & Environmental Takeaway Footer */}
-      <div className="mt-5 p-3.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div className="mt-5 p-3.5 rounded-lg bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 shrink-0">
+          <div className="p-1.5 rounded-full bg-emerald-500/20 text-emerald-600 shrink-0">
             <Award className="w-4 h-4" />
           </div>
-          <p className="text-xs text-emerald-900 dark:text-emerald-200">
+          <p className="text-xs text-emerald-900">
             <strong>ESG Strategic Insight:</strong> Transitioning from 5-day onsite to a <strong>{daysPerWeek}-day hybrid model</strong> reduces individual employee commute CO₂ emissions by <strong>{annualCO2SavingsPercent}%</strong>, offsetting <strong>{treesSaved} trees per employee each year</strong>.
           </p>
         </div>

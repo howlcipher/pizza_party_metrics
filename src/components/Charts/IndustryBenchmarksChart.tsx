@@ -114,11 +114,11 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
   }, [rawProfiles]);
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded p-5 shadow-sm h-full flex flex-col gap-6 border">
+    <div className="pizza-card p-5 h-full flex flex-col gap-6">
       {/* Header section */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pizza-divider pb-4">
         <div>
-          <h3 className="text-xl font-bold text-[var(--card-text)] flex items-center gap-2">
+          <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] flex items-center gap-2">
             <Trophy className="text-amber-500 w-6 h-6 inline-block shrink-0" />
             Industry Collaboration Benchmarks & Leaderboard
             <TooltipInfo content={
@@ -181,7 +181,7 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
                 </span>
                 <span className="text-xs font-bold text-amber-900">Rank #{selectedRank} of {rawProfiles.length} in Focus Time</span>
               </div>
-              <h4 className="text-2xl font-black text-amber-950 font-serif">
+              <h4 className="pizza-card-title text-2xl font-bold text-amber-950">
                 {selectedProfile.industry}
               </h4>
             </div>
@@ -338,7 +338,7 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
                     const optimalSetup = bestSetupMap[item.industry] || 'N/A';
                     return (
                       <div className="bg-white p-3 border-2 border-amber-500 rounded-lg shadow-xl text-xs font-sans text-gray-900">
-                        <div className="font-extrabold text-sm border-b border-gray-200 pb-1 mb-2 text-amber-900 flex items-center justify-between gap-2">
+                        <div className="font-extrabold text-sm pizza-divider pb-1 mb-2 text-amber-900 flex items-center justify-between gap-2">
                           <span>{item.industry}</span>
                           {isSelected && <span className="bg-amber-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">SELECTED</span>}
                         </div>
@@ -408,7 +408,7 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
           <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-xs">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="bg-gray-100/90 text-gray-700 border-b border-gray-200 uppercase font-extrabold tracking-wider">
+                <tr className="bg-gray-100/90 text-gray-700 pizza-divider uppercase font-extrabold tracking-wider">
                   <th className="py-3 px-4 w-16 text-center">Rank</th>
                   <th className="py-3 px-4">Industry Sector</th>
                   <th className="py-3 px-4">Focus Hours / Wk</th>

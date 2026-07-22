@@ -49,7 +49,7 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       <div className="sticky top-0 bg-white border-b-4 border-red-200 p-4 flex justify-between items-center z-10 shadow-sm">
         <div className="flex items-center gap-3">
           <Info className="text-red-600" size={24} />
-          <h2 className="text-2xl font-extrabold text-red-800 font-serif">The Secret Recipe (Methodology)</h2>
+          <h2 className="pizza-card-title text-2xl font-bold text-red-800">The Secret Recipe (Methodology)</h2>
         </div>
         <button 
           onClick={onClose}
@@ -62,7 +62,7 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       
       <div className="p-6 space-y-6 text-gray-800 text-sm leading-relaxed font-medium">
         <section>
-          <h3 className="text-xl font-extrabold text-red-800 mb-2 flex items-center gap-2 font-serif italic">
+          <h3 className="text-xl font-extrabold text-red-800 mb-2 flex items-center gap-2 pizza-card-title">
             <span className="text-xl">🍕</span> Pizza Party Index (PPI)
           </h3>
           <div className="bg-white p-4 rounded-lg border-2 border-green-600 shadow-sm">
@@ -79,7 +79,7 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         </section>
 
         <section>
-          <h3 className="text-xl font-extrabold text-red-800 mb-2 flex items-center gap-2 font-serif italic">
+          <h3 className="text-xl font-extrabold text-red-800 mb-2 flex items-center gap-2 pizza-card-title">
             <span className="text-xl">⚡</span> Task Completion Rate
           </h3>
           <div className="bg-white p-4 rounded-lg border-2 border-green-600 shadow-sm">
@@ -97,7 +97,7 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         </section>
 
         <section>
-          <h3 className="text-xl font-extrabold text-red-800 mb-2 flex items-center gap-2 font-serif italic">
+          <h3 className="text-xl font-extrabold text-red-800 mb-2 flex items-center gap-2 pizza-card-title">
             <span className="text-xl">🚗</span> Fatigue Penalty & Deep Work Capacity
           </h3>
           <div className="bg-white p-4 rounded-lg border-2 border-green-600 shadow-sm">
@@ -115,7 +115,7 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         </section>
 
         <section>
-          <h3 className="text-xl font-extrabold text-red-800 mb-2 font-serif italic">Data Ingredients</h3>
+          <h3 className="text-xl font-extrabold text-red-800 mb-2 pizza-card-title">Data Ingredients</h3>
           <p className="mb-2 text-gray-800">
             Our models fuse subjective survey data with objective digital telemetry to provide a balanced view of modern work environments.
           </p>

@@ -64,8 +64,8 @@ const DemographicsChart = ({ data }: { data: PizzaData[] }) => {
   const PIE_COLORS = ['var(--chart-primary)', 'var(--chart-danger)', 'var(--chart-warning)', 'var(--chart-info)']; // Italian green, red, cheese yellow, blue
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded p-5 shadow-sm h-full flex flex-col gap-6">
-      <h3 className="text-xl font-bold text-[var(--card-text)] mb-2 border-b border-gray-200 pb-2 flex items-center">
+    <div className="pizza-card p-5 h-full flex flex-col gap-6">
+      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center">
         Demographic Distribution & Work Setup
         <TooltipInfo content={
           <div>

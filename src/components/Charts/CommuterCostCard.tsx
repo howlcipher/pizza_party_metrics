@@ -105,18 +105,18 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
   }, [dailyWearCost, maxOnsiteAnnualCost, selectedWorkSetup]);
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded-lg p-5 lg:p-6 shadow-md transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 flex flex-col h-full relative overflow-hidden">
+    <div className="pizza-card p-5 lg:p-6 transition-all flex flex-col h-full relative overflow-hidden">
       {/* Background Decorative Accent */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-200 dark:border-gray-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 pizza-divider">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400">
+            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600">
               <Car className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-extrabold text-[var(--card-text)] dark:text-amber-100 flex items-center">
+            <h3 className="pizza-card-title text-xl font-extrabold text-[var(--card-text)] flex items-center">
               Commuter Cost &amp; Vehicle Wear Analysis
               <TooltipInfo content={
                 <div className="space-y-2 text-xs">
@@ -137,7 +137,7 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
               } />
             </h3>
           </div>
-          <p className="text-sm text-[var(--card-subtext)] dark:text-gray-400 mt-1">
+          <p className="text-sm text-[var(--card-subtext)] mt-1">
             Calculates daily vehicle degradation &amp; gas expenses projected annually per work setup.
           </p>
         </div>
@@ -145,7 +145,7 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
         {/* Action Controls */}
         <div className="flex items-center gap-2 self-start sm:self-auto">
           {selectedWorkSetup && (
-            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500/15 text-emerald-700 border border-emerald-500/30 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               Filtered: {selectedWorkSetup} ({SETUP_DAYS_MAP[selectedWorkSetup]?.days ?? 0} days/wk)
             </span>
@@ -155,7 +155,7 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
             className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 border ${
               showCalculator
                 ? 'bg-emerald-600 text-white border-emerald-700 shadow-sm'
-                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700'
+                : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
             }`}
             aria-label="Toggle custom calculator settings"
           >
@@ -167,20 +167,20 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
 
       {/* Interactive Calculator Drawer */}
       {showCalculator && (
-        <div className="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 transition-all">
+        <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 transition-all">
           <div className="flex items-center justify-between mb-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
               <Calculator className="w-4 h-4 text-emerald-500" />
               Adjust Mileage &amp; Commute Parameters
             </h4>
-            <span className="text-xs text-slate-500 dark:text-slate-400">
+            <span className="text-xs text-slate-500">
               Assumes 30 mph average city/highway speed
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
-              <label htmlFor="commute-time-input" className="block text-xs font-medium text-slate-600 dark:text-slate-300 mb-1">
+              <label htmlFor="commute-time-input" className="block text-xs font-medium text-slate-600 mb-1">
                 One-Way Commute Duration
               </label>
               <div className="flex items-center gap-2">
@@ -194,7 +194,7 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
                   onChange={(e) => setCommuteTimeMinutes(Number(e.target.value))}
                   className="w-full accent-emerald-600 cursor-pointer"
                 />
-                <span className="text-xs font-mono font-bold w-16 px-2 py-1 bg-white dark:bg-slate-900 border rounded text-center">
+                <span className="text-xs font-mono font-bold w-16 px-2 py-1 bg-white border rounded text-center">
                   {commuteTimeMinutes} min
                 </span>
               </div>
@@ -204,14 +204,14 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
             </div>
 
             <div>
-              <label htmlFor="mileage-rate-select" className="block text-xs font-medium text-slate-600 dark:text-slate-300 mb-1">
+              <label htmlFor="mileage-rate-select" className="block text-xs font-medium text-slate-600 mb-1">
                 IRS / AAA Mileage Rate ($/mile)
               </label>
               <select
                 id="mileage-rate-select"
                 value={mileageRate}
                 onChange={(e) => setMileageRate(Number(e.target.value))}
-                className="w-full p-2 text-xs rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-medium"
+                className="w-full p-2 text-xs rounded border border-slate-300 bg-white text-slate-800 font-medium"
               >
                 <option value={0.67}>$0.67 / mile (2024 IRS Standard Rate)</option>
                 <option value={0.72}>$0.72 / mile (AAA Full SUV Average)</option>
@@ -229,7 +229,7 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
                   setCommuteTimeMinutes(30);
                   setMileageRate(0.67);
                 }}
-                className="w-full py-2 px-3 text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded transition-colors"
+                className="w-full py-2 px-3 text-xs font-bold text-slate-600 bg-slate-200 hover:bg-slate-300 rounded transition-colors"
               >
                 Reset to Standard Defaults
               </button>
@@ -241,95 +241,95 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
         {/* Card 1: Daily Wear Cost */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-indigo-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-blue-500" />
               Daily Office Cost
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-semibold">
+            <span className="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold">
               Per Office Day
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 font-mono">
               ${(dailyDistanceMiles * mileageRate).toFixed(2)}
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               {dailyDistanceMiles.toFixed(0)} miles round-trip @ ${mileageRate}/mi
             </p>
           </div>
         </div>
 
         {/* Card 2: Projected Annual Cost */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className={`absolute top-0 left-0 right-0 h-1 ${
             annualCost === 0 ? 'bg-gradient-to-r from-emerald-400 to-teal-500' : 'bg-gradient-to-r from-rose-400 to-red-600'
           }`} />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <DollarSign className="w-3.5 h-3.5 text-rose-500" />
               Projected Annual Cost
             </span>
             <span className={`text-xs px-2 py-0.5 rounded font-semibold ${
               annualCost === 0 
-                ? 'bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300' 
-                : 'bg-rose-50 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300'
+                ? 'bg-emerald-50 text-emerald-700'
+                : 'bg-rose-50 text-rose-700'
             }`}>
               {activeDaysPerWeek} days/wk (50 wks)
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 font-mono">
               ${annualCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               {annualCost === 0 ? 'Zero financial commute penalty!' : 'Out-of-pocket vehicle & fuel burden'}
             </p>
           </div>
         </div>
 
         {/* Card 3: Annual Remote Savings */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-green-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <PiggyBank className="w-3.5 h-3.5 text-emerald-500" />
               Remote Savings / Yr
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-semibold flex items-center gap-1">
+            <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold flex items-center gap-1">
               <TrendingDown className="w-3 h-3" />
               vs 5-Day Onsite
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-emerald-600 font-mono">
               +${annualSavingsVsOnsite.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               {activeDaysPerWeek === 0 ? '100% full remote savings' : `Saved vs 5-day commute ($${maxOnsiteAnnualCost.toFixed(0)}/yr)`}
             </p>
           </div>
         </div>
 
         {/* Card 4: Pizza Equivalent Morale Stat */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-orange-500" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Fuel className="w-3.5 h-3.5 text-amber-500" />
               Pizza Party Equivalent
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 font-semibold">
+            <span className="text-xs px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-semibold">
               $20 / Pizza Box
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-amber-600 dark:text-amber-400 font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-amber-600 font-mono">
               🍕 {equivalentPizzaParties} Boxes
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               Annual commute cost equals {equivalentPizzaParties} large pizzas per worker!
             </p>
           </div>
@@ -337,13 +337,13 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
       </div>
 
       {/* Comparative Setup Breakdown Bars */}
-      <div className="mt-6 bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/60 rounded-xl p-5">
+      <div className="mt-6 bg-slate-50/70 border border-slate-200/80 rounded-xl p-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-          <h4 className="text-sm font-bold text-gray-900 dark:text-white flex items-center gap-2">
+          <h4 className="text-sm font-bold text-gray-900 flex items-center gap-2">
             <MapPin className="w-4 h-4 text-emerald-500" />
             Comparative Financial Breakdown by Work Setup
           </h4>
-          <span className="text-xs text-gray-500 dark:text-gray-400">
+          <span className="text-xs text-gray-500">
             Based on 50 work weeks @ ${mileageRate}/mile ({commuteTimeMinutes} min commute)
           </span>
         </div>
@@ -361,16 +361,16 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
                 className={`p-3.5 rounded-lg border transition-all ${
                   setup.isSelected
                     ? 'bg-emerald-500/10 border-emerald-500/40 shadow-sm ring-1 ring-emerald-500/30'
-                    : 'bg-white dark:bg-slate-900/60 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700'
+                    : 'bg-white border-gray-200 hover:border-gray-300'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                   <div className="flex items-center gap-2">
                     <span className={`w-2.5 h-2.5 rounded-full ${barColor}`} />
-                    <span className="text-sm font-bold text-gray-900 dark:text-white">
+                    <span className="text-sm font-bold text-gray-900">
                       {setup.label}
                     </span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                    <span className="text-xs text-gray-500">
                       ({setup.description})
                     </span>
                     {setup.isSelected && (
@@ -380,20 +380,20 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
                     )}
                   </div>
                   <div className="flex items-center gap-3 text-xs font-mono">
-                    <span className="text-gray-500 dark:text-gray-400">
+                    <span className="text-gray-500">
                       ${setup.dailyCost.toFixed(2)}/day
                     </span>
-                    <span className="font-bold text-gray-900 dark:text-white text-sm">
+                    <span className="font-bold text-gray-900 text-sm">
                       ${setup.annualCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/yr
                     </span>
-                    <span className={`font-bold ${setup.savingsVsOnsite > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-400'}`}>
+                    <span className={`font-bold ${setup.savingsVsOnsite > 0 ? 'text-emerald-600' : 'text-gray-400'}`}>
                       (Save ${setup.savingsVsOnsite.toLocaleString('en-US', { maximumFractionDigits: 0 })})
                     </span>
                   </div>
                 </div>
 
                 {/* Progress Bar */}
-                <div className="w-full h-3 bg-gray-200 dark:bg-slate-800 rounded-full overflow-hidden flex">
+                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden flex">
                   <div 
                     className={`h-full rounded-full transition-all duration-500 ${barColor}`}
                     style={{ width: `${Math.max(percentageOfMax, setup.days === 0 ? 0 : 4)}%` }}
@@ -405,14 +405,14 @@ const CommuterCostCard: React.FC<CommuterCostCardProps> = ({
         </div>
 
         {/* 5-Year Macro Impact Summary */}
-        <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/80 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+        <div className="mt-4 pt-4 border-t border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 text-slate-700">
             <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
             <span>
               <strong>Macro Impact:</strong> Switching from 5-day Onsite to Remote-First saves an employee <strong>${fiveYearSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong> over 5 years in pure vehicle wear and fuel costs.
             </span>
           </div>
-          <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold self-end md:self-auto">
+          <div className="flex items-center gap-1 text-emerald-600 font-bold self-end md:self-auto">
             <span>Direct Remote Benefit</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </div>

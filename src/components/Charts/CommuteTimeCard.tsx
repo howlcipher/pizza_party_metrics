@@ -60,10 +60,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'workouts',
     icon: Dumbbell,
     gradient: 'from-amber-500 to-orange-600',
-    borderColor: 'border-amber-500/30 dark:border-amber-500/20',
-    textColor: 'text-amber-600 dark:text-amber-400',
+    borderColor: 'border-amber-500/30',
+    textColor: 'text-amber-600',
     bgColor: 'bg-amber-500/10',
-    badgeBg: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300',
+    badgeBg: 'bg-amber-100 text-amber-800',
     category: 'Health & Wellness',
     description: '90-min strength & cardio fitness sessions'
   },
@@ -74,10 +74,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'books',
     icon: BookOpen,
     gradient: 'from-blue-500 to-indigo-600',
-    borderColor: 'border-indigo-500/30 dark:border-indigo-500/20',
-    textColor: 'text-indigo-600 dark:text-indigo-400',
+    borderColor: 'border-indigo-500/30',
+    textColor: 'text-indigo-600',
     bgColor: 'bg-indigo-500/10',
-    badgeBg: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
+    badgeBg: 'bg-indigo-100 text-indigo-800',
     category: 'Personal Growth',
     description: 'Complete 250-page books read cover to cover'
   },
@@ -88,10 +88,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'dinners',
     icon: Utensils,
     gradient: 'from-rose-500 to-pink-600',
-    borderColor: 'border-rose-500/30 dark:border-rose-500/20',
-    textColor: 'text-rose-600 dark:text-rose-400',
+    borderColor: 'border-rose-500/30',
+    textColor: 'text-rose-600',
     bgColor: 'bg-rose-500/10',
-    badgeBg: 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300',
+    badgeBg: 'bg-rose-100 text-rose-800',
     category: 'Family & Social',
     description: 'Quality 2-hour cooked family meals & conversations'
   },
@@ -102,10 +102,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'pizza nights',
     icon: Pizza,
     gradient: 'from-red-500 to-emerald-600',
-    borderColor: 'border-emerald-500/30 dark:border-emerald-500/20',
-    textColor: 'text-emerald-600 dark:text-emerald-400',
+    borderColor: 'border-emerald-500/30',
+    textColor: 'text-emerald-600',
     bgColor: 'bg-emerald-500/10',
-    badgeBg: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300',
+    badgeBg: 'bg-emerald-100 text-emerald-800',
     category: 'Pizza & Leisure',
     description: 'Slow dough proofing & gourmet pizza party nights'
   },
@@ -116,10 +116,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'full nights',
     icon: Moon,
     gradient: 'from-purple-500 to-violet-600',
-    borderColor: 'border-purple-500/30 dark:border-purple-500/20',
-    textColor: 'text-purple-600 dark:text-purple-400',
+    borderColor: 'border-purple-500/30',
+    textColor: 'text-purple-600',
     bgColor: 'bg-purple-500/10',
-    badgeBg: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
+    badgeBg: 'bg-purple-100 text-purple-800',
     category: 'Health & Wellness',
     description: 'Full 8-hour deep sleep cycles recovered'
   },
@@ -130,10 +130,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'skills',
     icon: Zap,
     gradient: 'from-cyan-500 to-blue-600',
-    borderColor: 'border-cyan-500/30 dark:border-cyan-500/20',
-    textColor: 'text-cyan-600 dark:text-cyan-400',
+    borderColor: 'border-cyan-500/30',
+    textColor: 'text-cyan-600',
     bgColor: 'bg-cyan-500/10',
-    badgeBg: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300',
+    badgeBg: 'bg-cyan-100 text-cyan-800',
     category: 'Personal Growth',
     description: '20-hr deliberate practice milestones (coding, music)'
   },
@@ -144,10 +144,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'hikes',
     icon: Trees,
     gradient: 'from-teal-500 to-emerald-600',
-    borderColor: 'border-teal-500/30 dark:border-teal-500/20',
-    textColor: 'text-teal-600 dark:text-teal-400',
+    borderColor: 'border-teal-500/30',
+    textColor: 'text-teal-600',
     bgColor: 'bg-teal-500/10',
-    badgeBg: 'bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300',
+    badgeBg: 'bg-teal-100 text-teal-800',
     category: 'Health & Wellness',
     description: 'Energizing 2.5-hour outdoor trail hikes in fresh air'
   },
@@ -158,10 +158,10 @@ const ACTIVITIES: OpportunityActivity[] = [
     unitName: 'films',
     icon: Film,
     gradient: 'from-amber-400 to-yellow-600',
-    borderColor: 'border-yellow-500/30 dark:border-yellow-500/20',
-    textColor: 'text-yellow-600 dark:text-yellow-400',
+    borderColor: 'border-yellow-500/30',
+    textColor: 'text-yellow-600',
     bgColor: 'bg-yellow-500/10',
-    badgeBg: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
+    badgeBg: 'bg-yellow-100 text-yellow-800',
     category: 'Pizza & Leisure',
     description: '2-hour feature films or docuseries watch parties'
   }
@@ -249,19 +249,19 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
   }, [dailyCommuteHours, maxOnsiteAnnualHours, selectedWorkSetup, activeDaysPerWeek, weeksPerYear]);
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded-lg p-5 lg:p-6 shadow-md transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 flex flex-col h-full relative overflow-hidden">
+    <div className="pizza-card p-5 lg:p-6 transition-all flex flex-col h-full relative overflow-hidden">
       {/* Background Decorative Ambient Glow */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-200 dark:border-gray-800 relative z-10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 pizza-divider relative z-10">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-amber-500/10 text-amber-600 dark:bg-amber-500/20 dark:text-amber-400">
+            <div className="p-2 rounded-lg bg-amber-500/10 text-amber-600">
               <Hourglass className="w-6 h-6 animate-pulse" />
             </div>
-            <h3 className="text-xl font-extrabold text-[var(--card-text)] dark:text-amber-100 flex items-center">
+            <h3 className="pizza-card-title text-xl font-extrabold text-[var(--card-text)] flex items-center">
               Commute Time Opportunity Cost
               <TooltipInfo content={
                 <div className="space-y-2 text-xs">
@@ -279,7 +279,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
               } />
             </h3>
           </div>
-          <p className="text-sm text-[var(--card-subtext)] dark:text-gray-400 mt-1">
+          <p className="text-sm text-[var(--card-subtext)] mt-1">
             Quantifies annual hours locked in transit &amp; contrasts them against real-world life activities.
           </p>
         </div>
@@ -287,7 +287,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
         {/* Action Controls */}
         <div className="flex items-center gap-2 self-start sm:self-auto">
           {selectedWorkSetup && (
-            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/15 text-amber-700 border border-amber-500/30 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               {selectedWorkSetup} ({SETUP_DAYS_MAP[selectedWorkSetup]?.days ?? 0} d/wk)
             </span>
@@ -297,7 +297,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
             className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 border cursor-pointer ${
               showCalculator
                 ? 'bg-amber-600 text-white border-amber-700 shadow-sm'
-                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700'
+                : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
             }`}
             aria-label="Toggle commute parameters customizer"
           >
@@ -309,9 +309,9 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
 
       {/* Interactive Customizer Drawer */}
       {showCalculator && (
-        <div className="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 transition-all relative z-10">
+        <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 transition-all relative z-10">
           <div className="flex items-center justify-between mb-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
               <Calculator className="w-4 h-4 text-amber-500" />
               Adjust Commute Duration &amp; Office Frequency
             </h4>
@@ -321,7 +321,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                 setCustomDaysOverride(null);
                 setWeeksPerYear(50);
               }}
-              className="text-xs text-amber-600 dark:text-amber-400 hover:underline font-semibold"
+              className="text-xs text-amber-600 hover:underline font-semibold"
             >
               Reset to Defaults
             </button>
@@ -331,10 +331,10 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
             {/* Slider 1: One-Way Commute Time */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label htmlFor="commute-mins-input" className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <label htmlFor="commute-mins-input" className="text-xs font-medium text-slate-600">
                   One-Way Commute
                 </label>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white dark:bg-slate-900 border rounded text-amber-600 dark:text-amber-400">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white border rounded text-amber-600">
                   {commuteTimeMinutes} min
                 </span>
               </div>
@@ -356,10 +356,10 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
             {/* Slider 2: Office Days per Week */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label htmlFor="office-days-input" className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <label htmlFor="office-days-input" className="text-xs font-medium text-slate-600">
                   Office Days / Week
                 </label>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white dark:bg-slate-900 border rounded text-amber-600 dark:text-amber-400">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white border rounded text-amber-600">
                   {activeDaysPerWeek} days
                 </span>
               </div>
@@ -381,10 +381,10 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
             {/* Slider 3: Work Weeks per Year */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label htmlFor="work-weeks-input" className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <label htmlFor="work-weeks-input" className="text-xs font-medium text-slate-600">
                   Work Weeks / Year
                 </label>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white dark:bg-slate-900 border rounded text-amber-600 dark:text-amber-400">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 bg-white border rounded text-amber-600">
                   {weeksPerYear} weeks
                 </span>
               </div>
@@ -409,89 +409,89 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
       {/* Primary Summary Stats Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5 relative z-10">
         {/* KPI 1: Annual Commute Hours */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-orange-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-amber-500" />
               Annual Transit Time
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 font-semibold">
+            <span className="text-xs px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-semibold">
               {activeDaysPerWeek} d/wk
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 font-mono">
               {Math.round(annualCommuteHours)} <span className="text-lg text-gray-500 font-sans font-medium">hrs/yr</span>
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               {weeklyCommuteHours.toFixed(1)} hours spent in a vehicle every week
             </p>
           </div>
         </div>
 
         {/* KPI 2: Consecutive Days Lost */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-400 to-pink-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5 text-rose-500" />
               Full Days Lost
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 font-semibold">
+            <span className="text-xs px-2 py-0.5 rounded bg-rose-50 text-rose-700 font-semibold">
               24-Hr Blocks
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 font-mono">
               {annualCommuteDays} <span className="text-lg text-gray-500 font-sans font-medium">days</span>
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               Equivalent to {annualCommuteDays} full 24-hour days sitting in traffic
             </p>
           </div>
         </div>
 
         {/* KPI 3: Equivalent Workweeks */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-400 to-purple-600" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <Layers className="w-3.5 h-3.5 text-indigo-500" />
               Workweeks Lost
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-semibold">
+            <span className="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-semibold">
               40-Hr Base
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 font-mono">
               {equivalentWorkWeeks} <span className="text-lg text-gray-500 font-sans font-medium">weeks</span>
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               Equal to working almost {equivalentWorkWeeks} extra unpaid full-time weeks!
             </p>
           </div>
         </div>
 
         {/* KPI 4: Remote Hours Saved vs 5-Day Onsite */}
-        <div className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+        <div className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-500" />
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
               Hours Saved / Yr
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-semibold flex items-center gap-1">
+            <span className="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold flex items-center gap-1">
               <TrendingDown className="w-3 h-3" />
               vs 5-Day Onsite
             </span>
           </div>
           <div>
-            <div className="text-2xl lg:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">
+            <div className="text-2xl lg:text-3xl font-extrabold text-emerald-600 font-mono">
               +{Math.round(annualHoursSavedVsOnsite)} <span className="text-lg font-sans font-medium">hrs</span>
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-xs text-gray-600 mt-1">
               {activeDaysPerWeek === 0
                 ? '100% full remote commute hours reclaimed!'
                 : `Reclaimed vs 5-day commute (${Math.round(maxOnsiteAnnualHours)} total hrs)`}
@@ -501,14 +501,14 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
       </div>
 
       {/* Alternative Activities Section */}
-      <div className="mt-6 bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/60 rounded-xl p-5 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5 pb-3 border-b border-slate-200 dark:border-slate-700">
+      <div className="mt-6 bg-slate-50/70 border border-slate-200/80 rounded-xl p-5 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5 pb-3 border-b border-slate-200">
           <div>
-            <h4 className="text-base font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
+            <h4 className="text-base font-extrabold text-gray-900 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-amber-500" />
               What Else Could You Do With {Math.round(annualCommuteHours)} Hours/Year?
             </h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+            <p className="text-xs text-gray-500 mt-0.5">
               Contrasting vehicle transit time against life-enriching personal activities &amp; hobbies.
             </p>
           </div>
@@ -522,7 +522,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                 className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-amber-600 text-white shadow-sm'
-                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
                 {cat}
@@ -542,7 +542,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
             return (
               <div
                 key={act.id}
-                className={`bg-white dark:bg-slate-900 border ${act.borderColor} rounded-xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group`}
+                className={`bg-white border ${act.borderColor} rounded-xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group`}
               >
                 {/* Top Accent Bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${act.gradient}`} />
@@ -557,7 +557,7 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                     </span>
                   </div>
 
-                  <h5 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <h5 className="text-xs font-bold text-gray-500 uppercase tracking-wider">
                     {act.label}
                   </h5>
 
@@ -565,25 +565,25 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                     <span className={`text-3xl font-extrabold font-mono ${act.textColor}`}>
                       {count.toLocaleString()}
                     </span>
-                    <span className="text-sm font-bold text-gray-700 dark:text-gray-300">
+                    <span className="text-sm font-bold text-gray-700">
                       {act.unitName}
                     </span>
                   </div>
 
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">
+                  <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                     {act.description}
                   </p>
                 </div>
 
                 {/* Progress bar visual */}
-                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
-                  <div className="flex justify-between items-center text-[11px] text-gray-500 dark:text-gray-400 mb-1 font-mono">
+                <div className="mt-4 pt-3 border-t border-slate-100">
+                  <div className="flex justify-between items-center text-[11px] text-gray-500 mb-1 font-mono">
                     <span>Equivalence Yield</span>
-                    <span className="font-bold text-slate-700 dark:text-slate-300">
+                    <span className="font-bold text-slate-700">
                       {count * act.hoursPerUnit} / {Math.round(annualCommuteHours)} hrs
                     </span>
                   </div>
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                  <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full bg-gradient-to-r ${act.gradient} transition-all duration-500`}
                       style={{ width: `${annualCommuteHours > 0 ? 100 : 0}%` }}
@@ -596,20 +596,20 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
         </div>
 
         {/* Dynamic Highlight Formula Banner */}
-        <div className="mt-5 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+        <div className="mt-5 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-amber-500/20 rounded-full text-amber-600 dark:text-amber-400 shrink-0">
+            <div className="p-2 bg-amber-500/20 rounded-full text-amber-600 shrink-0">
               <Pizza className="w-5 h-5" />
             </div>
             <div>
-              <span className="font-extrabold text-amber-800 dark:text-amber-200">
+              <span className="font-extrabold text-amber-800">
                 The Pizza Party Perspective:
               </span>{' '}
               <span>
                 A standard {activeDaysPerWeek} day/week commute ({Math.round(annualCommuteHours)} hours/yr) is equal to doing{' '}
-                <strong className="text-amber-700 dark:text-amber-300 font-mono">{Math.floor(annualCommuteHours / 1.5)} workouts</strong>,{' '}
-                reading <strong className="text-amber-700 dark:text-amber-300 font-mono">{Math.floor(annualCommuteHours / 5.0)} books</strong>, or baking sourdough pizzas for{' '}
-                <strong className="text-amber-700 dark:text-amber-300 font-mono">{Math.floor(annualCommuteHours / 3.0)} pizza parties</strong>!
+                <strong className="text-amber-700 font-mono">{Math.floor(annualCommuteHours / 1.5)} workouts</strong>,{' '}
+                reading <strong className="text-amber-700 font-mono">{Math.floor(annualCommuteHours / 5.0)} books</strong>, or baking sourdough pizzas for{' '}
+                <strong className="text-amber-700 font-mono">{Math.floor(annualCommuteHours / 3.0)} pizza parties</strong>!
               </span>
             </div>
           </div>
@@ -617,13 +617,13 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
       </div>
 
       {/* Comparative Setup Opportunity Cost Matrix */}
-      <div className="mt-6 bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/60 rounded-xl p-5 relative z-10">
+      <div className="mt-6 bg-slate-50/70 border border-slate-200/80 rounded-xl p-5 relative z-10">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-          <h4 className="text-sm font-bold text-gray-900 dark:text-white flex items-center gap-2">
+          <h4 className="text-sm font-bold text-gray-900 flex items-center gap-2">
             <MapPin className="w-4 h-4 text-amber-500" />
             Work Setup Opportunity Cost Comparison
           </h4>
-          <span className="text-xs text-gray-500 dark:text-gray-400">
+          <span className="text-xs text-gray-500">
             Based on {commuteTimeMinutes} min one-way commute ({weeksPerYear} work weeks/yr)
           </span>
         </div>
@@ -641,16 +641,16 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                 className={`p-4 rounded-xl border transition-all ${
                   setup.isSelected
                     ? 'bg-amber-500/10 border-amber-500/40 shadow-sm ring-1 ring-amber-500/30'
-                    : 'bg-white dark:bg-slate-900/60 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700'
+                    : 'bg-white border-gray-200 hover:border-gray-300'
                 }`}
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
                     <span className={`w-3 h-3 rounded-full ${barColor}`} />
-                    <span className="text-sm font-bold text-gray-900 dark:text-white">
+                    <span className="text-sm font-bold text-gray-900">
                       {setup.label}
                     </span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                    <span className="text-xs text-gray-500">
                       ({setup.description})
                     </span>
                     {setup.isSelected && (
@@ -661,20 +661,20 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                   </div>
 
                   <div className="flex items-center gap-4 text-xs font-mono">
-                    <span className="text-gray-500 dark:text-gray-400">
+                    <span className="text-gray-500">
                       {(dailyCommuteHours * setup.days).toFixed(1)} hrs/wk
                     </span>
-                    <span className="font-bold text-gray-900 dark:text-white text-sm">
+                    <span className="font-bold text-gray-900 text-sm">
                       {Math.round(setup.annualHours)} hrs/yr lost
                     </span>
-                    <span className={`font-bold ${setup.hoursSavedVsOnsite > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-400'}`}>
+                    <span className={`font-bold ${setup.hoursSavedVsOnsite > 0 ? 'text-emerald-600' : 'text-gray-400'}`}>
                       (+{Math.round(setup.hoursSavedVsOnsite)} hrs saved)
                     </span>
                   </div>
                 </div>
 
                 {/* Progress Bar */}
-                <div className="w-full h-3 bg-gray-200 dark:bg-slate-800 rounded-full overflow-hidden mb-3">
+                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden mb-3">
                   <div
                     className={`h-full rounded-full transition-all duration-500 ${barColor}`}
                     style={{ width: `${Math.max(percentageOfMax, setup.days === 0 ? 0 : 5)}%` }}
@@ -682,17 +682,17 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
                 </div>
 
                 {/* Equivalent Life Yield Tags */}
-                <div className="flex flex-wrap items-center gap-2 text-xs pt-1 border-t border-slate-100 dark:border-slate-800">
-                  <span className="text-slate-500 dark:text-slate-400 font-medium">Alternative Yield:</span>
-                  <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-300 font-semibold flex items-center gap-1">
+                <div className="flex flex-wrap items-center gap-2 text-xs pt-1 border-t border-slate-100">
+                  <span className="text-slate-500 font-medium">Alternative Yield:</span>
+                  <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 font-semibold flex items-center gap-1">
                     <Dumbbell className="w-3 h-3 text-amber-500" />
                     {setup.workoutsYield} Workouts
                   </span>
-                  <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 font-semibold flex items-center gap-1">
+                  <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-700 font-semibold flex items-center gap-1">
                     <BookOpen className="w-3 h-3 text-indigo-500" />
                     {setup.booksYield} Books
                   </span>
-                  <span className="px-2 py-0.5 rounded bg-rose-500/10 text-rose-700 dark:text-rose-300 font-semibold flex items-center gap-1">
+                  <span className="px-2 py-0.5 rounded bg-rose-500/10 text-rose-700 font-semibold flex items-center gap-1">
                     <Utensils className="w-3 h-3 text-rose-500" />
                     {setup.dinnersYield} Family Dinners
                   </span>
@@ -703,14 +703,14 @@ const CommuteTimeCard: React.FC<CommuteTimeCardProps> = ({
         </div>
 
         {/* 5-Year Cumulative Hours Summary */}
-        <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/80 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+        <div className="mt-4 pt-4 border-t border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 text-slate-700">
             <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
             <span>
               <strong>5-Year Macro Impact:</strong> Switching from 5-day Onsite to Remote-First saves an employee <strong>{Math.round(maxOnsiteAnnualHours * 5)} hours</strong> ({Math.round((maxOnsiteAnnualHours * 5) / 24)} continuous days) in traffic over 5 years!
             </span>
           </div>
-          <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold self-end md:self-auto">
+          <div className="flex items-center gap-1 text-emerald-600 font-bold self-end md:self-auto">
             <span>Reclaim Life Hours</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </div>

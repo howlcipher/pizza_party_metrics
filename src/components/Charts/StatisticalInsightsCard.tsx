@@ -46,7 +46,7 @@ const StatisticalInsightsCard: React.FC = () => {
       type: 'positive',
       percentage: '+96.8%',
       badgeLabel: 'Strong Direct Correlation',
-      badgeClass: 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30',
+      badgeClass: 'bg-amber-500/15 text-amber-700 border-amber-500/30',
       headline: 'Meeting Overload Triggers Pizza Interventions',
       summary: 'Empirical data reveals a 96.8% positive correlation between meeting fatigue and pizza party deployments. As meeting hours rise, management increasingly relies on pizza parties to boost morale.',
       recommendation: 'Replace mandatory pizza socials with calendar audits to directly address root fatigue.',
@@ -60,7 +60,7 @@ const StatisticalInsightsCard: React.FC = () => {
       type: 'negative',
       percentage: '-100.0%',
       badgeLabel: 'Perfect Inverse Tradeoff',
-      badgeClass: 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border-rose-500/30',
+      badgeClass: 'bg-rose-500/15 text-rose-700 border-rose-500/30',
       headline: 'Zero Cushion: Meetings Directly Destroy Focus',
       summary: 'A perfect -100.0% inverse correlation exists between focus hours and meeting overhead. Every hour scheduled in meetings directly subtracts from deep focus time.',
       recommendation: 'Establish no-meeting focus blocks to guarantee uninterrupted developer output.',
@@ -74,7 +74,7 @@ const StatisticalInsightsCard: React.FC = () => {
       type: 'negative',
       percentage: '-96.8%',
       badgeLabel: 'Strong Inverse Correlation',
-      badgeClass: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30',
+      badgeClass: 'bg-emerald-500/15 text-emerald-700 border-emerald-500/30',
       headline: 'High Focus Teams Require 96.8% Fewer Pizza Parties',
       summary: 'Teams with sustained focus hours show a -96.8% inverse correlation with the Pizza Party Index. Protecting focus time is the most effective cure for employee dissatisfaction.',
       recommendation: 'Measure productivity by uninterrupted focus time rather than attendance at team events.',
@@ -98,22 +98,22 @@ const StatisticalInsightsCard: React.FC = () => {
   };
 
   const getCellColor = (val: number, isSelf: boolean) => {
-    if (isSelf) return 'bg-gray-100 dark:bg-gray-800/60 text-gray-500 dark:text-gray-400 font-mono';
-    if (val > 0.8) return 'bg-amber-500/20 dark:bg-amber-500/30 text-amber-800 dark:text-amber-200 font-bold border border-amber-500/40';
-    if (val < -0.8) return 'bg-emerald-500/20 dark:bg-emerald-500/30 text-emerald-800 dark:text-emerald-200 font-bold border border-emerald-500/40';
-    return 'bg-gray-50 dark:bg-gray-800/40 text-gray-700 dark:text-gray-300';
+    if (isSelf) return 'bg-gray-100 text-gray-500 font-mono';
+    if (val > 0.8) return 'bg-amber-500/20 text-amber-800 font-bold border border-amber-500/40';
+    if (val < -0.8) return 'bg-emerald-500/20 text-emerald-800 font-bold border border-emerald-500/40';
+    return 'bg-gray-50 text-gray-700';
   };
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded-lg p-5 lg:p-6 shadow-md transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 flex flex-col h-full">
+    <div className="pizza-card p-5 lg:p-6 transition-all flex flex-col h-full">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-200 dark:border-gray-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 pizza-divider">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-orange-500/10 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400">
+            <div className="p-2 rounded-lg bg-orange-500/10 text-orange-600">
               <BrainCircuit className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-extrabold text-[var(--card-text)] dark:text-amber-100 flex items-center">
+            <h3 className="pizza-card-title text-xl font-extrabold text-[var(--card-text)] flex items-center">
               Key Takeaways &amp; Statistical Insights
               <TooltipInfo content={
                 <div>
@@ -130,19 +130,19 @@ const StatisticalInsightsCard: React.FC = () => {
               } />
             </h3>
           </div>
-          <p className="text-sm text-[var(--card-subtext)] dark:text-gray-400 mt-1">
+          <p className="text-sm text-[var(--card-subtext)] mt-1">
             Empirical correlation analysis across meeting overhead, deep focus hours, and the Pizza Party Index (PPI).
           </p>
         </div>
 
         {/* View Switcher Tabs */}
-        <div className="flex items-center bg-gray-100 dark:bg-gray-800 p-1 rounded-lg self-start sm:self-auto border border-gray-200 dark:border-gray-700">
+        <div className="flex items-center bg-gray-100 p-1 rounded-lg self-start sm:self-auto border border-gray-200">
           <button
             onClick={() => setActiveTab('cards')}
             className={`px-3 py-1.5 rounded-md text-xs font-bold transition-colors ${
               activeTab === 'cards'
-                ? 'bg-white dark:bg-slate-700 text-gray-900 dark:text-white shadow-sm'
-                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                ? 'bg-white text-gray-900 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
             }`}
           >
             Insights Cards
@@ -151,8 +151,8 @@ const StatisticalInsightsCard: React.FC = () => {
             onClick={() => setActiveTab('matrix')}
             className={`px-3 py-1.5 rounded-md text-xs font-bold transition-colors ${
               activeTab === 'matrix'
-                ? 'bg-white dark:bg-slate-700 text-gray-900 dark:text-white shadow-sm'
-                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                ? 'bg-white text-gray-900 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
             }`}
           >
             Correlation Matrix
@@ -168,7 +168,7 @@ const StatisticalInsightsCard: React.FC = () => {
             {keyPairs.map((pair) => (
               <div 
                 key={pair.id} 
-                className="bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-gray-700/80 rounded-xl p-4 flex flex-col justify-between hover:shadow-lg transition-all duration-200 relative overflow-hidden group"
+                className="bg-white/80 border border-gray-200 rounded-xl p-4 flex flex-col justify-between hover:shadow-lg transition-all duration-200 relative overflow-hidden group"
               >
                 {/* Top Accent Line */}
                 <div className={`absolute top-0 left-0 right-0 h-1 ${
@@ -181,7 +181,7 @@ const StatisticalInsightsCard: React.FC = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       {pair.icon}
-                      <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                         {pair.metric1} vs {pair.metric2}
                       </span>
                     </div>
@@ -190,23 +190,23 @@ const StatisticalInsightsCard: React.FC = () => {
                     </span>
                   </div>
 
-                  <h4 className="text-base font-bold text-gray-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                  <h4 className="text-base font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">
                     {pair.headline}
                   </h4>
-                  <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  <p className="text-xs text-gray-600 leading-relaxed mb-4">
                     {pair.summary}
                   </p>
                 </div>
 
                 {/* Progress / Magnitude Bar */}
-                <div className="pt-3 border-t border-gray-100 dark:border-gray-700/60">
+                <div className="pt-3 border-t border-gray-100">
                   <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="text-gray-500 dark:text-gray-400 font-medium">Correlation Intensity</span>
-                    <span className="font-mono font-bold text-gray-700 dark:text-gray-300">
+                    <span className="text-gray-500 font-medium">Correlation Intensity</span>
+                    <span className="font-mono font-bold text-gray-700">
                       {pair.value > 0 ? `+${pair.value.toFixed(3)}` : pair.value.toFixed(3)}
                     </span>
                   </div>
-                  <div className="w-full h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                     <div 
                       className={`h-full rounded-full ${
                         pair.type === 'positive' ? 'bg-amber-500' : 
@@ -221,26 +221,26 @@ const StatisticalInsightsCard: React.FC = () => {
           </div>
 
           {/* Actionable Executive Takeaways */}
-          <div className="bg-orange-50/60 dark:bg-slate-800/40 border border-orange-200/80 dark:border-slate-700/60 rounded-xl p-5">
-            <h4 className="text-sm font-bold text-orange-950 dark:text-amber-200 flex items-center gap-2 mb-3">
-              <CheckCircle2 className="w-4 h-4 text-orange-600 dark:text-amber-400" />
+          <div className="bg-orange-50/60 border border-orange-200/80 rounded-xl p-5">
+            <h4 className="text-sm font-bold text-orange-950 flex items-center gap-2 mb-3">
+              <CheckCircle2 className="w-4 h-4 text-orange-600" />
               Strategic Takeaways for Engineering Leaders
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-700 dark:text-gray-300">
-              <div className="flex items-start gap-2 bg-white/60 dark:bg-slate-900/40 p-3 rounded-lg border border-orange-100 dark:border-gray-800">
-                <span className="font-extrabold text-orange-600 dark:text-amber-400 text-sm">01</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-700">
+              <div className="flex items-start gap-2 bg-white/60 p-3 rounded-lg border border-orange-100">
+                <span className="font-extrabold text-orange-600 text-sm">01</span>
                 <p>
                   <strong>Address Root Causes:</strong> Free pizza cannot offset calendar bloat. Reducing weekly meetings by 2 hours improves developer satisfaction faster than social events.
                 </p>
               </div>
-              <div className="flex items-start gap-2 bg-white/60 dark:bg-slate-900/40 p-3 rounded-lg border border-orange-100 dark:border-gray-800">
-                <span className="font-extrabold text-orange-600 dark:text-amber-400 text-sm">02</span>
+              <div className="flex items-start gap-2 bg-white/60 p-3 rounded-lg border border-orange-100">
+                <span className="font-extrabold text-orange-600 text-sm">02</span>
                 <p>
                   <strong>Protect Deep Focus:</strong> Every hour in meetings directly cannibalizes developer focus time at a strict 1:1 ratio (-100% correlation).
                 </p>
               </div>
-              <div className="flex items-start gap-2 bg-white/60 dark:bg-slate-900/40 p-3 rounded-lg border border-orange-100 dark:border-gray-800">
-                <span className="font-extrabold text-orange-600 dark:text-amber-400 text-sm">03</span>
+              <div className="flex items-start gap-2 bg-white/60 p-3 rounded-lg border border-orange-100">
+                <span className="font-extrabold text-orange-600 text-sm">03</span>
                 <p>
                   <strong>Track the Index:</strong> High Pizza Party Index (PPI) is a diagnostic alarm for high meeting churn rather than a metric of successful team bonding.
                 </p>
@@ -254,21 +254,21 @@ const StatisticalInsightsCard: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left border-collapse">
               <thead>
-                <tr className="border-b border-gray-200 dark:border-gray-800">
-                  <th className="py-3 px-4 text-xs font-extrabold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                <tr className="pizza-divider">
+                  <th className="py-3 px-4 text-xs font-extrabold text-gray-500 uppercase tracking-wider">
                     Metric
                   </th>
                   {matrixMetrics.map(m => (
-                    <th key={m.key} className="py-3 px-4 text-xs font-extrabold text-gray-700 dark:text-gray-300 uppercase tracking-wider text-center">
+                    <th key={m.key} className="py-3 px-4 text-xs font-extrabold text-gray-700 uppercase tracking-wider text-center">
                       {m.label}
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 dark:divide-gray-800/60">
+              <tbody className="divide-y divide-gray-100">
                 {matrixMetrics.map((row) => (
-                  <tr key={row.key} className="hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition-colors">
-                    <td className="py-3 px-4 font-bold text-gray-900 dark:text-gray-200 text-xs">
+                  <tr key={row.key} className="hover:bg-gray-50/50 transition-colors">
+                    <td className="py-3 px-4 font-bold text-gray-900 text-xs">
                       {row.label}
                     </td>
                     {matrixMetrics.map((col) => {
@@ -294,23 +294,23 @@ const StatisticalInsightsCard: React.FC = () => {
           </div>
 
           {/* Matrix Hover Helper / Details */}
-          <div className="bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-xs">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-xs">
             {hoveredCell ? (
               <div className="flex items-center gap-2">
-                <span className="font-bold text-gray-900 dark:text-white">
+                <span className="font-bold text-gray-900">
                   {hoveredCell.row} &amp; {hoveredCell.col}:
                 </span>
-                <span className="font-mono font-extrabold text-amber-600 dark:text-amber-400">
+                <span className="font-mono font-extrabold text-amber-600">
                   r = {hoveredCell.val > 0 ? `+${hoveredCell.val.toFixed(3)}` : hoveredCell.val.toFixed(3)}
                 </span>
-                <span className="text-gray-600 dark:text-gray-300">
+                <span className="text-gray-600">
                   ({hoveredCell.val === 1 ? 'Identical metric baseline' :
                     hoveredCell.val > 0 ? 'Strong positive correlation — metrics increase together' :
                     'Inverse correlation — increase in one decreases the other'})
                 </span>
               </div>
             ) : (
-              <p className="text-gray-500 dark:text-gray-400 flex items-center gap-1.5">
+              <p className="text-gray-500 flex items-center gap-1.5">
                 <HelpCircle className="w-4 h-4 text-gray-400" />
                 Hover over matrix cells to inspect specific metric correlation relationships.
               </p>

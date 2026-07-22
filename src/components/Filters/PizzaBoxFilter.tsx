@@ -22,7 +22,7 @@ const PizzaBoxFilter = ({ filters, setFilters, data }: { filters: Record<string,
       
       <div className="flex items-center gap-3 mb-6 text-red-700 border-b-2 border-red-800/30 pb-3">
         <Filter size={24} />
-        <h2 className="text-2xl font-extrabold font-serif italic drop-shadow-sm">Build Your Own Pizza (Filters)</h2>
+        <h2 className="pizza-card-title text-2xl font-bold drop-shadow-sm">Build Your Own Pizza (Filters)</h2>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">

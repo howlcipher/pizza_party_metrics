@@ -44,8 +44,8 @@ const WorkSlicesChart = ({ data }: { data: PizzaData[] }) => {
   }, [data]);
 
   return (
-    <div className="bg-[var(--card-bg)] border-[var(--card-border)] rounded p-5 shadow-sm h-full flex flex-col">
-      <h3 className="text-xl font-bold text-[var(--card-text)] mb-2 border-b border-gray-200 pb-2 flex items-center">
+    <div className="pizza-card p-5 h-full flex flex-col">
+      <h3 className="pizza-card-title text-xl font-bold text-[var(--card-text)] mb-2 pizza-divider pb-2 flex items-center">
         Slices of Work: Focus vs Meetings vs Fatigue
         <TooltipInfo content={
           <div>

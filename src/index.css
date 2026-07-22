@@ -3,34 +3,57 @@
 :root {
   --app-bg: #fdf5e6;
   --app-text: #111827;
-  
+
   --dashboard-bg: #f2dfbe;
   --dashboard-border: #d4ab71;
-  
+
   --card-bg: rgba(255, 255, 255, 0.95);
-  --card-border: #e5e7eb;
+  --card-border: #d9b382;
   --card-text: #3e2723;
   --card-subtext: #4b5563;
-  
+
   --chart-primary: #16a34a;
   --chart-secondary: #f0e6d2;
   --chart-danger: #ef4444;
   --chart-warning: #fcd34d;
   --chart-info: #3b82f6;
-  
+
   --grid-line: #e5e7eb;
   --axis-line: #d1d5db;
   --axis-text: #4b5563;
   --tooltip-bg: #ffffff;
   --tooltip-text: #333333;
+
+  /* Trattoria signage type: script wordmark + chunky rounded headings */
+  --font-brand: 'Pacifico', cursive;
+  --font-heading: 'Fredoka', ui-rounded, 'Segoe UI', sans-serif;
 }
 
 body {
   background-color: var(--app-bg);
   color: var(--app-text);
-  background-image: 
-    linear-gradient(45deg, rgba(204, 41, 43, 0.15) 25%, transparent 25%, transparent 75%, rgba(204, 41, 43, 0.15) 75%, rgba(204, 41, 43, 0.15)), 
+  background-image:
+    linear-gradient(45deg, rgba(204, 41, 43, 0.15) 25%, transparent 25%, transparent 75%, rgba(204, 41, 43, 0.15) 75%, rgba(204, 41, 43, 0.15)),
     linear-gradient(45deg, rgba(204, 41, 43, 0.15) 25%, transparent 25%, transparent 75%, rgba(204, 41, 43, 0.15) 75%, rgba(204, 41, 43, 0.15));
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
+}
+
+/* Shared pizza-box card shell, applied to every chart/metric card so the
+   "pizza parlor" chrome (thick crust border, dashed divider, heading font)
+   stays identical everywhere instead of drifting per-component. */
+.pizza-card {
+  background-color: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px -8px rgba(107, 45, 22, 0.28);
+}
+
+.pizza-card-title {
+  font-family: var(--font-heading);
+  letter-spacing: 0.01em;
+}
+
+.pizza-divider {
+  border-bottom: 2px dashed var(--card-border);
 }

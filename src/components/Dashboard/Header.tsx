@@ -38,7 +38,7 @@ const Header = ({ rawData = [] }) => {
           <Pizza size={36} fill="#ffcc00" />
         </div>
         <div className="text-center md:text-left">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[var(--chart-danger)] tracking-tight font-serif drop-shadow-sm">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-[var(--chart-danger)] tracking-tight drop-shadow-sm" style={{ fontFamily: 'var(--font-brand)' }}>
             Luigi's Pizza Party Metrics
           </h1>
           <p className="text-[var(--chart-primary)] font-bold mt-1 text-xs md:text-sm uppercase tracking-wider">
