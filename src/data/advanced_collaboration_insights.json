@@ -128,5 +128,7 @@
             "work_setup_category": "Remote-First",
             "focus_meeting_ratio": 1.32
         }
-    ]
+    ],
+    "burnout_risk_profile": [],
+    "true_productivity_profile": []
 }

@@ -23,7 +23,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 
 | # | Improvement | Status | Score (V×D÷E) | Claude model | Gemini model | ROI rationale |
 | --- | --- | --- | --- | --- | --- | --- |
-| 50 | Data Pipeline & UI: Wire True Collaboration Velocity | 📅 Pending | 4.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High Value) * 1.0 (new capability) / 2 = 4.00 |
+| 50 | Data Pipeline & UI: Wire True Collaboration Velocity | Done (2026-07-22) | 4.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High Value) * 1.0 (new capability) / 2 = 4.00 |
 | 51 | UI/UX: Display Optimal Setup by Age Group | 📅 Pending | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 2 = 3.50 |
 | 52 | UI/UX: Display Industry Benchmarks | 📅 Pending | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 2 = 3.50 |
 | 53 | UI/UX: Add Statistical Insights / Correlations Card | 📅 Pending | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 2 = 3.50 |
@@ -346,7 +346,8 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 ### 50. Data Pipeline & UI: Wire True Collaboration Velocity
 **Description:** Update `CollaborationChart.tsx` to source its data directly from `velocity_metadata.json`. Display Median Resolution Time and Velocity Proxy per setup instead of flatlining on missing fields.
 **Context:** The current chart reads non-existent fields and displays zeroes. Wiring real GitHub telemetry satisfies the core product thesis by measuring async delivery speed.
-**Status:** 📅 Pending
+**Status:** Done (2026-07-22)
+**Done note (2026-07-22):** Wired `CollaborationChart.tsx` to read `velocity_metadata.json` directly. Replaced dummy logic so it maps `Remote-First`, `Hybrid`, and `Onsite-Heavy` from the dataset, enabling the Async Collaboration velocity graph to show genuine Github telemetry for the core thesis.
 
 ### 51. UI/UX: Display Optimal Setup by Age Group
 **Description:** Add a visualization (bar chart or insights card) showing the best work setup and Focus/Meeting ratio broken down by age group.

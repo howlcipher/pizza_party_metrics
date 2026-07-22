@@ -4,9 +4,10 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
 import TooltipInfo from '../TooltipInfo';
+import velocityMetadata from '../../data/velocity_metadata.json';
 
 const srOnlyStyle = {
-  position: 'absolute',
+  position: 'absolute' as const,
   width: '1px',
   height: '1px',
   padding: 0,
@@ -18,27 +19,27 @@ const srOnlyStyle = {
 };
 
 const CollaborationChart = ({ data }: { data: PizzaData[] }) => {
-  // Aggregate data by work_setup_category using memoized single-pass accumulator
+  // Extract active setups from the current filtered data to maintain filter functionality
   const chartData = useMemo(() => {
     if (!data || data.length === 0) return [];
 
-    const setupMap = {};
+    const activeSetups = new Set<string>();
     for (let i = 0; i < data.length; i++) {
-      const curr = data[i];
-      const cat = curr.work_setup_category;
-      if (!setupMap[cat]) {
-        setupMap[cat] = { collaboration_score: 0, turnaround_hours: 0, count: 0 };
-      }
-      setupMap[cat].collaboration_score += (curr.collaboration_score || 0);
-      setupMap[cat].turnaround_hours += (curr.review_turnaround_hours || 0);
-      setupMap[cat].count += 1;
+      activeSetups.add(data[i].work_setup_category);
     }
 
-    return Object.entries(setupMap).map(([cat, item]) => ({
-      name: cat,
-      "Collaboration Score": Number((item.collaboration_score / item.count).toFixed(1)),
-      "Review Turnaround (Hrs)": Number((item.turnaround_hours / item.count).toFixed(1))
-    }));
+    const setups = ["Remote-First", "Hybrid", "Onsite-Heavy"] as const;
+    
+    return setups
+      .filter(setup => activeSetups.has(setup))
+      .map(setup => {
+        const meta = (velocityMetadata as any)[setup];
+        return {
+          name: setup,
+          "Velocity Proxy": meta ? Number(meta.velocity_proxy.toFixed(4)) : 0,
+          "Median Resolution (Hrs)": meta ? meta.median_resolution_h : 0
+        };
+      });
   }, [data]);
 
   return (
@@ -49,19 +50,19 @@ const CollaborationChart = ({ data }: { data: PizzaData[] }) => {
           <div>
             <p className="font-bold mb-1">Metrics Explained:</p>
             <ul className="list-disc pl-4 space-y-1">
-              <li><strong>Collab Score:</strong> Measure of PR interactions, comments, and knowledge sharing (higher is better).</li>
-              <li><strong>Wait Hours (Turnaround):</strong> Average time code is blocked waiting for peer review.</li>
+              <li><strong>Velocity Proxy:</strong> A measure of PRs/Issues resolved relative to open volume (higher is better).</li>
+              <li><strong>Median Resolution (Hrs):</strong> Average time taken to resolve PRs and issues.</li>
             </ul>
           </div>
         } />
       </h3>
       <p className="text-sm text-[var(--card-subtext)] font-bold mb-4">
-        Collaboration efficiency vs. time blocked waiting.
+        GitHub telemetry: Velocity Proxy vs. Median Resolution Time.
       </p>
       
-      <div className="flex-grow min-h-[300px]" role="figure" aria-label="Bar chart comparing Collaboration Scores across work setups.">
+      <div className="flex-grow min-h-[300px]" role="figure" aria-label="Bar chart comparing Velocity Proxy across work setups.">
         <div style={srOnlyStyle}>
-          This bar chart displays the breakdown of collaboration scores versus review turnaround hours across different work setup categories.
+          This bar chart displays the breakdown of Velocity Proxy versus Median Resolution Hours across different work setup categories.
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
@@ -80,7 +81,7 @@ const CollaborationChart = ({ data }: { data: PizzaData[] }) => {
               tick={{ fill: 'var(--chart-primary)', fontWeight: 600 }}
               axisLine={{ stroke: 'var(--axis-line)' }}
               tickLine={false}
-              label={{ value: 'Collab Score', angle: -90, position: 'insideLeft', fill: 'var(--chart-primary)', fontWeight: 'bold' }}
+              label={{ value: 'Velocity Proxy', angle: -90, position: 'insideLeft', fill: 'var(--chart-primary)', fontWeight: 'bold' }}
             />
             <YAxis 
               yAxisId="right"
@@ -88,7 +89,7 @@ const CollaborationChart = ({ data }: { data: PizzaData[] }) => {
               tick={{ fill: 'var(--chart-danger)', fontWeight: 600 }}
               axisLine={{ stroke: 'var(--axis-line)' }}
               tickLine={false}
-              label={{ value: 'Wait Hours', angle: 90, position: 'insideRight', fill: 'var(--chart-danger)', fontWeight: 'bold' }}
+              label={{ value: 'Median Res (Hrs)', angle: 90, position: 'insideRight', fill: 'var(--chart-danger)', fontWeight: 'bold' }}
             />
             <Tooltip 
               cursor={{ fill: '#e5e7eb', opacity: 0.3 }}
@@ -101,8 +102,8 @@ const CollaborationChart = ({ data }: { data: PizzaData[] }) => {
               }}
             />
             <Legend wrapperStyle={{ paddingTop: '10px', fontWeight: 'bold', color: '#333' }} />
-            <Bar yAxisId="left" dataKey="Collaboration Score" fill="var(--chart-primary)" radius={[4, 4, 0, 0]} maxBarSize={60} />
-            <Bar yAxisId="right" dataKey="Review Turnaround (Hrs)" fill="var(--chart-danger)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+            <Bar yAxisId="left" dataKey="Velocity Proxy" fill="var(--chart-primary)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+            <Bar yAxisId="right" dataKey="Median Resolution (Hrs)" fill="var(--chart-danger)" radius={[4, 4, 0, 0]} maxBarSize={60} />
           </BarChart>
         </ResponsiveContainer>
       </div>
