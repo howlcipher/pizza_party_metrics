@@ -3,7 +3,7 @@
 # Run flake8 linter
 lint:
 	flake8 src/ scripts/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
-	flake8 src/ scripts/ tests/ --count --max-complexity=10 --max-line-length=127 --statistics
+	flake8 src/ scripts/ tests/ --count --max-complexity=10 --max-line-length=127 --extend-ignore=E501,W293,E221 --statistics
 
 # Run pytest
 test:

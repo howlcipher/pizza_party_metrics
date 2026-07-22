@@ -39,8 +39,7 @@ class GitHubClient:
     def __init__(self):
         self.headers = {'Accept': 'application/vnd.github.v3+json'}
         if os.getenv('GITHUB_TOKEN'):
-            self.headers['Authorization'] = f"token {
-                os.getenv('GITHUB_TOKEN')}"
+            self.headers['Authorization'] = f"token {os.getenv('GITHUB_TOKEN')}"
         os.makedirs(config.CACHE_DIR, exist_ok=True)
         self._semaphore = None
 
