@@ -23,6 +23,11 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 
 | # | Improvement | Status | Score (V×D÷E) | Claude model | Gemini model | ROI rationale |
 | --- | --- | --- | --- | --- | --- | --- |
+| 50 | Data Pipeline & UI: Wire True Collaboration Velocity | 📅 Pending | 4.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (High Value) * 1.0 (new capability) / 2 = 4.00 |
+| 51 | UI/UX: Display Optimal Setup by Age Group | 📅 Pending | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 2 = 3.50 |
+| 52 | UI/UX: Display Industry Benchmarks | 📅 Pending | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 2 = 3.50 |
+| 53 | UI/UX: Add Statistical Insights / Correlations Card | 📅 Pending | 3.50 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 2 = 3.50 |
+| 54 | Data Pipeline & UI: Calculate and Display Optimal Setup by Industry | 📅 Pending | 1.75 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 7 (High Value) * 1.0 (new capability) / 4 = 1.75 |
 | 49 | Direct User Feedback: Display Pizza Party Index Math | Done (2026-07-21) | 6.00 | - | gemini-3.1-pro-high | 6 (User req) * 1.0 / 1 = 6.00 |
 | 46 | Direct User Feedback: Update Async Collab Labels | Done (2026-07-21) | 6.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (User req) * 1.0 / 1 = 6.00 |
 | 48 | Direct User Feedback: Disable Tooltips on Mobile | Done (2026-07-21) | 6.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 6 (User req) * 1.0 / 1 = 6.00 |
