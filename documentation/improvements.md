@@ -37,7 +37,7 @@ Pending rows are ranked by a diminishing-returns score, recomputed at every groo
 | 41 | [Agent Suggestion] Data Pipeline: Remove Hardcoded Bias | Done (2026-07-21) | 0.16 | - | gemini-3.1-pro-high | 8 (Data integrity) * 0.0625 (decay) / 3 = 0.16 |
 | 36 | [Agent Suggestion] Data Pipeline: Asynchronous API Execution | Done (2026-07-21) | 0.16 | - | gemini-3.1-pro-high | 8 (Resiliency) * 0.0625 (decay) / 3 = 0.16 |
 | 39 | [Agent Suggestion] Frontend: Migrate Codebase to TypeScript | Done (2026-07-21) | 0.16 | - | gemini-3.1-pro-high | 8 (Strict typing) * 0.125 (decay) / 6 = 0.16 |
-| 37 | [Agent Suggestion] Data Pipeline: Decouple ETL Monolith | ⚠️ below floor | 0.12 | - | gemini-3.1-pro-high | 8 (Maintainability) * 0.0625 (decay) / 4 = 0.12 |
+| 37 | [Agent Suggestion] Data Pipeline: Decouple ETL Monolith | Done (2026-07-21) | 0.12 | - | gemini-3.1-pro-high | 8 (Maintainability) * 0.0625 (decay) / 4 = 0.12 |
 | 42 | [Agent Suggestion] Data Pipeline: Fix ML Data Leakage | Done (2026-07-21) | 0.12 | - | gemini-3.1-pro-high | 6 (Statistical validity) * 0.0625 (decay) / 3 = 0.12 |
 | 43 | [Agent Suggestion] Data Pipeline: Use Pandas .assign() | Done (2026-07-21) | 0.09 | - | gemini-3.1-pro-high | 3 (Code hygiene) * 0.0625 (decay) / 2 = 0.09 |
 | 1 | [Agent Suggestion] Frontend: Rendering Efficiency (useMemo) | Done (2026-07-21) | 4.00 | claude-3-7-sonnet-20250219 | gemini-3.1-pro-high | 8 (Major performance fix) * 1.0 / 2 = 4.00 |
