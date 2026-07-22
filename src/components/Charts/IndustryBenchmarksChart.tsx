@@ -124,11 +124,11 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
             <TooltipInfo content={
               <div>
                 <p className="font-bold mb-1">Benchmark Analysis:</p>
-                <p className="mb-2">Compares average Focus Hours and Meeting Overhead across 14 industry sectors based on nationwide research profiles.</p>
+                <p className="mb-2">Compares average Focus Hours and Meeting Overhead across {rawProfiles.length} office-based industry sectors, drawn from nationwide WFH Research survey profiles. Frontline/manual-labor sectors (retail, food service, manufacturing, warehousing) are excluded since remote/hybrid arrangements don't apply to them.</p>
                 <ul className="list-disc pl-4 space-y-1 text-xs">
                   <li><strong>Focus Hours:</strong> Deep work time unobstructed by meetings.</li>
                   <li><strong>Meeting Overhead:</strong> Time spent in recurring or synchronous meetings.</li>
-                  <li><strong>Pizza Party Index:</strong> Friction/burnout risk proxy score (lower is healthier).</li>
+                  <li><strong>Pizza Party Index:</strong> Composite focus + async-collaboration score (higher is better) — see "The Recipe" for the full formula and its caveats.</li>
                 </ul>
               </div>
             } />
@@ -402,7 +402,7 @@ const IndustryBenchmarksChart: React.FC<IndustryBenchmarksChartProps> = ({ selec
             <h4 className="text-base font-bold text-gray-800 flex items-center gap-2">
               <Award size={18} className="text-amber-600" /> Industry Ranking Leaderboard
             </h4>
-            <span className="text-xs text-gray-500 font-semibold">14 Industry Sectors</span>
+            <span className="text-xs text-gray-500 font-semibold">{rawProfiles.length} Industry Sectors</span>
           </div>
 
           <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-xs">

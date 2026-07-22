@@ -16,9 +16,10 @@ const srOnlyStyle: React.CSSProperties = {
 };
 
 const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
-  const { bestScore, bestSetup } = useMemo(() => {
+  const { bestScore, bestSetup, maxObserved } = useMemo(() => {
     let topScore = 0;
     let topSetup = "No Data";
+    let observedMax = 0;
 
     if (data && data.length > 0) {
       const setupScores: Record<string, { total: number, count: number }> = {};
@@ -29,6 +30,7 @@ const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
         }
         setupScores[cat].total += data[i].pizza_party_index;
         setupScores[cat].count += 1;
+        observedMax = Math.max(observedMax, data[i].pizza_party_index);
       }
 
       for (const [setup, stats] of Object.entries(setupScores)) {
@@ -40,11 +42,14 @@ const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
       }
     }
 
-    return { bestScore: topScore, bestSetup: topSetup };
+    return { bestScore: topScore, bestSetup: topSetup, maxObserved: observedMax };
   }, [data]);
 
-  // Assume max index is 40 for the gauge
-  const maxIndex = 40;
+  // The Index's scale isn't fixed: its collaboration-score term is refetched
+  // periodically from live GitHub PR/review data and can shift the whole
+  // range between ETL runs. Calibrate the gauge to the data actually loaded
+  // instead of a hardcoded ceiling, so it can't silently pin at 100%.
+  const maxIndex = Math.max(maxObserved * 1.05, 1);
   const normalizedValue = Math.min(bestScore, maxIndex);
   const remainingValue = maxIndex - normalizedValue;
 
@@ -55,12 +60,14 @@ const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
 
   const COLORS = ['var(--chart-primary)', 'var(--chart-secondary)']; // Green (good performance) and dough color
 
-  // Determine environment optimization based on score
+  // Determine environment optimization based on score, relative to the
+  // observed range rather than an absolute number that can drift.
+  const scoreRatio = maxIndex > 0 ? bestScore / maxIndex : 0;
   let optimizationLabel = `Best: ${bestSetup}`;
   let optimizationColor = "text-yellow-600";
-  if (bestScore >= 22) {
+  if (scoreRatio >= 0.75) {
     optimizationColor = "text-green-700";
-  } else if (bestScore < 18 && bestScore > 0) {
+  } else if (scoreRatio < 0.55 && bestScore > 0) {
     optimizationColor = "text-red-600";
   }
 
@@ -84,20 +91,20 @@ const PizzaGauge = ({ data }: { data: PizzaData[] }) => {
           <div>
             <p className="font-bold mb-1">Pizza Party Index (PPI):</p>
             <p className="mb-1">A composite score of overall team performance and satisfaction.</p>
-            <p className="text-xs text-gray-300"><strong>Formula:</strong> Focus Hours + (Collaboration Score × 2.0). Max: 40.</p>
+            <p className="text-xs text-gray-300"><strong>Formula:</strong> Focus Hours + (Collaboration Score × 2.0). Higher is better. The Collaboration Score is refreshed periodically from live GitHub PR/review data and can shift the Index's overall scale between updates, so the gauge is scaled to the current dataset rather than a fixed ceiling.</p>
           </div>
         } />
       </h3>
       <p className="text-sm text-[var(--card-subtext)] mb-4 font-bold">
         Displays the highest-scoring Work Setup for your filters. Higher scores = Better performance.
         <span className="block font-normal text-xs text-gray-500 mt-1">
-          Formula: Focus Hours + (Collaboration Score × 2.0), up to a max of 40.
+          Formula: Focus Hours + (Collaboration Score × 2.0). Scale shown reflects the current dataset.
         </span>
       </p>
-      
-      <div className="flex-grow relative min-h-[200px]" role="figure" aria-label={`Pizza Party Index Gauge. Top score is ${bestScore.toFixed(1)} out of 40.`}>
+
+      <div className="flex-grow relative min-h-[200px]" role="figure" aria-label={`Pizza Party Index Gauge. Top score is ${bestScore.toFixed(1)} for ${bestSetup}.`}>
         <div style={srOnlyStyle}>
-          This gauge displays the highest Pizza Party Index among work setups. The top score is {bestScore.toFixed(1)} out of 40 for {bestSetup}.
+          This gauge displays the highest Pizza Party Index among work setups. The top score is {bestScore.toFixed(1)} for {bestSetup}.
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>

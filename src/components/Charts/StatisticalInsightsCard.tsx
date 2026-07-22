@@ -32,10 +32,31 @@ const StatisticalInsightsCard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'cards' | 'matrix'>('cards');
   const [hoveredCell, setHoveredCell] = useState<{ row: string; col: string; val: number } | null>(null);
 
-  // Safely reference correlation data
-  const meetingPpi = correlations?.meeting_overhead?.pizza_party_index ?? 0.968;
-  const focusPpi = correlations?.focus_hours?.pizza_party_index ?? -0.968;
+  // Read correlations live so displayed percentages can never drift out of
+  // sync with the badge/headline copy below (this dashboard's data is
+  // refreshed periodically by an automated ETL job).
+  const meetingPpi = correlations?.meeting_overhead?.pizza_party_index ?? 0;
+  const focusPpi = correlations?.focus_hours?.pizza_party_index ?? 0;
   const focusMeeting = correlations?.focus_hours?.meeting_overhead ?? -1.0;
+
+  const pct = (v: number) => `${v >= 0 ? '+' : ''}${(v * 100).toFixed(1)}%`;
+  const strengthBadge = (v: number): { label: string; cls: string } => {
+    const abs = Math.abs(v);
+    if (abs >= 0.9) {
+      return v >= 0
+        ? { label: 'Very Strong Direct Correlation', cls: 'bg-amber-500/15 text-amber-700 border-amber-500/30' }
+        : { label: 'Very Strong Inverse Correlation', cls: 'bg-rose-500/15 text-rose-700 border-rose-500/30' };
+    }
+    if (abs >= 0.5) {
+      return v >= 0
+        ? { label: 'Moderate Direct Correlation', cls: 'bg-amber-500/15 text-amber-700 border-amber-500/30' }
+        : { label: 'Moderate Inverse Correlation', cls: 'bg-rose-500/15 text-rose-700 border-rose-500/30' };
+    }
+    return { label: 'Weak Correlation', cls: 'bg-gray-200 text-gray-700 border-gray-300' };
+  };
+
+  const meetingPpiBadge = strengthBadge(meetingPpi);
+  const focusPpiBadge = strengthBadge(focusPpi);
 
   const keyPairs: CorrelationPair[] = [
     {
@@ -43,13 +64,13 @@ const StatisticalInsightsCard: React.FC = () => {
       metric1: 'Meeting Overhead',
       metric2: 'Pizza Party Index',
       value: meetingPpi,
-      type: 'positive',
-      percentage: '+96.8%',
-      badgeLabel: 'Strong Direct Correlation',
-      badgeClass: 'bg-amber-500/15 text-amber-700 border-amber-500/30',
-      headline: 'Meeting Overload Triggers Pizza Interventions',
-      summary: 'Empirical data reveals a 96.8% positive correlation between meeting fatigue and pizza party deployments. As meeting hours rise, management increasingly relies on pizza parties to boost morale.',
-      recommendation: 'Replace mandatory pizza socials with calendar audits to directly address root fatigue.',
+      type: meetingPpi >= 0 ? 'positive' : 'negative',
+      percentage: pct(meetingPpi),
+      badgeLabel: meetingPpiBadge.label,
+      badgeClass: meetingPpiBadge.cls,
+      headline: 'Meeting Overhead Tracks the Pizza Party Index',
+      summary: `The Index (Focus Hours + Collaboration Score × 2.0) currently ${meetingPpi >= 0 ? 'rises' : 'falls'} alongside Meeting Overhead. Because the Collaboration term comes from a fixed GitHub-repo proxy shared across all industries (see "The Recipe"), this relationship is driven as much by which work-setup category is faster on GitHub right now as by meeting culture itself — read it as a snapshot, not a fixed law.`,
+      recommendation: 'Use this alongside the raw Focus Hours / Meeting Overhead numbers below, not as a standalone verdict on meeting culture.',
       icon: <Flame className="w-5 h-5 text-amber-500" />
     },
     {
@@ -58,12 +79,12 @@ const StatisticalInsightsCard: React.FC = () => {
       metric2: 'Meeting Overhead',
       value: focusMeeting,
       type: 'negative',
-      percentage: '-100.0%',
-      badgeLabel: 'Perfect Inverse Tradeoff',
+      percentage: pct(focusMeeting),
+      badgeLabel: 'Correlation by Definition',
       badgeClass: 'bg-rose-500/15 text-rose-700 border-rose-500/30',
-      headline: 'Zero Cushion: Meetings Directly Destroy Focus',
-      summary: 'A perfect -100.0% inverse correlation exists between focus hours and meeting overhead. Every hour scheduled in meetings directly subtracts from deep focus time.',
-      recommendation: 'Establish no-meeting focus blocks to guarantee uninterrupted developer output.',
+      headline: 'Focus Hours and Meeting Overhead Are Complementary',
+      summary: 'This near-perfect inverse relationship is built into how the two metrics are defined (Meeting Overhead is derived as the remainder of a fixed weekly-hours budget after Focus Hours), not an independently discovered finding — the underlying, meaningful signal is how that split shifts by work setup, shown in "Slices of Work" below.',
+      recommendation: 'Compare the two metrics across work setups directly rather than citing this correlation as new evidence on its own.',
       icon: <ArrowRightLeft className="w-5 h-5 text-rose-500" />
     },
     {
@@ -71,13 +92,13 @@ const StatisticalInsightsCard: React.FC = () => {
       metric1: 'Focus Hours',
       metric2: 'Pizza Party Index',
       value: focusPpi,
-      type: 'negative',
-      percentage: '-96.8%',
-      badgeLabel: 'Strong Inverse Correlation',
-      badgeClass: 'bg-emerald-500/15 text-emerald-700 border-emerald-500/30',
-      headline: 'High Focus Teams Require 96.8% Fewer Pizza Parties',
-      summary: 'Teams with sustained focus hours show a -96.8% inverse correlation with the Pizza Party Index. Protecting focus time is the most effective cure for employee dissatisfaction.',
-      recommendation: 'Measure productivity by uninterrupted focus time rather than attendance at team events.',
+      type: focusPpi >= 0 ? 'positive' : 'negative',
+      percentage: pct(focusPpi),
+      badgeLabel: focusPpiBadge.label,
+      badgeClass: focusPpiBadge.cls,
+      headline: 'Focus Hours vs. the Pizza Party Index',
+      summary: `Focus Hours currently move ${focusPpi >= 0 ? 'with' : 'against'} the Index. Since the Index adds Focus Hours directly, a negative reading here means the Collaboration term (see caveat above) is swinging hard enough in the opposite direction to overwhelm it for the current data snapshot.`,
+      recommendation: 'Prefer the individual Focus Hours and Collaboration figures over the combined Index when comparing work setups.',
       icon: <Sparkles className="w-5 h-5 text-emerald-500" />
     }
   ];
@@ -119,13 +140,8 @@ const StatisticalInsightsCard: React.FC = () => {
                 <div>
                   <p className="font-bold mb-1">Pearson Correlation Coefficient (r):</p>
                   <p className="text-xs leading-relaxed mb-2">
-                    Measures linear correlation between variables ranging from -1.0 (perfect inverse) to +1.0 (perfect positive).
+                    Measures linear correlation between variables ranging from -1.0 (perfect inverse) to +1.0 (perfect positive). Values below refresh with the live dataset — see each card's caveat for how to read it.
                   </p>
-                  <ul className="list-disc pl-4 text-xs space-y-1">
-                    <li><strong>+0.968:</strong> Strong positive link between meeting churn &amp; pizza parties.</li>
-                    <li><strong>-1.000:</strong> Direct 1:1 tradeoff between meetings &amp; focus hours.</li>
-                    <li><strong>-0.968:</strong> High focus reduces need for pizza morale boosters.</li>
-                  </ul>
                 </div>
               } />
             </h3>
@@ -236,13 +252,13 @@ const StatisticalInsightsCard: React.FC = () => {
               <div className="flex items-start gap-2 bg-white/60 p-3 rounded-lg border border-orange-100">
                 <span className="font-extrabold text-orange-600 text-sm">02</span>
                 <p>
-                  <strong>Protect Deep Focus:</strong> Every hour in meetings directly cannibalizes developer focus time at a strict 1:1 ratio (-100% correlation).
+                  <strong>Protect Deep Focus:</strong> Focus Hours and Meeting Overhead move in lockstep by definition — every hour added to one is an hour removed from the other's fixed weekly budget.
                 </p>
               </div>
               <div className="flex items-start gap-2 bg-white/60 p-3 rounded-lg border border-orange-100">
                 <span className="font-extrabold text-orange-600 text-sm">03</span>
                 <p>
-                  <strong>Track the Index:</strong> High Pizza Party Index (PPI) is a diagnostic alarm for high meeting churn rather than a metric of successful team bonding.
+                  <strong>Read the Index Carefully:</strong> A high Pizza Party Index reflects strong Focus Hours and fast async collaboration — but its collaboration term is a shared GitHub-repo proxy, not an industry-specific measurement, so use the underlying Focus Hours / Meeting Overhead numbers for industry comparisons.
                 </p>
               </div>
             </div>

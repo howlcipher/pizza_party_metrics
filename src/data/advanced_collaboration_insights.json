@@ -1,206 +1,384 @@
 {
     "industry_profile": [
         {
-            "industry": "Arts Entertain",
-            "avg_focus_hours": 20.86,
-            "avg_meeting_overhead": 19.14,
-            "avg_pizza_party_index": 3.2
+            "industry": "Arts & Entertainment",
+            "avg_focus_hours": 16.64,
+            "avg_meeting_overhead": 23.36,
+            "avg_pizza_party_index": 45.94
         },
         {
             "industry": "Education",
-            "avg_focus_hours": 18.19,
-            "avg_meeting_overhead": 21.81,
-            "avg_pizza_party_index": 4.78
+            "avg_focus_hours": 14.75,
+            "avg_meeting_overhead": 25.25,
+            "avg_pizza_party_index": 41.8
         },
         {
             "industry": "Finance Insurance",
-            "avg_focus_hours": 21.62,
-            "avg_meeting_overhead": 18.38,
-            "avg_pizza_party_index": 2.76
+            "avg_focus_hours": 17.31,
+            "avg_meeting_overhead": 22.69,
+            "avg_pizza_party_index": 50.47
         },
         {
             "industry": "Government",
-            "avg_focus_hours": 18.81,
-            "avg_meeting_overhead": 21.19,
-            "avg_pizza_party_index": 4.51
+            "avg_focus_hours": 15.01,
+            "avg_meeting_overhead": 24.99,
+            "avg_pizza_party_index": 45.21
         },
         {
             "industry": "Healthcare",
-            "avg_focus_hours": 18.46,
-            "avg_meeting_overhead": 21.54,
-            "avg_pizza_party_index": 4.42
-        },
-        {
-            "industry": "Hospitaility Food",
-            "avg_focus_hours": 17.79,
-            "avg_meeting_overhead": 22.21,
-            "avg_pizza_party_index": 5.23
+            "avg_focus_hours": 15.4,
+            "avg_meeting_overhead": 24.6,
+            "avg_pizza_party_index": 43.47
         },
         {
             "industry": "Information",
-            "avg_focus_hours": 20.43,
-            "avg_meeting_overhead": 19.57,
-            "avg_pizza_party_index": 3.27
+            "avg_focus_hours": 18.6,
+            "avg_meeting_overhead": 21.4,
+            "avg_pizza_party_index": 54.63
         },
         {
-            "industry": "Manufacturing",
-            "avg_focus_hours": 17.53,
-            "avg_meeting_overhead": 22.47,
-            "avg_pizza_party_index": 5.23
+            "industry": "Professional & Business Services",
+            "avg_focus_hours": 16.75,
+            "avg_meeting_overhead": 23.25,
+            "avg_pizza_party_index": 48.45
         },
         {
-            "industry": "Prof Bus Services",
-            "avg_focus_hours": 18.51,
-            "avg_meeting_overhead": 21.49,
-            "avg_pizza_party_index": 4.25
-        },
-        {
-            "industry": "Realestate",
-            "avg_focus_hours": 19.28,
-            "avg_meeting_overhead": 20.72,
-            "avg_pizza_party_index": 4.02
-        },
-        {
-            "industry": "Retail",
-            "avg_focus_hours": 18.1,
-            "avg_meeting_overhead": 21.9,
-            "avg_pizza_party_index": 4.94
-        },
-        {
-            "industry": "Transp Warehousing",
-            "avg_focus_hours": 18.12,
-            "avg_meeting_overhead": 21.88,
-            "avg_pizza_party_index": 4.77
+            "industry": "Real Estate",
+            "avg_focus_hours": 16.77,
+            "avg_meeting_overhead": 23.23,
+            "avg_pizza_party_index": 53.43
         },
         {
             "industry": "Utilities",
-            "avg_focus_hours": 18.52,
-            "avg_meeting_overhead": 21.48,
-            "avg_pizza_party_index": 4.7
-        },
-        {
-            "industry": "Wholesale",
-            "avg_focus_hours": 18.24,
-            "avg_meeting_overhead": 21.76,
-            "avg_pizza_party_index": 4.92
+            "avg_focus_hours": 14.95,
+            "avg_meeting_overhead": 25.05,
+            "avg_pizza_party_index": 46.43
         }
     ],
     "correlations": {
         "focus_hours": {
             "focus_hours": 1.0,
             "meeting_overhead": -1.0,
-            "pizza_party_index": -0.968
+            "fatigue_penalty": -0.952,
+            "pizza_party_index": 0.39,
+            "review_turnaround_hours": 0.6,
+            "collaboration_score": 0.199,
+            "interruption_frequency": -0.65,
+            "sustained_high_workload": -0.003,
+            "burnout_risk_score": -0.375
         },
         "meeting_overhead": {
             "focus_hours": -1.0,
             "meeting_overhead": 1.0,
-            "pizza_party_index": 0.968
+            "fatigue_penalty": 0.952,
+            "pizza_party_index": -0.39,
+            "review_turnaround_hours": -0.6,
+            "collaboration_score": -0.199,
+            "interruption_frequency": 0.65,
+            "sustained_high_workload": 0.003,
+            "burnout_risk_score": 0.375
+        },
+        "fatigue_penalty": {
+            "focus_hours": -0.952,
+            "meeting_overhead": 0.952,
+            "fatigue_penalty": 1.0,
+            "pizza_party_index": -0.248,
+            "review_turnaround_hours": -0.733,
+            "collaboration_score": -0.058,
+            "interruption_frequency": 0.615,
+            "sustained_high_workload": -0.0,
+            "burnout_risk_score": 0.349
         },
         "pizza_party_index": {
-            "focus_hours": -0.968,
-            "meeting_overhead": 0.968,
-            "pizza_party_index": 1.0
+            "focus_hours": 0.39,
+            "meeting_overhead": -0.39,
+            "fatigue_penalty": -0.248,
+            "pizza_party_index": 1.0,
+            "review_turnaround_hours": -0.476,
+            "collaboration_score": 0.98,
+            "interruption_frequency": -0.265,
+            "sustained_high_workload": -0.004,
+            "burnout_risk_score": -0.164
+        },
+        "review_turnaround_hours": {
+            "focus_hours": 0.6,
+            "meeting_overhead": -0.6,
+            "fatigue_penalty": -0.733,
+            "pizza_party_index": -0.476,
+            "review_turnaround_hours": 1.0,
+            "collaboration_score": -0.637,
+            "interruption_frequency": -0.378,
+            "sustained_high_workload": 0.003,
+            "burnout_risk_score": -0.206
+        },
+        "collaboration_score": {
+            "focus_hours": 0.199,
+            "meeting_overhead": -0.199,
+            "fatigue_penalty": -0.058,
+            "pizza_party_index": 0.98,
+            "review_turnaround_hours": -0.637,
+            "collaboration_score": 1.0,
+            "interruption_frequency": -0.141,
+            "sustained_high_workload": -0.004,
+            "burnout_risk_score": -0.094
+        },
+        "interruption_frequency": {
+            "focus_hours": -0.65,
+            "meeting_overhead": 0.65,
+            "fatigue_penalty": 0.615,
+            "pizza_party_index": -0.265,
+            "review_turnaround_hours": -0.378,
+            "collaboration_score": -0.141,
+            "interruption_frequency": 1.0,
+            "sustained_high_workload": 0.006,
+            "burnout_risk_score": 0.553
+        },
+        "sustained_high_workload": {
+            "focus_hours": -0.003,
+            "meeting_overhead": 0.003,
+            "fatigue_penalty": -0.0,
+            "pizza_party_index": -0.004,
+            "review_turnaround_hours": 0.003,
+            "collaboration_score": -0.004,
+            "interruption_frequency": 0.006,
+            "sustained_high_workload": 1.0,
+            "burnout_risk_score": 0.644
+        },
+        "burnout_risk_score": {
+            "focus_hours": -0.375,
+            "meeting_overhead": 0.375,
+            "fatigue_penalty": 0.349,
+            "pizza_party_index": -0.164,
+            "review_turnaround_hours": -0.206,
+            "collaboration_score": -0.094,
+            "interruption_frequency": 0.553,
+            "sustained_high_workload": 0.644,
+            "burnout_risk_score": 1.0
         }
     },
     "best_setup_by_age": [
         {
-            "age_group": "25-34",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.62
-        },
-        {
             "age_group": "35-44",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.55
-        },
-        {
-            "age_group": "18-24",
             "work_setup_category": "Remote-First",
             "focus_meeting_ratio": 1.5
         },
         {
-            "age_group": "45-54",
+            "age_group": "55+",
             "work_setup_category": "Remote-First",
             "focus_meeting_ratio": 1.48
         },
         {
-            "age_group": "55+",
+            "age_group": "25-34",
             "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.32
+            "focus_meeting_ratio": 1.48
+        },
+        {
+            "age_group": "45-54",
+            "work_setup_category": "Remote-First",
+            "focus_meeting_ratio": 1.46
+        },
+        {
+            "age_group": "18-24",
+            "work_setup_category": "Remote-First",
+            "focus_meeting_ratio": 1.45
         }
     ],
     "best_setup_by_industry": [
         {
-            "industry": "Education",
+            "industry": "Arts & Entertainment",
             "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.65
-        },
-        {
-            "industry": "Prof Bus Services",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.64
-        },
-        {
-            "industry": "Realestate",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.64
-        },
-        {
-            "industry": "Utilities",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.62
-        },
-        {
-            "industry": "Arts Entertain",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.59
-        },
-        {
-            "industry": "Government",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.53
-        },
-        {
-            "industry": "Finance Insurance",
-            "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.52
+            "focus_meeting_ratio": 1.57
         },
         {
             "industry": "Information",
             "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.47
+            "focus_meeting_ratio": 1.55
+        },
+        {
+            "industry": "Professional & Business Services",
+            "work_setup_category": "Remote-First",
+            "focus_meeting_ratio": 1.52
+        },
+        {
+            "industry": "Finance Insurance",
+            "work_setup_category": "Remote-First",
+            "focus_meeting_ratio": 1.5
         },
         {
             "industry": "Healthcare",
             "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.39
+            "focus_meeting_ratio": 1.45
         },
         {
-            "industry": "Hospitaility Food",
+            "industry": "Real Estate",
             "work_setup_category": "Remote-First",
             "focus_meeting_ratio": 1.37
         },
         {
-            "industry": "Transp Warehousing",
+            "industry": "Education",
             "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.3
+            "focus_meeting_ratio": 1.36
         },
         {
-            "industry": "Retail",
+            "industry": "Utilities",
             "work_setup_category": "Remote-First",
-            "focus_meeting_ratio": 1.16
+            "focus_meeting_ratio": 1.36
         },
         {
-            "industry": "Wholesale",
-            "work_setup_category": "Hybrid",
-            "focus_meeting_ratio": 1.02
-        },
-        {
-            "industry": "Manufacturing",
-            "work_setup_category": "Hybrid",
-            "focus_meeting_ratio": 1.01
+            "industry": "Government",
+            "work_setup_category": "Remote-First",
+            "focus_meeting_ratio": 1.34
         }
     ],
-    "burnout_risk_profile": [],
-    "true_productivity_profile": []
+    "burnout_risk_profile": [
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Arts & Entertainment",
+            "burnout_risk_score": 0.5817
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Education",
+            "burnout_risk_score": 0.5887
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Finance Insurance",
+            "burnout_risk_score": 0.5296
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Government",
+            "burnout_risk_score": 0.5784
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Healthcare",
+            "burnout_risk_score": 0.5567
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Information",
+            "burnout_risk_score": 0.5025
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Professional & Business Services",
+            "burnout_risk_score": 0.5414
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Real Estate",
+            "burnout_risk_score": 0.4985
+        },
+        {
+            "work_setup_category": "Hybrid",
+            "industry": "Utilities",
+            "burnout_risk_score": 0.538
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Arts & Entertainment",
+            "burnout_risk_score": 0.7623
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Education",
+            "burnout_risk_score": 0.7545
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Finance Insurance",
+            "burnout_risk_score": 0.7613
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Government",
+            "burnout_risk_score": 0.7242
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Healthcare",
+            "burnout_risk_score": 0.7286
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Information",
+            "burnout_risk_score": 0.8024
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Professional & Business Services",
+            "burnout_risk_score": 0.7378
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Real Estate",
+            "burnout_risk_score": 0.7402
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "industry": "Utilities",
+            "burnout_risk_score": 0.7392
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Arts & Entertainment",
+            "burnout_risk_score": 0.4308
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Education",
+            "burnout_risk_score": 0.4196
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Finance Insurance",
+            "burnout_risk_score": 0.4278
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Government",
+            "burnout_risk_score": 0.4298
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Healthcare",
+            "burnout_risk_score": 0.4674
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Information",
+            "burnout_risk_score": 0.3915
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Professional & Business Services",
+            "burnout_risk_score": 0.4432
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Real Estate",
+            "burnout_risk_score": 0.5227
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "industry": "Utilities",
+            "burnout_risk_score": 0.5847
+        }
+    ],
+    "true_productivity_profile": [
+        {
+            "work_setup_category": "Hybrid",
+            "true_productive_hours": 16.94
+        },
+        {
+            "work_setup_category": "Onsite-Heavy",
+            "true_productive_hours": 8.69
+        },
+        {
+            "work_setup_category": "Remote-First",
+            "true_productive_hours": 21.74
+        }
+    ]
 }

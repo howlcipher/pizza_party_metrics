@@ -63,6 +63,8 @@ class MetricsProcessor:
             if f'hybrid_{ind}' not in latest_row:
                 raise ValueError(f"Missing data column for hybrid_{ind}")
 
+        industries = [
+            i for i in industries if i not in config.EXCLUDED_INDUSTRIES]
         industries.extend(
             [i for i in config.ADDITIONAL_INDUSTRIES if i not in industries])
 
@@ -94,7 +96,8 @@ class MetricsProcessor:
             onsite_pct=lambda x: x['industry_raw'].map(lambda i: get_pct(i, 'full_onsite')),
             hybrid_pct=lambda x: x['industry_raw'].map(lambda i: get_pct(i, 'hybrid')),
             remote_pct=lambda x: x['industry_raw'].map(lambda i: get_pct(i, 'full_remote')),
-            industry=lambda x: x['industry_raw'].str.replace('_', ' ').str.title()
+            industry=lambda x: x['industry_raw'].str.replace('_', ' ').str.title().replace(
+                config.INDUSTRY_DISPLAY_NAMES)
         )
 
         mask_zero = (

@@ -6,10 +6,10 @@ Welcome to **Pizza Party Metrics**, a highly thematic, automated dashboard that 
 
 ## 📈 The Freshly Baked Metrics
 <!-- METRICS_START -->
-**Total Records Analyzed**: 140<br>
-**Average Pizza Party Index**: 4.36<br>
-**Average Focus Hours**: 18.89<br>
-**Average Meeting Overhead**: 21.11
+**Total Records Analyzed**: 5000<br>
+**Average Pizza Party Index**: 47.84<br>
+**Average Focus Hours**: 16.27<br>
+**Average Meeting Overhead**: 23.73
 <!-- METRICS_END -->
 *(These metrics are automatically updated by our automated ETL pipeline!)*
 

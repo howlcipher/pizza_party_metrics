@@ -69,11 +69,38 @@ DEMOGRAPHICS = {
 }
 
 # Injected Industries (to ensure broad coverage if original WFH dataset
-# lacks them)
+# lacks them). 'healthcare' and 'education' are no-ops here since the WFH
+# dataset already carries those columns natively.
+#
+# Removed 'it_infrastructure', 'software_engineering', and 'finance': the WFH
+# dataset has no full_onsite_/hybrid_/full_remote_ columns for these keys, so
+# they silently fell back to a meaningless uniform 33/33/34 split (see
+# MetricsProcessor.process's mask_zero handling) instead of real survey data.
+# 'finance' also duplicated the real 'finance_insurance' column under a
+# different label. Re-add an industry here only once real percentage data
+# for it is sourced.
 ADDITIONAL_INDUSTRIES = [
-    'it_infrastructure',
-    'software_engineering',
-    'finance',
     'healthcare',
     'education',
 ]
+
+# Industries excluded from the dashboard: majority frontline/manual-labor
+# roles (retail floor staff, line cooks, warehouse/transport workers,
+# factory workers) where the site's core metrics -- Focus Hours vs Meeting
+# Overhead, hybrid/remote arrangements, PR-review-based collaboration
+# velocity -- don't meaningfully apply.
+EXCLUDED_INDUSTRIES = [
+    'retail',
+    'manufacturing',
+    'wholesale',
+    'hospitaility_food',
+    'transp_warehousing',
+]
+
+# Cosmetic renames for real WFH dataset columns whose raw names are
+# truncated/abbreviated (e.g. spreadsheet column-width constraints).
+INDUSTRY_DISPLAY_NAMES = {
+    'Arts Entertain': 'Arts & Entertainment',
+    'Prof Bus Services': 'Professional & Business Services',
+    'Realestate': 'Real Estate',
+}

@@ -73,7 +73,8 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700 font-medium">
               <li><strong>Productivity:</strong> Calculated as base Focus Hours, adjusted by the industry's meeting overhead.</li>
               <li><strong>Collaboration:</strong> Derived from asynchronous online collaboration metrics (e.g., turnaround times on digital approvals, document reviews, or task resolutions). Faster turnarounds boost the score!</li>
-              <li><strong>The Formula:</strong> <code>(Focus Hours + (Collaboration Score × 2.0), up to a max of 40)</code></li>
+              <li><strong>The Formula:</strong> <code>Focus Hours + (Collaboration Score × 2.0)</code> — higher is better, no fixed ceiling.</li>
+              <li><strong>Caveat:</strong> The Collaboration term is refetched periodically from a small, fixed basket of public GitHub repos (see "Task Completion Rate" below) — the same repos for every industry. It can dominate the Index and shift its whole scale between data refreshes, so treat exact scores as relative within a single snapshot, not as a stable absolute number to compare over time.</li>
             </ul>
           </div>
         </section>
@@ -84,14 +85,14 @@ const MethodologyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           </h3>
           <div className="bg-white p-4 rounded-lg border-2 border-green-600 shadow-sm">
             <p className="mb-2 text-gray-800">
-              The <strong>Task Completion Rate</strong> is our primary measure of real-world delivery speed and efficiency across different work setups (remote, hybrid, in-office).
+              The <strong>Task Completion Rate</strong> is a proxy for delivery speed and efficiency, measured once per <em>work-setup category</em> — not per industry.
             </p>
             <h4 className="font-extrabold text-green-800 mt-3 mb-1 uppercase tracking-wide text-xs">Calculation:</h4>
             <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700 font-medium">
-              <li>Pulled directly from digital telemetry and project management tools.</li>
-              <li>Calculates the median time for async approvals and task resolutions.</li>
-              <li>Measures the average digital turnaround time.</li>
-              <li>Aggregated and averaged to form a composite score that indicates how quickly value is delivered.</li>
+              <li>Pulled from real pull request and issue activity on a fixed basket of ~10 public GitHub repositories, chosen to represent each work-setup category (e.g. GitLab and Terraform for Remote-First, VS Code and React for Hybrid).</li>
+              <li>Calculates the median PR/issue resolution time and average reviewer turnaround for that basket.</li>
+              <li><strong>Every industry filter shows the same three category-level numbers</strong> — this metric doesn't vary by industry, only by which work setup is selected.</li>
+              <li>Because it depends on whichever PRs happen to exist in those repos at fetch time, values can shift materially between data refreshes.</li>
             </ul>
           </div>
         </section>

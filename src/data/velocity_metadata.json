@@ -1,105 +1,81 @@
 {
     "Remote-First": {
-        "task_completion_rate": 0.013396,
-        "communication_turnaround_h": 74.65,
-        "total_samples": 193,
-        "pr_samples": 185,
-        "issue_samples": 8,
+        "task_completion_rate": 0.013717,
+        "communication_turnaround_h": 72.9,
+        "total_samples": 196,
+        "pr_samples": 186,
+        "issue_samples": 10,
+        "review_turnaround_samples": 79,
+        "avg_review_turnaround_hours": 246.86,
         "repos": [
             {
                 "repo": "gitlabhq/gitlabhq",
-                "pr_samples": 38,
-                "issue_samples": 0,
-                "median_pr_hours": 525.21,
-                "median_issue_hours": null
+                "samples": 38
             },
             {
                 "repo": "pandas-dev/pandas",
-                "pr_samples": 50,
-                "issue_samples": 0,
-                "median_pr_hours": 410.7,
-                "median_issue_hours": null
+                "samples": 54
             },
             {
                 "repo": "automattic/wp-calypso",
-                "pr_samples": 50,
-                "issue_samples": 1,
-                "median_pr_hours": 14.1,
-                "median_issue_hours": 1253.02
+                "samples": 50
             },
             {
                 "repo": "hashicorp/terraform",
-                "pr_samples": 47,
-                "issue_samples": 7,
-                "median_pr_hours": 19.64,
-                "median_issue_hours": 118.29
+                "samples": 54
             }
         ],
-        "fetched_at": "2026-07-21T16:12:29.393765+00:00",
+        "fetched_at": "2026-07-22T19:11:44.582262+00:00",
         "is_fallback": false
     },
     "Hybrid": {
-        "task_completion_rate": 0.038652,
-        "communication_turnaround_h": 25.87,
-        "total_samples": 206,
-        "pr_samples": 145,
-        "issue_samples": 61,
+        "task_completion_rate": 0.079908,
+        "communication_turnaround_h": 12.51,
+        "total_samples": 180,
+        "pr_samples": 146,
+        "issue_samples": 34,
+        "review_turnaround_samples": 108,
+        "avg_review_turnaround_hours": 7.81,
         "repos": [
             {
                 "repo": "microsoft/vscode",
-                "pr_samples": 49,
-                "issue_samples": 41,
-                "median_pr_hours": 6.16,
-                "median_issue_hours": 75.12
+                "samples": 75
             },
             {
                 "repo": "facebook/react",
-                "pr_samples": 46,
-                "issue_samples": 6,
-                "median_pr_hours": 220.61,
-                "median_issue_hours": 2379.3
+                "samples": 55
             },
             {
                 "repo": "flutter/flutter",
-                "pr_samples": 50,
-                "issue_samples": 14,
-                "median_pr_hours": 3.55,
-                "median_issue_hours": 75.87
+                "samples": 50
             }
         ],
-        "fetched_at": "2026-07-21T16:12:29.393765+00:00",
+        "fetched_at": "2026-07-22T19:33:56.579509+00:00",
         "is_fallback": false
     },
     "Onsite-Heavy": {
-        "task_completion_rate": 0.010554,
-        "communication_turnaround_h": 94.76,
-        "total_samples": 154,
-        "pr_samples": 150,
-        "issue_samples": 4,
+        "task_completion_rate": 0.035,
+        "communication_turnaround_h": null,
+        "total_samples": 0,
+        "pr_samples": 0,
+        "issue_samples": 0,
+        "review_turnaround_samples": 0,
+        "avg_review_turnaround_hours": 24.0,
         "repos": [
             {
                 "repo": "apache/kafka",
-                "pr_samples": 50,
-                "issue_samples": 0,
-                "median_pr_hours": 177.91,
-                "median_issue_hours": null
+                "samples": 0
             },
             {
                 "repo": "tensorflow/tensorflow",
-                "pr_samples": 50,
-                "issue_samples": 0,
-                "median_pr_hours": 105.04,
-                "median_issue_hours": null
+                "samples": 0
             },
             {
                 "repo": "oracle/graal",
-                "pr_samples": 50,
-                "issue_samples": 4,
-                "median_pr_hours": 9.81,
-                "median_issue_hours": 527.68
+                "samples": 0
             }
         ],
-        "fetched_at": "2026-07-21T16:12:29.393765+00:00",
-        "is_fallback": false
+        "fetched_at": "2026-07-22T19:58:00.306973+00:00",
+        "is_fallback": true
     }
 }
