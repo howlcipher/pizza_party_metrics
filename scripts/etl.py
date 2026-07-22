@@ -4,6 +4,8 @@ import logging
 import time
 import math
 import hashlib
+import asyncio
+import aiohttp
 import requests
 import pandas as pd
 from datetime import datetime, timezone
@@ -11,6 +13,7 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 
 try:
     from scripts import config
@@ -45,48 +48,51 @@ def _save_cache(path: str, data: list) -> None:
 
 
 class GitHubClient:
-    """Handles GitHub API requests with exponential backoff, rate limiting, and caching."""
+    """Handles GitHub API requests asynchronously with exponential backoff and caching."""
 
     def __init__(self):
         self.headers = {'Accept': 'application/vnd.github.v3+json'}
         if os.getenv('GITHUB_TOKEN'):
             self.headers['Authorization'] = f"token {os.getenv('GITHUB_TOKEN')}"
         os.makedirs(config.CACHE_DIR, exist_ok=True)
+        self.semaphore = asyncio.Semaphore(10)
 
     def _cache_key(self, repo: str, endpoint: str) -> str:
         safe = hashlib.md5(f"{repo}_{endpoint}".encode(), usedforsecurity=False).hexdigest()[:12]
         return os.path.join(config.CACHE_DIR, f"{safe}.json")
 
-    def fetch_endpoint(self, url: str, cache_id: str, description: str) -> list:
+    async def fetch_endpoint(self, session: aiohttp.ClientSession, url: str, cache_id: str, description: str) -> list:
         cache_path = self._cache_key(*cache_id)
         cached = _load_cache(cache_path)
         if cached is not None:
             return cached
 
         logging.info(f"  → GET {description} …")
-        items = self._fetch_with_backoff(url, description)
+        items = await self._fetch_with_backoff(session, url, description)
         if items is None:
             items = []
         _save_cache(cache_path, items)
         return items
 
-    def _fetch_with_backoff(self, url: str, description: str) -> list | None:
-        for attempt in range(1, config.MAX_RETRIES + 1):
-            try:
-                resp = requests.get(url, headers=self.headers, timeout=20)
-                if resp.status_code == 200:
-                    return resp.json()
-                if resp.status_code in (429, 403):
-                    wait = float(resp.headers.get('Retry-After') or max(0.0, float(resp.headers.get('X-RateLimit-Reset', 0)) - time.time()) or (config.BASE_BACKOFF_SECONDS * math.pow(2, attempt - 1)))
-                    time.sleep(min(wait, 60.0))
-                    continue
-                if resp.status_code >= 500:
-                    time.sleep(min(config.BASE_BACKOFF_SECONDS * math.pow(2, attempt - 1), 60.0))
-                    continue
-                return None
-            except Exception:
-                time.sleep(min(config.BASE_BACKOFF_SECONDS * math.pow(2, attempt - 1), 60.0))
-        return None
+    async def _fetch_with_backoff(self, session: aiohttp.ClientSession, url: str, description: str) -> list | None:
+        async with self.semaphore:
+            for attempt in range(1, config.MAX_RETRIES + 1):
+                try:
+                    async with session.get(url, headers=self.headers, timeout=20) as resp:
+                        if resp.status == 200:
+                            return await resp.json()
+                        if resp.status in (429, 403):
+                            wait = float(resp.headers.get('Retry-After') or max(0.0, float(resp.headers.get('X-RateLimit-Reset', 0)) - time.time()) or (config.BASE_BACKOFF_SECONDS * math.pow(2, attempt - 1)))
+                            await asyncio.sleep(min(wait, 60.0))
+                            continue
+                        if resp.status >= 500:
+                            await asyncio.sleep(min(config.BASE_BACKOFF_SECONDS * math.pow(2, attempt - 1), 60.0))
+                            continue
+                        return None
+                except Exception as e:
+                    logging.error(f"Error fetching {url}: {e}")
+                    await asyncio.sleep(min(config.BASE_BACKOFF_SECONDS * math.pow(2, attempt - 1), 60.0))
+            return None
 
 
 class VelocityAnalyzer:
@@ -108,59 +114,69 @@ class VelocityAnalyzer:
             logging.debug(f"Error calculating resolution hours: {exc}")
         return None
 
-    def analyze(self, setup_repos=None, issues_per_repo=None, pulls_per_repo=None) -> tuple[dict, dict, dict]:
+    async def analyze(self, setup_repos=None, issues_per_repo=None, pulls_per_repo=None) -> tuple[dict, dict, dict]:
         target_repos = setup_repos or config.SETUP_REPOS
         num_issues = issues_per_repo or config.GITHUB_ISSUES_PER_REPO
         num_pulls = pulls_per_repo or config.GITHUB_PULLS_PER_REPO
         velocities, turnarounds, metadata = {}, {}, {}
-        for category, repos in target_repos.items():
-            cat_pr_times, cat_issue_times, cat_turnarounds, repo_stats = [], [], [], []
-            for repo in repos:
-                pr_url = config.GITHUB_PULLS_URL_TEMPLATE.format(repo=repo, limit=num_pulls)
-                pulls = self.client.fetch_endpoint(pr_url, (repo, 'pulls'), f"{repo}/pulls")
+        
+        async with aiohttp.ClientSession() as session:
+            for category, repos in target_repos.items():
+                cat_pr_times, cat_issue_times, cat_turnarounds, repo_stats = [], [], [], []
+                for repo in repos:
+                    pr_url = config.GITHUB_PULLS_URL_TEMPLATE.format(repo=repo, limit=num_pulls)
+                    pulls = await self.client.fetch_endpoint(session, pr_url, (repo, 'pulls'), f"{repo}/pulls")
+                    
+                    repo_pr_times, repo_turnaround_times = [], []
+                    
+                    # Fetch reviews concurrently
+                    review_tasks = []
+                    for pr in pulls:
+                        h = self._resolution_hours(pr)
+                        if h is not None:
+                            repo_pr_times.append(h)
+                        if pr.get('number'):
+                            rev_url = f"https://api.github.com/repos/{repo}/pulls/{pr['number']}/reviews?per_page=100"
+                            review_tasks.append((pr, self.client.fetch_endpoint(session, rev_url, (repo, f"pulls_{pr['number']}_reviews"), f"{repo} PR #{pr['number']} reviews")))
+                    
+                    if review_tasks:
+                        results = await asyncio.gather(*(t[1] for t in review_tasks))
+                        for (pr, _), reviews in zip(review_tasks, results):
+                            t = self._pr_review_turnaround_hours(pr, reviews)
+                            if t is not None:
+                                repo_turnaround_times.append(t)
+                                
+                    issue_url = config.GITHUB_ISSUES_URL_TEMPLATE.format(repo=repo, limit=num_issues)
+                    issues_raw = await self.client.fetch_endpoint(session, issue_url, (repo, 'issues'), f"{repo}/issues")
+                    issues = [i for i in issues_raw if 'pull_request' not in i]
+                    repo_issue_times = [h for i in issues if (h := self._resolution_hours(i)) is not None]
+
+                    cat_pr_times.extend(repo_pr_times)
+                    cat_issue_times.extend(repo_issue_times)
+                    cat_turnarounds.extend(repo_turnaround_times)
+                    repo_stats.append({'repo': repo, 'samples': len(repo_pr_times) + len(repo_issue_times)})
+
+                all_hours = cat_pr_times + cat_issue_times
+                median_h = float(np.median(all_hours)) if all_hours else None
+                is_fallback = median_h is None or median_h <= 0
+                velocity = 1.0 / median_h if not is_fallback else config.FALLBACK_VELOCITIES[category]
+                avg_turn = float(np.mean(cat_turnarounds)) if cat_turnarounds else config.ETL_SETTINGS['review_turnaround_default']
+
+                velocities[category] = velocity
+                turnarounds[category] = avg_turn
+                metadata[category] = {
+                    'velocity_proxy': round(velocity, 6),
+                    'median_resolution_h': round(median_h, 2) if median_h else None,
+                    'total_samples': len(all_hours),
+                    'pr_samples': len(cat_pr_times),
+                    'issue_samples': len(cat_issue_times),
+                    'review_turnaround_samples': len(cat_turnarounds),
+                    'avg_review_turnaround_hours': round(avg_turn, 2),
+                    'repos': repo_stats,
+                    'fetched_at': datetime.now(timezone.utc).isoformat(),
+                    'is_fallback': is_fallback,
+                }
                 
-                repo_pr_times, repo_turnaround_times = [], []
-                for pr in pulls:
-                    h = self._resolution_hours(pr)
-                    if h is not None:
-                        repo_pr_times.append(h)
-                    if pr.get('number'):
-                        rev_url = f"https://api.github.com/repos/{repo}/pulls/{pr['number']}/reviews?per_page=100"
-                        reviews = self.client.fetch_endpoint(rev_url, (repo, f"pulls_{pr['number']}_reviews"), f"{repo} PR #{pr['number']} reviews")
-                        t = self._pr_review_turnaround_hours(pr, reviews)
-                        if t is not None:
-                            repo_turnaround_times.append(t)
-                            
-                issue_url = config.GITHUB_ISSUES_URL_TEMPLATE.format(repo=repo, limit=num_issues)
-                issues = [i for i in self.client.fetch_endpoint(issue_url, (repo, 'issues'), f"{repo}/issues") if 'pull_request' not in i]
-                repo_issue_times = [h for i in issues if (h := self._resolution_hours(i)) is not None]
-
-                cat_pr_times.extend(repo_pr_times)
-                cat_issue_times.extend(repo_issue_times)
-                cat_turnarounds.extend(repo_turnaround_times)
-                repo_stats.append({'repo': repo, 'samples': len(repo_pr_times) + len(repo_issue_times)})
-
-            all_hours = cat_pr_times + cat_issue_times
-            median_h = float(np.median(all_hours)) if all_hours else None
-            is_fallback = median_h is None or median_h <= 0
-            velocity = 1.0 / median_h if not is_fallback else config.FALLBACK_VELOCITIES[category]
-            avg_turn = float(np.mean(cat_turnarounds)) if cat_turnarounds else config.ETL_SETTINGS['review_turnaround_default']
-
-            velocities[category] = velocity
-            turnarounds[category] = avg_turn
-            metadata[category] = {
-                'velocity_proxy': round(velocity, 6),
-                'median_resolution_h': round(median_h, 2) if median_h else None,
-                'total_samples': len(all_hours),
-                'pr_samples': len(cat_pr_times),
-                'issue_samples': len(cat_issue_times),
-                'review_turnaround_samples': len(cat_turnarounds),
-                'avg_review_turnaround_hours': round(avg_turn, 2),
-                'repos': repo_stats,
-                'fetched_at': datetime.now(timezone.utc).isoformat(),
-                'is_fallback': is_fallback,
-            }
-            
         return velocities, turnarounds, metadata
 
     def _pr_review_turnaround_hours(self, pr: dict, reviews: list) -> float | None:
@@ -235,10 +251,13 @@ class MetricsProcessor:
         })
         
         def get_pct(ind, prefix): return float(latest_row.get(f'{prefix}_{ind}', 0.0) or 0.0) / 100.0
-        df_results['onsite_pct'] = df_results['industry_raw'].map(lambda x: get_pct(x, 'full_onsite'))
-        df_results['hybrid_pct'] = df_results['industry_raw'].map(lambda x: get_pct(x, 'hybrid'))
-        df_results['remote_pct'] = df_results['industry_raw'].map(lambda x: get_pct(x, 'full_remote'))
-        df_results['industry'] = df_results['industry_raw'].str.replace('_', ' ').str.title()
+        
+        df_results = df_results.assign(
+            onsite_pct=lambda x: x['industry_raw'].map(lambda i: get_pct(i, 'full_onsite')),
+            hybrid_pct=lambda x: x['industry_raw'].map(lambda i: get_pct(i, 'hybrid')),
+            remote_pct=lambda x: x['industry_raw'].map(lambda i: get_pct(i, 'full_remote')),
+            industry=lambda x: x['industry_raw'].str.replace('_', ' ').str.title()
+        )
         
         mask_zero = (df_results['onsite_pct'] + df_results['hybrid_pct'] + df_results['remote_pct']) == 0
         df_results.loc[mask_zero, ['remote_pct', 'hybrid_pct', 'onsite_pct']] = [0.33, 0.33, 0.34]
@@ -246,27 +265,39 @@ class MetricsProcessor:
         total = df_results['onsite_pct'] + df_results['hybrid_pct'] + df_results['remote_pct']
         rand_cat = np.random.uniform(0, 1, size=N)
         p_rem, p_hyb = df_results['remote_pct'] / total, df_results['hybrid_pct'] / total
-        df_results['work_setup_category'] = np.select([rand_cat < p_rem, rand_cat < p_rem + p_hyb], ['Remote-First', 'Hybrid'], default='Onsite-Heavy')
         
-        df_results['cat_vel'] = df_results['work_setup_category'].map(lambda c: self.velocities.get(c, 0.05))
-        # Thematic Turnaround Base (to ensure Remote is fastest, Onsite is slowest)
-        turnaround_base = {'Remote-First': 12.5, 'Hybrid': 28.0, 'Onsite-Heavy': 110.0}
-        df_results['review_turnaround_hours'] = df_results['work_setup_category'].apply(lambda c: turnaround_base[c] + np.random.uniform(-2, 4)).round(2)
+        df_results = df_results.assign(
+            work_setup_category=np.select([rand_cat < p_rem, rand_cat < p_rem + p_hyb], ['Remote-First', 'Hybrid'], default='Onsite-Heavy')
+        )
         
-        df_results['cat_factor'] = np.select(
-            [df_results['work_setup_category'] == 'Remote-First', df_results['work_setup_category'] == 'Hybrid'],
-            [0.55 + df_results['remote_pct'] * 0.20, 0.45 + df_results['hybrid_pct'] * 0.15],
-            default=0.35 + df_results['onsite_pct'] * 0.10
+        df_results = df_results.assign(
+            cat_vel=lambda x: x['work_setup_category'].map(lambda c: self.velocities.get(c, 0.05)),
+            review_turnaround_hours=lambda x: x['work_setup_category'].map(lambda c: self.turnarounds.get(c, 24.0)).round(2)
+        )
+        
+        df_results = df_results.assign(
+            cat_factor=lambda x: np.select(
+                [x['work_setup_category'] == 'Remote-First', x['work_setup_category'] == 'Hybrid'],
+                [0.55 + x['remote_pct'] * 0.20, 0.45 + x['hybrid_pct'] * 0.15],
+                default=0.35 + x['onsite_pct'] * 0.10
+            )
         )
         
         base_h = config.ETL_SETTINGS['base_focus_hours']
-        df_results['collaboration_score'] = (24.0 / np.maximum(df_results['review_turnaround_hours'], 1.0) * 10).round(2)
-        df_results['focus_hours'] = (base_h * (df_results['cat_factor'] + np.random.uniform(-0.05, 0.05, size=N)) * (1.0 + df_results['cat_vel'])).round(2)
-        df_results['meeting_overhead'] = np.maximum(5.0, base_h - df_results['focus_hours']).round(2)
-        df_results['pizza_party_index'] = (df_results['focus_hours'] + df_results['collaboration_score'] * 2.0).round(2)
-        
-        df_results['interruption_frequency'] = ((df_results['meeting_overhead'] / base_h) * 10.0 + np.random.poisson(2, size=N)).round(2)
-        df_results['sustained_high_workload'] = (np.maximum(0.0, (df_results['focus_hours'] + df_results['meeting_overhead'] - base_h) / 5.0) + np.random.exponential(1.0, size=N)).round(2)
+        df_results = df_results.assign(
+            collaboration_score=lambda x: (24.0 / np.maximum(x['review_turnaround_hours'], 1.0) * 10).round(2),
+            focus_hours=lambda x: (base_h * (x['cat_factor'] + np.random.uniform(-0.05, 0.05, size=N)) * (1.0 + x['cat_vel'])).round(2)
+        )
+        df_results = df_results.assign(
+            meeting_overhead=lambda x: np.maximum(5.0, base_h - x['focus_hours']).round(2),
+        )
+        df_results = df_results.assign(
+            pizza_party_index=lambda x: (x['focus_hours'] + x['collaboration_score'] * 2.0).round(2),
+            interruption_frequency=lambda x: ((x['meeting_overhead'] / base_h) * 10.0 + np.random.poisson(2, size=N)).round(2),
+        )
+        df_results = df_results.assign(
+            sustained_high_workload=lambda x: (np.maximum(0.0, (x['focus_hours'] + x['meeting_overhead'] - base_h) / 5.0) + np.random.exponential(1.0, size=N)).round(2)
+        )
         
         df_results['work_setup'] = df_results.apply(lambda row: {'onsite_pct': round(row['onsite_pct'] * 100, 2), 'hybrid_pct': round(row['hybrid_pct'] * 100, 2), 'remote_pct': round(row['remote_pct'] * 100, 2)}, axis=1)
         
@@ -276,7 +307,10 @@ class MetricsProcessor:
         pipeline = Pipeline([('scaler', StandardScaler()), ('classifier', LogisticRegression(random_state=config.ETL_SETTINGS['random_seed']))])
         features = df_results[['interruption_frequency', 'sustained_high_workload']]
         target = ((df_results['interruption_frequency'] * 0.5 + df_results['sustained_high_workload'] * 2.0 + np.random.normal(0, 1, N)) > 5.0).astype(int)
-        pipeline.fit(features, target)
+        
+        X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+        pipeline.fit(X_train, y_train)
+        
         df_results['burnout_risk_score'] = np.round(pipeline.predict_proba(features)[:, 1], 4) if hasattr(pipeline, "predict_proba") else pipeline.predict(features)
         
         return df_results
@@ -285,12 +319,12 @@ class MetricsProcessor:
 class ETLPipeline:
     """Orchestrates the extraction, transformation, and loading of metrics."""
 
-    def run(self):
+    async def run(self):
         os.makedirs('src/data', exist_ok=True)
         
         client = GitHubClient()
         analyzer = VelocityAnalyzer(client)
-        velocities, turnarounds, metadata = analyzer.analyze()
+        velocities, turnarounds, metadata = await analyzer.analyze()
         
         with open('src/data/velocity_metadata.json', 'w', encoding='utf-8') as f:
             json.dump(metadata, f, indent=4)
@@ -303,21 +337,19 @@ class ETLPipeline:
         logging.info("ETL pipeline completed successfully.")
 
 
+if __name__ == '__main__':
+    asyncio.run(ETLPipeline().run())
+
 def _resolution_hours(item: dict) -> float | None:
     return VelocityAnalyzer(GitHubClient())._resolution_hours(item)
 
-
 def fetch_work_setup_velocities(setup_repos=None, issues_per_repo=None, pulls_per_repo=None) -> tuple[dict, dict, dict]:
-    return VelocityAnalyzer(GitHubClient()).analyze(setup_repos=setup_repos, issues_per_repo=issues_per_repo, pulls_per_repo=pulls_per_repo)
-
+    # This requires an event loop in tests, but the test might call this synchronously.
+    # We should run it with asyncio if it's async now.
+    return asyncio.run(VelocityAnalyzer(GitHubClient()).analyze(setup_repos=setup_repos, issues_per_repo=issues_per_repo, pulls_per_repo=pulls_per_repo))
 
 def download_wfh_data(filepath="raw_data/wfh_data.xlsx") -> str:
     return WFHDataExtractor.download(filepath)
 
-
 def process_data(wfh_file: str, velocities: dict, turnarounds: dict) -> pd.DataFrame:
     return MetricsProcessor(wfh_file, velocities, turnarounds).process()
-
-
-if __name__ == '__main__':
-    ETLPipeline().run()
