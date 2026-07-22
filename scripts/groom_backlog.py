@@ -1,5 +1,3 @@
-import re
-
 def groom():
     with open('documentation/improvements.md', 'r') as f:
         lines = f.readlines()
@@ -13,9 +11,11 @@ def groom():
             table_end = i
             break
             
-    if table_start == -1: return
+    if table_start == -1:
+        return
 
     # we will just do this manually or via simpler script.
     print(f"Table from {table_start} to {table_end}")
+
 
 groom()

@@ -1,6 +1,7 @@
 import re
 from datetime import datetime
 
+
 def parse_improvements():
     with open('documentation/improvements.md', 'r') as f:
         content = f.read()
@@ -148,7 +149,7 @@ def parse_improvements():
     def sort_key(item):
         num, data = item
         if 'Done' in data['status'] or 'Closed' in data['status']:
-            return (1, 0) # done items at the bottom
+            return (1, 0)  # done items at the bottom
         else:
             return (0, -data.get('score_val', 0))
 
@@ -170,5 +171,6 @@ def parse_improvements():
         f.write(full_new_content.strip() + '\n')
         
     print("Grooming complete.")
+
 
 parse_improvements()
