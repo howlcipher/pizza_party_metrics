@@ -130,6 +130,9 @@ const Dashboard = () => {
       <footer className="text-center pt-8 pb-6 text-gray-800 text-sm font-bold mt-auto space-y-2 bg-[var(--card-bg)] backdrop-blur-sm relative">
         <div className="pizza-checker absolute top-0 left-0 w-full h-3 shadow-[0_1px_3px_rgba(0,0,0,0.15)]"></div>
         <p className="text-xl text-[var(--chart-danger)]" style={{ fontFamily: 'var(--font-brand)' }}>Telemetry generated with 🧀 &amp; 🍅</p>
+        <p className="text-xs font-semibold text-gray-700">
+          ENGINEERED BY <a href="https://howlcipher.github.io/william_elias/" className="underline hover:text-red-700">WILLIAM ELIAS</a>
+        </p>
         <p className="text-xs font-normal">
           <strong>Live Data Sources:</strong> <a href="https://wfhresearch.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-700">WFH Research (SWAA)</a> &amp; <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-700">GitHub REST API</a>
         </p>
