@@ -5,7 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
     <link rel="alternate icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizza Party Metrics</title>
+    <title>Pizza Party Metrics | Remote Work vs RTO Analytics &amp; Delivery Data</title>
+    <meta name="description" content="Empirical analysis of return-to-office claims versus real remote work surveys, engineering throughput, and developer productivity delivery data." />
+    <link rel="canonical" href="https://howlcipher.github.io/pizza_party_metrics/" />
 
     <!-- Trattoria signage fonts: a hand-lettered script for the brand wordmark, a chunky rounded display face for headings -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,18 +15,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
 
     <!-- Open Graph / Social Meta Tags -->
-    <meta property="og:title" content="Pizza Party Metrics" />
-    <meta property="og:description" content="Every return-to-office memo promises culture, collaboration, and pizza parties. This dashboard checks that pitch against real WFH survey and GitHub delivery data." />
+    <meta property="og:site_name" content="Pizza Party Metrics" />
+    <meta property="og:title" content="Pizza Party Metrics | Remote Work vs RTO Analytics &amp; Delivery Data" />
+    <meta property="og:description" content="Empirical analysis of return-to-office claims versus real remote work surveys, engineering throughput, and developer productivity delivery data." />
     <meta property="og:image" content="https://howlcipher.github.io/pizza_party_metrics/og-image.jpg" />
     <meta property="og:url" content="https://howlcipher.github.io/pizza_party_metrics/" />
     <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Pizza Party Metrics" />
-    <meta name="twitter:description" content="Real data on remote vs. in-office work, checked against the 'come back for the culture' pitch." />
+    <meta name="twitter:title" content="Pizza Party Metrics | Remote Work vs RTO Analytics &amp; Delivery Data" />
+    <meta name="twitter:description" content="Empirical analysis of return-to-office claims versus real remote work surveys, engineering throughput, and developer productivity delivery data." />
     <meta name="twitter:image" content="https://howlcipher.github.io/pizza_party_metrics/og-image.jpg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Pizza Party Metrics",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "description": "Empirical analysis of return-to-office claims versus real remote work surveys, engineering throughput, and developer productivity delivery data.",
+      "url": "https://howlcipher.github.io/pizza_party_metrics/",
+      "author": {
+        "@type": "Person",
+        "name": "William Elias",
+        "url": "https://howlcipher.github.io/william_elias/"
+      }
+    }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <header style="display:none">
+        <h1>Luigi's Pizza Party Metrics</h1>
+      </header>
+    </div>
+    <noscript>
+      <div style="padding: 20px; font-family: sans-serif; text-align: center;">
+        <p>Empirical analysis comparing return-to-office culture claims against remote work surveys and software delivery telemetry.</p>
+        <p>Engineered by <a href="https://howlcipher.github.io/william_elias/">William Elias</a></p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
