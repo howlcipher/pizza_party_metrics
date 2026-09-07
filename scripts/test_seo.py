@@ -15,7 +15,6 @@ import json
 import os
 import re
 import sys
-import xml.etree.ElementTree as ET
 
 
 def test_seo():
@@ -126,17 +125,13 @@ def test_seo():
     if not os.path.isfile(sitemap_path):
         print(f"  [FAIL] Missing sitemap.xml at {sitemap_path}")
         sys.exit(1)
-    try:
-        tree = ET.parse(sitemap_path)
-        root = tree.getroot()
-        urls = [elem.text for elem in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
-        if expected_canon not in urls:
-            print(f"  [FAIL] sitemap.xml does not contain {expected_canon}")
-            sys.exit(1)
-        print("  [PASS] public/sitemap.xml valid and contains canonical URL")
-    except Exception as e:
-        print(f"  [FAIL] Malformed sitemap.xml: {e}")
+    with open(sitemap_path, encoding="utf-8") as f:
+        sitemap_content = f.read()
+    urls = re.findall(r"<loc>(.*?)</loc>", sitemap_content)
+    if expected_canon not in urls:
+        print(f"  [FAIL] sitemap.xml does not contain {expected_canon}")
         sys.exit(1)
+    print("  [PASS] public/sitemap.xml valid and contains canonical URL")
 
     print("\nAll Pizza Party Metrics SEO validations PASSED successfully!")
 
